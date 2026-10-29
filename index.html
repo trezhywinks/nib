@@ -260,9 +260,9 @@
   }
   
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", tocarAudio);
+   // document.addEventListener("DOMContentLoaded", tocarAudio);
   } else {
-    tocarAudio();
+  //  tocarAudio();
   }
 </script>
 
@@ -579,7 +579,7 @@ function copiarTexto() {
      </div>
        <div>
          <div class="shalow" onclick="">
-     <i class="fa-solid fa-toggle-on meu-toggle"
+     <i class="fa-solid fa-toggle-off meu-toggle"
 style="font-size: 40px; cursor: pointer;"
 onclick="alternarToggle(this)"
 
@@ -1129,11 +1129,20 @@ inputCodigo.addEventListener("input", () => {
       </div>
 
 
-      <p style="font-size:11px;" id="cidade">Obtaining data...</p>
+      <p style="font-size:11px; display: none;" id="cidade">Obtaining data...</p>
       <br>
-      <span style="font-size:11px; margin-right:20px; opacity: 0.6;">• Help</span>
-      <span class="fim" style="font-size:11px; opacity: 0.6;"> • Redeem code</span>
-    <span style="font-size:11px; margin-left:20px; opacity: 0.6;"> • Chat</span>
+      <span style="font-size:12px; margin-right:20px; opacity: 0.6;">• Help</span>
+      <span class="fim" style="font-size:12px; opacity: 0.6;"> • Redeem code</span>
+    <span style="font-size:12px; margin-left:20px; opacity: 0.6;"> • Chat</span>
+    <span style="font-size:12px; margin-left:20px; opacity: 0.6;"> • Terms</span>
+    <span style="font-size:12px; margin-left:20px; opacity: 0.6;"> • Docs</span><br>
+    <span style="font-size:12px; margin-left:20px; opacity: 0.6;"> • Contact</span>
+    <span style="font-size:12px; margin-left:20px; opacity: 0.6;"> • Status</span>
+    <span style="font-size:12px; margin-left:20px; opacity: 0.6;"> • Privacy</span>
+    <span style="font-size:12px; margin-left:20px; opacity: 0.6;"> • Games</span>
+    <br>
+    <span style="font-size:12px; margin-left:20px; opacity: 0.6;">Version: 1.00.1.0</span>
+
    </div>
 
     <script>
@@ -2409,7 +2418,7 @@ border:none;
 }
 
 .mensage{
-  background: #181818;
+  background: #0c0c0c;
   display: flex;
   border-radius:100px;
   width:100%;
@@ -2737,8 +2746,8 @@ transition: 0.2s;
   </label>
 </div>
 
-<div class="perfil" style="display: flex; justify-content: space-between; width: 100%;">
-<div class="backVz" onclick="o()" style="width:40px;">
+<div class="perfil" style="display: flex; background:; justify-content: space-between; width:100%; overflow:;">
+<div class="backVz" onclick="o()" style="width:40px; margin-top:-5px; padding:;">
   <script>
     function o(){
       document.querySelector(".chatsT").style.display = "none";
@@ -2752,7 +2761,7 @@ transition: 0.2s;
     
    
   </script>
-<p style="font-size:27px;"><</p>  
+<p style="font-size:40px;"><</p>  
 </div>
   <script>
     function dert(){
@@ -2762,7 +2771,7 @@ transition: 0.2s;
 <script>
  
 </script>
-  <div onclick="perfi()" style="margin-left:-110px;">
+  <div onclick="perfi()" style="margin-left:-50px; width: 190px;">
 
 <div style="display: flex; margin-left: 20px">
     <div style="margin-left:;">
@@ -2775,12 +2784,15 @@ transition: 0.2s;
 
     </div>
 <div style="margin-left:10px;">
-  <strong id="meuNome">Anônimo</strong>
+  <div style="display:flex;">
+  <strong id="meuNome" style="white-space:nowrap; width:; overflow:;">Anônimo</strong>
+  <div class="seloV" style="margin-left:1px;"></div>
+  </div>
+
       <span id="status">
       conectando...
     </span>
 </div> 
-<div class="seloV" style="margin-left:5px;"> </div>
 </div>
 
   </div>
@@ -3085,7 +3097,7 @@ padding: 10px; border-radius: 50px; background: #0c0c0c;">
     <input
       id="texto"
       type="text"
-      placeholder="Mensagem..."
+      placeholder="Message..."
       autocomplete="off"
     >
       </div>
