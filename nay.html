@@ -1,0 +1,4633 @@
+<!DOCTYPE html>
+
+<!-- 
+ _              _  _      
+| |_ _ _ ___ __| || |_  _ 
+|  _| '_/ -_)_ / __ | || |
+ \__|_| \___/__|_||_|\_, |
+                     |__/ 
+ [-] server 06
+ [-] version : 0.0.1 / 1.0.0
+-->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Server  Sector 01" />
+    <meta name="og:description" content="Welcome to Server Sector 01" />
+    <meta name="og:url" content="" />
+    <meta name="og:title" content="Sector 01/ dreq" />
+    <meta name="og:image" content="https://raw.githubusercontent.com/trezhywinks/Cc/refs/heads/main/IMG_7292.jpeg">
+    <meta property="og:image" content="https://raw.githubusercontent.com/trezhywinks/Cc/refs/heads/main/IMG_7292.jpeg" />
+    <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/trezhywinks/Cc/refs/heads/main/IMG_7292.jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="Not for Drugs" />
+  <link rel="shortcut icon" href="./img/3d376001-ac30-4b95-8203-4fc5c0254467-1.ico" type="image/x-icon" />
+ <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="manifest" href="manifest.json">
+  <title>Sector 01/ dreq</title>
+</head>
+<style>
+*{
+  margin:0; padding:0;
+}
+@font-face{
+  font-family: mine;
+  src:url("./1_MinecraftRegular1.otf");
+}
+
+:root{
+  --ser: --wer: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+  body{
+    background:#0C0C0C;
+    font-family:mine;
+    font-weight:800;
+    font-size:17px;
+    color: #8C8C8C;
+  }
+  
+  .der{
+    font-family: mine;
+    background:#9331e4;
+    color: #fff;
+    font-weight: bold;
+ text-shadow: 0 1px 1px white;
+    padding: 10px 20px;
+   border-radius: 10px;
+    font-size: 20px;
+    border: #232323;
+  }
+  .server{
+    text-align:center;
+  }
+  .botttom{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+  }
+  .btnZ{
+    color:#fff;
+    font-size:17px;
+    font-family:mine;
+    border:none;
+    font-weight:800;
+  }
+  
+  .btnC{
+    background:#3193E4;
+    border-radius:5px;
+    width:70%;
+    color:#fff;
+    padding:5px 7px;
+    font-size:19px;
+    font-family:mine;
+    border:1px solid #232323;
+    font-weight:800;
+
+  }
+  .o{
+    display:flex;
+    text-align:center;
+    justify-content: center;
+    z-index:100 ;
+  }
+  .p{
+    margin:10px;
+  }
+  
+  .select{
+    padding: 10px;
+    position: fixed;
+    left:-450px;
+    transition: 0.5s;
+    top: 0;
+    height: 100vh;
+    width: 130px;
+    background: #0C0C0C;
+    display: block;
+    text-align:center;
+  }
+  .select.ativo{
+    transition: 0.5s;
+    left:0;
+  }
+    .cay{
+      padding:10px;
+      overflow:hidden;
+      height:80px;
+      justify-content:center;
+    }
+    .coladin{
+      position:fixed;
+      left:0;
+      right:0;
+      top:20px;
+      transition:0.5s;
+      transform:translateY(750px);
+      background:#0C0C0C80;
+      backdrop-filter:blur(10px);
+      height:100vh;
+      border-top-left-radius:50px;
+      border-top-right-radius:50px;
+      border-top:1px solid #676767A1;
+      padding:20px;
+      z-index:100;
+    }
+    
+    .plan{
+      position:fixed;
+      text-align:center;
+      left:0;
+      right:0;
+      top:20px;
+      transition:0.5s;
+      background:#0C0C0C80;
+      backdrop-filter:blur(10px);
+      transform:translateY(750px);
+      height:100vh;
+      border-top-left-radius:50px;
+      border-top-right-radius:50px;
+      border-top:1px solid #676767A1;
+      padding:20px;
+      z-index:9999999;
+    }
+    
+        
+    .plan.ativo{
+      transition:0.5s;
+      transform:translateY(0);
+    }
+
+    
+    
+    .coladin.ativo{
+      transition:0.5s;
+      transform:translateY(0);
+    }
+    
+    .mdekd{
+      display:flex;
+      justify-content: space-between;
+    }
+    .lseld{
+      margin:5px;
+    }
+    
+          .over {
+        text-align: center;
+        overflow: hidden;
+      }
+    
+            .linw {
+          width: 100%;
+          position:;
+          animation: -mov 13s linear infinite;
+          display: flex;
+        }
+        
+        @keyframes -mov {
+          0% {
+            transform: translateX(0);
+          }
+          
+          100% {
+            transform: translateX(-120%);
+          }
+        }
+                .text, .texy{
+          white-space:nowrap;
+          padding-right:50px;
+          -webkit-text-size-adjust:100%;
+          text-size-adjust: 100%;
+          transition:0.5s;
+          animation: --opa 0.5s linear infinite;
+        }
+        
+        @keyframes --opa{
+          from{
+            opacity: 1;
+            transition:0.5s;
+          }
+          to{
+          opacity: 0.4;
+          transition:0.5s;
+  
+          }
+        }
+        
+        i{
+          font-size:12px;
+        }
+      .joguin{
+        display:none;
+      }  
+ #conteudo{
+  display: none;
+ }
+ 
+ .suate{
+   z-index: 1000;
+   background: #000;
+   height: 100vh;
+   display: none;
+ }
+</style>
+<body>
+  
+<audio id="audio" class="audio" src="./toq/file_0_0.mp3" loop></audio>
+<audio id="audio2" class="audio2" src="./fechando.mov"></audio>
+<audio id="audio3" class="audio3" src="./abrindo.mov"></audio>
+
+<script>
+  const audio = document.getElementById("audio");
+  
+  audio.preload = "auto";
+  audio.volume = 1;
+  
+  function tocarAudio() {
+    audio.play().catch(() => {
+      document.addEventListener("touchstart", tocarAudio, {
+        once: true
+      });
+    });
+  }
+  
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", tocarAudio);
+  } else {
+    tocarAudio();
+  }
+</script>
+
+
+<div class="suate">
+    
+<button id="conectarGitHub" type="button">
+  Conectar com GitHub
+</button>
+
+<div id="perfilGitHub" hidden>
+  <img id="fotoGitHub" width="50" height="50"
+       alt="Foto do usuário GitHub">
+  <span id="nomeGitHub"></span>
+  <button id="sairGitHub" type="button">Sair</button>
+</div>
+
+<p id="estadoGitHub"></p>
+
+<script>
+const API = "https://SEU-SERVIDOR.onrender.com";
+
+const botao = document.getElementById("conectarGitHub");
+const estado = document.getElementById("estadoGitHub");
+const perfil = document.getElementById("perfilGitHub");
+
+botao.addEventListener("click", () => {
+  // O servidor inicia o fluxo OAuth.
+  window.location.href = `${API}/auth/github`;
+});
+
+async function carregarUsuarioGitHub() {
+  try {
+    const resposta = await fetch(`${API}/api/me`, {
+      credentials: "include"
+    });
+
+    if (!resposta.ok) {
+      perfil.hidden = true;
+      return;
+    }
+
+    const dados = await resposta.json();
+
+    if (!dados.autenticado) return;
+
+    document.getElementById("fotoGitHub").src =
+      dados.usuario.foto;
+
+    document.getElementById("nomeGitHub").textContent =
+      dados.usuario.nome;
+
+    perfil.hidden = false;
+    botao.hidden = true;
+    estado.textContent = "Conta conectada ao Whmer.";
+
+    // Outros scripts podem aproveitar os dados.
+    window.dispatchEvent(
+      new CustomEvent("whmer:usuario", {
+        detail: dados.usuario
+      })
+    );
+  } catch (erro) {
+    estado.textContent = "Não foi possível consultar a conta.";
+  }
+}
+
+document.getElementById("sairGitHub").addEventListener(
+  "click", async () => {
+    await fetch(`${API}/api/logout`, {
+      method: "POST",
+      credentials: "include"
+    });
+
+    perfil.hidden = true;
+    botao.hidden = false;
+    estado.textContent = "Você saiu da sua conta.";
+  }
+);
+
+if (new URLSearchParams(location.search)
+    .get("github_login") === "success") {
+  history.replaceState({}, "", location.pathname);
+}
+
+carregarUsuarioGitHub();
+</script>
+
+  </div>
+  <div class="carre">
+    <br><br><br><br><br><br><br>
+    <br><br><br>
+
+    <br><br><br><br><br><br>
+
+
+    <div class="loading">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<style>
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.loading span {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  animation: pular 1.2s infinite ease-in-out;
+}
+
+.loading span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.loading span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes pular {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+</style>
+  </div>
+  <div class="plan">
+        <div class="mdekd">
+      <div class="lseld" style="text-align:left; padding-left:10px;">
+      <p style="font-size:17px;">Payment</p>
+      <p style="font-size:13px; color:green;">100% secure payment</p>
+      </div>
+      <div class="mzmedd" onclick="fg()">
+     <h2 style="font-size:40px; margin-top:-10px; margin-right:10px;">x</h2>
+     </div>
+    </div>
+<br>
+<style>
+  .bords{
+    border:1px solid #232323;
+    padding:10px;
+    border-radius: 10px;
+  }
+</style>
+<div class="bords">
+         <h2>Version Pro</h2>
+         <p>Amount to pay $ 5,50</p>
+         <br>
+         <br>
+         <img src="./img/IMG_0999.png" width="250" style="border-radius:10px;"/><br>
+         <br>
+     <button class="btnC" id="mensagem" onclick="copiarTexto();">Copy code</button>
+     <br>
+     </div>
+     <center>
+      <div class="wap" style="margin-top:5px; border-bottom:2px solid #232322; width:80%;">
+       <p style="color:#f7f7f7;">I've already made the payment.</p>
+     </div>
+     <br>
+   <p style="font-size:11px; opacity:0.6; border: 1px solid #232323; padding: 10px; border-radius:5px;">Click here to talk to Serafim about your payment that has already been made.</p>
+     </center>
+     <script>
+       document.querySelector(".wap").addEventListener("click", () => {
+       window.location.href = "https://api.whatsapp.com/send/?phone=%2B19043027496&text=meu+prime&type=phone_number&app_absent=0";
+       })
+     </script>
+     </center>
+
+     <span id=""></span>
+<style>
+  #mensagem{
+  }
+</style>
+<script>
+
+function copiarTexto() {
+
+    const texto = "00020126580014BR.GOV.BCB.PIX01360259b107-06d6-4ada-9319-0e6005494bc452040000530398654045.505802BR5901N6001C62070503***63046BC6";
+
+    navigator.clipboard.writeText(texto).then(() => {
+
+        document.getElementById("mensagem").textContent = "Code copied!";
+
+        setTimeout(() => {
+
+            document.getElementById("mensagem").textContent = "Copy code";
+
+        }, 2000);
+
+    });
+
+}
+
+</script>
+     <br>
+     <p>Use our pro version of sever T, have fun with the tools of this version.</p>
+     <script>
+       function serT(){
+         const btnC = document.querySelector(".btnC")
+      btnC.innerText = "Loading...";
+        window.location.href = "https://hash-evsl.onrender.com/login"
+       }
+       </script>
+    </center>
+  </div>
+  <script>  
+   </script>
+
+
+       <script>
+       function fg(){
+         const maraA = document.querySelector(".plan");
+         document.getElementById("audio2").play();
+         if(maraA.classList.toggle("ativo")){
+           maraA.classList.toggle("ativo");
+         }
+       }
+       </script>
+
+  <div class="painel" id="conteudo">
+  <div class="coladin">
+    <div class="mdekd">
+      <div class="lseld">
+      <p style="font-size:17px;">Sharing screen / creator</p>
+      <p style="font-size:13px;">Configuration and creator</p>
+      </div>
+     <h2 onclick="bonequinha()" style="font-size:40px; margin-top:-10px; margin-right:10px;">x</h2>
+     <script>
+       function bonequinha(){
+         document.getElementById("audio2").play();
+          const mara = document.querySelector(".coladin");
+         const maravilha = document.querySelector(".select");
+         if(mara.classList.toggle("ativo")){
+           mara.classList.toggle("ativo");
+         }
+
+                 //if(maravilha.classList.toggle("ativo")){
+     //      maravilha.classList.toggle("ativo");
+     //    }
+       }
+       </script>
+    </div>
+    <div class="over">
+    <div class="linw">
+    <div class="text">    </div>
+    <div class="texy">    </div>
+    </div>
+    </div>
+    <script>
+      const text = document.querySelector(".text");
+      const texy = document.querySelector(".texy");
+      texy.innerHTML = "<i>Bienvenido al servidor, se realizarán actualizaciones y los usuarios podrán jugar</i>"
+      text.innerHTML = "<i>Bienvenido al servidor, se realizarán actualizaciones y los usuarios podrán jugar</i>"
+      
+    </script>
+    <br>
+    <br>
+    <style>
+      .tre{
+        display:flex;
+      }
+      .kzkekd{
+        margin-left:10px;
+      }
+      .line{
+        height:1px;
+        background: #505050A1;
+        width:80%;
+      }
+    </style>
+    <div class="tre">
+      <img src="./toq/IMG_7296.jpeg" alt="" width="60"/>
+     <div class="kzkekd">
+       <p style="color:#fff;">dRëqxy</p>
+       <p style="font-size:13px;">Copyright 2014 - 2026<br>
+       wa.me/dreqxy
+       
+       </p>
+     </div> 
+    </div>
+    <br>
+        <div class="tre" style="display:none;">
+      <img src="./img/IMG_0942.jpeg" alt="" width="60"/>
+     <div class="kzkekd">
+       <p style="color:#fff;">trezhyWinks</p>
+       <p style="font-size:13px;">Copyright 2014 - 2026<br>
+       wa.me/trezhywinks
+       
+       </p>
+     </div> 
+    </div>
+    <div class="">
+      <div class="pares" style="display:flex; justify-content: space-between;">
+        <div>
+        <p style="font-size:14px;">Racionais Mc's - instrumental</p>
+        <p style="font-size:11px;">Click to stop the music.</p>
+     </div>
+       <div>
+         <div class="shalow" onclick="">
+     <i class="fa-solid fa-toggle-on meu-toggle"
+style="font-size: 40px; cursor: pointer;"
+onclick="alternarToggle(this)"
+
+></i>
+<script>
+
+function alternarToggle(icone) {
+  const ad = document.querySelector(".audio");
+  if (icone.classList.contains("fa-toggle-on")) {
+    icone.classList.replace("fa-toggle-on", "fa-toggle-off");
+    ad.pause();
+  }
+  
+  else {
+    icone.classList.replace("fa-toggle-off", "fa-toggle-on");
+    ad.play();
+  }
+}
+
+</script>
+<style>
+  .shalow i{
+    font-size: 30px !important;
+  }
+</style>
+         </div>
+       </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>
+      <img class="qigg" src="./img/IMG_0966.gif" data-nome="file-paf" width="80"/>
+
+     <p style="font-size:13px; color:red;">Updates will be made soon, have fun and be one of the first to play with us. Welcome<br><br>
+     </p>
+     <p class="line"></p>
+     <br>
+     <p style="font-size:13px; color:red;">
+     Las actualizaciones se harán pronto, diviértete y sé uno de los primeros en jugar con nosotros. Bienvenido</p>
+     <br>
+     <br>
+     <br>
+  </div>
+  <div class="server">
+    <br>
+    <div style="display: flex; height: 59px; justify-content: space-around;">
+         <div>
+    <h2>Whmer Sector 01</h2>
+    <h2 style="color:#fff; font-size:12px; opacity: 0.6;">Certain things are not official</h2>
+   </div>
+         <div style="margin-top: 20px;">
+      <img class="qik" src="./img/IMG_0927.gif" data-nome="file-paf" width="40"/>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+        <center>
+          <div class="bordB">
+           
+          </div>
+          <div class="select">
+           <img class="mig a" src="./img/IMG_0935.gif" data-nome="file-1" data-width="40" onclick="cip(this)" width="50" alt="" /> <br>
+           <img class="mig e" src="./img/IMG_0927.gif" data-nome="file-2" width="50" data-width="40" onclick="cip(this)" alt="" /> <br>
+           <img class="mig i" src="./img/IMG_0936.gif" data-nome="file-3" data-width="40" width="50" alt="" onclick="cip(this)" /> <br>
+           <img class="mig m" src="./img/IMG_0933.gif" data-nome="file-4" data-width="30" onclick="cip(this)" width="30" alt="" /><br> 
+           <img class="mig s" src="./img/IMG_0938.gif" data-nome="file-4" data-width="40" onclick="cip(this)" width="50" alt="" /><br> 
+           <img class="mig d" src="./img/IMG_0939.gif" data-nome="file-5" data-width="40" onclick="cip(this)" width="50" alt="" /><br> 
+
+           <style>
+             .a{
+               position:relative;
+               transition:0.1s;
+               left:-50px;
+             }
+             
+           .e{
+          position: relative;
+          transition: 0.2s;
+          left: -55px;
+        }
+        
+             .i{
+          position: relative;
+          transition: 0.3s;
+          left: -60px;
+        }
+        
+                     .m{
+          position: relative;
+          transition: 0.4s;
+          left: -65px;
+        }
+     
+                  .s{
+          position: relative;
+          transition: 0.5s;
+          left: -50px;
+        }
+     
+                  .d{
+          position: relative;
+          transition: 0.6s;
+          left: -50px;
+        }
+        
+              .m.ativo{
+               transition:0.8s;
+               left:0;
+             }
+
+      .s.ativo{
+               transition:0.8s;
+               left:0;
+             }
+
+      .d.ativo{
+               transition:0.8s;
+               left:0;
+             }
+
+     
+     
+             .i.ativo{
+               transition:0.8s;
+               left:0;
+             }
+
+             
+             
+             .a.ativo{
+               transition:0.8s;
+               left:0;
+             }
+       
+             .e.ativo{
+               transition:0.9s;
+               left:0;
+             }
+             
+             .bottom{
+               padding:10px;
+              width: 90%;
+              margin:0 auto 10px;
+               justify-content: space-between;
+             }
+             
+             .nasjdj{
+               text-align:left;
+             }
+             
+             .contros{
+               display:flex;
+               width:100%;
+              justify-content:center;
+             }
+             .bordB{
+               height: 100vh;
+               position: fixed;
+               top: 0;
+               right: 0;
+               left: 0;
+               background: #0000008F;
+               display: none;
+               z-index: 999;
+             }
+             
+             .select{
+               z-index: 999;
+             }
+           </style>
+          </div>
+    </center>
+    <div class="contros">
+    <div class="start" style="padding:10px; border:1px solid #232323; margin:2px; width:120px;">
+     <p style="color:#fff; font-size:14px;">Start Game</p>
+    </div>
+    <div class="chatsU" style="padding:10px; width:120px; margin:2px; border:1px solid #232323">
+     <p style="color:#fff; font-size:14px;">Init Chat</p>
+    </div>
+    </div>
+    <script>
+      document.querySelector(".chatsU").addEventListener("click", () =>{
+        document.querySelector(".chatsT").style.display = "block";
+        document.querySelector(".painel").style.display = "none";
+       // document.getElementById("audio").pause();
+      } )
+    </script>
+    <div class="o" style="margin-top:10px;">
+     <div class="p" style="display:none;" >
+       <img src="./img/IMG_0928.gif" width="30"/>
+     </div> 
+     <div class="p" style="margin-top:; border: 1px solid #232323; padding:10px; width:150px;">
+      <p onclick="server()" class="btnZ" style="font-size:14px;">Click me Please</p>
+      <script>
+     function server(){
+       const sele = document.querySelector(".select");
+       const bordB = document.querySelector(".bordB");
+    const a = document.querySelector(".a");
+    const e = document.querySelector(".e");
+    const i = document.querySelector(".i");
+    const m = document.querySelector(".m");
+    const s = document.querySelector(".s");
+    const d = document.querySelector(".d");
+    sele.classList.toggle("ativo");
+    bordB.style.display = "block"
+   a.classList.toggle("ativo");
+   e.classList.toggle("ativo");
+   i.classList.toggle("ativo");
+   m.classList.toggle("ativo");
+   s.classList.toggle("ativo");
+   d.classList.toggle("ativo");
+      }
+      const bodyg = document.querySelector(".bordB");
+      const selse = document.querySelector(".select");
+     bodyg.addEventListener("click", () => {
+       document.querySelector(".a").classList.toggle("ativo");
+document.querySelector(".e").classList.toggle("ativo");
+document.querySelector(".i").classList.toggle("ativo");
+document.querySelector(".m").classList.toggle("ativo");
+document.querySelector(".s").classList.toggle("ativo");
+document.querySelector(".d").classList.toggle("ativo");
+      // alert(.)
+     bodyg.style.display = "none"
+       if(selse.classList.toggle("ativo")){
+        selse.classList.toggle("ativo") ;
+       }
+      });
+      </script>
+     </div>
+     <div class="p" style="display:none;">
+       <img src="./img/IMG_0928.gif" width="30"/>
+     </div>
+          <div class="pass" onclick="boneca()" style="border:; margin-top:15px; padding:; width:;">
+            <p style="color:#fff; font-size:14px;">Server Creators</p>
+          </div>
+    </div>
+    <center>
+    <div class="batista" style="border:1px solid #232323; z-index: 80; width:150px; padding:10px;">
+     <p onclick="valet()" style="font-size:14px;">Version Pro</p>
+    </div>
+        <div class="batista2" style="border:1px solid #000; z-index:; display: none; 
+        width:150px; padding:10px; color: #000; background: #00c853; border-radius: 3px;">
+     <p onclick="" style="font-size:14px;">Version Paid</p>
+    </div>
+
+    <div style="margin-top: -6px; display:none; margin-left: 20px; background: #00c853; border-radius:10px; padding: 5px ;
+    border: 3px solid #000; width:80px; z-index: 90;">
+      <p style="color:#000;">paid</p>
+    </div>
+    </center>
+
+
+    <script>
+      function valet(){
+        document.querySelector(".plan").classList.toggle("ativo");
+      }
+    </script>
+    <center>
+    
+                
+          <script>
+          function boneca(){
+       document.querySelector(".coladin").classList.toggle("ativo");
+          }
+          </script>
+    </center>
+<br>
+<br>
+<br>
+
+    <br>
+          <style>
+         .mskeurr{
+           position: fixed;
+           top:25px;
+           left:0;
+           height: 100vh;
+           right:0;
+           backdrop-filter: blur(10px);
+           background: transparent;
+           z-index: 1000;
+           border-top: 1px solid #232323;
+           padding: 10px;
+           border-top-left-radius: 50px;
+           border-top-right-radius: 50px;
+           transform: translateY(750px);
+           transition:0.5s;
+         }
+         .mskeurr.ativo{
+           transform: translateY(0px);
+           transition:0.5s;
+         }
+         .mdkeduyy{
+           display: flex;
+           justify-content: space-between;
+           padding: 10px;
+           width: 95%;
+         }
+         #codigoVerificacao{
+           width:60%;
+           border: 1px solid #232323;
+           background: transparent;
+           border-radius:2px;
+           font-size:20px;
+           padding:8px;
+           text-align: center;
+           color: #fff;
+           outline: none;
+         }
+         
+         #btnVerificar{
+           background: #fff;
+           font-size:17px;
+           color: #000;
+           width:250px;
+           border-radius:5px;
+           border:1px solid #232333;
+         }
+         
+         #statusVerificacao{
+           font-size:12px;
+         }
+       </style>
+
+             <div class="mskeurr">
+               <div class="mdkeduyy">
+                 <div style="text-align: left;">
+                   <h4>Redeem your code here</h4>
+                   <p style="opacity: 0.6;">Get the code and redeem it here</p>
+                 </div>
+                 <div onclick="remotu()" style="margin-top:-5px;">
+                   <span style="font-size:40px;">x</span>
+                 </div>
+               </div>
+               <br>
+               <br>
+           
+         <div class="verificacao">
+  <input
+    id="codigoVerificacao"
+    type="text"
+    placeholder="Enter the code"
+    maxlength="4"
+  />
+<br>
+<br>
+  <button id="btnVerificar">
+   To check
+  </button>
+
+  <p id="statusVerificacao">...</p>
+  <br>
+  <br>
+  <p style="font-size:11px; border: 1px solid #232324; padding:5px;">Redeem the code to be getting our pro version, get exclusive tools in the pro version. Var in pro version, pay to receive the code, redeem here and have access to the tools, your code is valid all the time.
+  </p>
+</div>
+       </div>
+
+
+<script>
+const WS_WHMER = "wss://cc-6t67.onrender.com";
+
+const inputCodigo = document.getElementById("codigoVerificacao");
+const btnVerificar = document.getElementById("btnVerificar");
+const statusCodigo = document.getElementById("statusVerificacao");
+const batista = document.querySelector(".batista");
+const batista2 = document.querySelector(".batista2");
+
+
+btnVerificar.addEventListener("click", () => {
+  const codigo = inputCodigo.value.trim().toUpperCase();
+
+  if (codigo.length !== 4) {
+    statusCodigo.textContent = "Enter a 4-character code.";
+    statusCodigo.style.color = "#ff4444";
+    return;
+  }
+
+  // Reutiliza a conexão do chat, se ela já existir.
+  const socketAtual =
+    window.wsc ||
+    window.wds ||
+    window.socket;
+
+  if (
+    socketAtual &&
+    socketAtual.readyState === WebSocket.OPEN
+  ) {
+    enviarCodigo(socketAtual, codigo);
+    return;
+  }
+
+  // Cria uma conexão própria caso não exista uma conexão aberta.
+  const socketResgate = new WebSocket(WS_WHMER);
+
+  statusCodigo.textContent = "Connecting to server...";
+  statusCodigo.style.color = "#aaa";
+
+  socketResgate.onopen = () => {
+    enviarCodigo(socketResgate, codigo);
+  };
+
+  socketResgate.onmessage = (event) => {const batista = document.querySelector(".batista");
+
+    try {
+      const data = JSON.parse(event.data);
+
+      if (data.tipo === "conectado") {
+        socketResgate.send(JSON.stringify({
+          tipo: "verificar",
+          codigo
+        }));
+      }
+
+      if (data.tipo === "resultadoVerificacao") {
+        mostrarResultado(data);
+
+        if (data.sucesso) {
+          const seloV = document.querySelector(".seloV");
+          const selo = document.createElement("span");
+             document.querySelector(".plan").style.display = "none";
+             //if(document.querySelector(".listo").classList.toggle("ativo")){
+               document.querySelector(".listo").style.display = "block";
+              
+               if(document.querySelector(".listo").classList.toggle("ativo")){
+                 document.querySelector(".listo").classList.toggle("ativo");
+               }
+        //     }
+    selo.id = "meuSeloVerificado";
+
+    selo.title = "Usuário verificado";
+
+    selo.innerHTML = `
+
+      <svg viewBox="0 0 18 18" width="15" height="15"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>
+
+    `;
+
+    // Exibe temporariamente o selo na página para testar
+
+  seloV.appendChild(selo);
+  
+batista.style.display = "none";
+          batista2.style.display = "block";
+   
+    //selo.style.cssText = "position:fixed;top:20px;right:20px;z-index:999999;";
+
+
+          
+          window.dispatchEvent(
+            new CustomEvent("whmerVerificado", {
+              detail: data
+            })
+          );
+        }
+
+        socketResgate.close();
+      }
+    } catch (erro) {
+      statusCodigo.textContent = "Server response error.";
+      statusCodigo.style.color = "#ff4444";
+    }
+  };
+
+  socketResgate.onerror = () => {
+    statusCodigo.textContent = "Could not connect to server.";
+    statusCodigo.style.color = "#ff4444";
+  };
+
+  socketResgate.onclose = () => {
+    // A conexão exclusiva do resgate foi encerrada.
+  };
+});
+
+function enviarCodigo(socket, codigo) {
+  if (socket.readyState !== WebSocket.OPEN) {
+    statusCodigo.textContent = "Server is not connected.";
+    statusCodigo.style.color = "#ff4444";
+    return;
+  }
+
+  statusCodigo.textContent = "Checking code...";
+  statusCodigo.style.color = "#aaa";
+
+  socket.send(JSON.stringify({
+    tipo: "verificar",
+    codigo
+  }));
+}
+
+function mostrarResultado(data) {
+  statusCodigo.textContent = data.mensagem;
+  statusCodigo.style.color =
+    data.sucesso ? "#00c853" : "#ff4444";
+
+  if (data.sucesso) {
+    inputCodigo.value = "";
+
+    // Opcional: fechar a janela após o resgate.
+    // remotu();
+  }
+}
+
+inputCodigo.addEventListener("input", () => {
+  inputCodigo.value = inputCodigo.value
+    .replace(/[^a-zA-Z0-9]/g, "")
+    .toUpperCase()
+    .slice(0, 4);
+});
+</script>
+<style>
+  .zfast{
+    position: fixed;
+    bottom:0;
+    left: 0;
+    right: 0;
+  }
+</style>
+<div class="zfast">
+     <div class="bottom" style="display:flex; text-align:center; width: 100%; background:;">
+           <div class="mzeiudii">
+             <img src="https://count.getloli.com/@Trezhywinks?name=Trezhywinks&theme=booru-lisu&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" width="160"/>
+       </div>
+       <div class="nasjdj" style="margin-top:-20px;">
+       <h3 style="color:red; font-family:mine;"><span style="color:white;">Sector 01</span></h3>
+        <p style="font-size:11px; opacity:0.6;">Developed by whmer for you<br>All rights reserved
+        <br>&copy; Copyright 2014 - 2026 | Sector 01
+        </p>
+       </div>
+      </div>
+
+
+      <p style="font-size:11px;" id="cidade">Obtaining data...</p>
+      <br>
+      <span style="font-size:11px; margin-right:20px; opacity: 0.6;">• Help</span>
+      <span class="fim" style="font-size:11px; opacity: 0.6;"> • Redeem code</span>
+    <span style="font-size:11px; margin-left:20px; opacity: 0.6;"> • Chat</span>
+   </div>
+
+    <script>
+    
+      const mskeurr = document.querySelector(".mskeurr");
+      
+      function remotu(){
+        document.getElementById("audio2").play();
+        if(mskeurr.classList.toggle("ativo")){
+          mskeurr.classList.toggle("ativo");
+        }
+      }
+      document.querySelector(".fim").addEventListener("click", () =>{
+        mskeurr.classList.toggle("ativo");
+      })
+    </script>
+
+<script>
+  async function mostrarCidade() {
+    try {
+      const res = await fetch('https://ipapi.co/json/');
+      const data = await res.json();
+      
+      document.getElementById('cidade').innerText = `${data.city} - ${data.region} - ${data.ip}`;
+    } catch (e) {
+      document.getElementById('cidade').innerText = 'erro location!';
+    }
+  }
+  
+  mostrarCidade();
+</script>
+
+  </div>
+      <style>
+#instalarSite {
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index: 999;
+  display:flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: #121212C7;
+  color: white;
+  border-top: 1px solid #333;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 5px 25px #0006;
+}
+
+#iconeSite {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.infoSite {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.infoSite span {
+  color: #aaa;
+  font-size: 12px;
+}
+#btnInstalar {
+  border: none;
+  border-radius: 9px;
+  padding: 10px 12px;
+  background: #1685ff;
+  color: white;
+  font-weight: bold;
+}
+#fecharInstalar {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  padding: 4px;
+}
+.shix{
+  position:absolute;
+  border-left: 1px solid #333;
+  border-top: 1px solid #333;
+  top: -45px;
+  background:#121212;
+  padding: 10px;
+  right: 0;
+}
+</style>
+
+      <div id="instalarSite" style="display:none;">
+  <img id="iconeSite" src="https://raw.githubusercontent.com/trezhywinks/Cc/refs/heads/main/logo.JPEG" alt="Ícone do site">
+  <div class="infoSite">
+    <strong id="nomeSite">Sector 01</strong>
+    <p style="opacity: 0.6; font-size:12px;">Add the home screen</p>
+  </div>
+  <div class="" id="btnInstalar">
+ To add
+ </div>
+ <div class="shix">
+   <span style="font-size:40px; font-family: mine;">x</span>
+ </div>
+</div>
+    <script>
+let promptInstalacao = null;
+
+const divInstalar = document.getElementById("instalarSite");
+const btnInstalar = document.getElementById("btnInstalar");
+const fecharInstalar = document.getElementById("fecharInstalar");
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+
+  promptInstalacao = event;
+
+  if (!window.matchMedia("(display-mode: standalone)").matches) {
+    divInstalar.style.display = "flex";
+  }
+});
+
+btnInstalar.addEventListener("click", async () => {
+  if (!promptInstalacao) {
+    alert("Use the browser menu to add the website to the home screen.");
+    return;
+  }
+
+  promptInstalacao.prompt();
+
+  const resultado = await promptInstalacao.userChoice;
+
+  if (resultado.outcome === "accepted") {
+    divInstalar.style.display = "none";
+  }
+
+  promptInstalacao = null;
+});
+
+// Fechar a div
+fecharInstalar.addEventListener("click", () => {
+  divInstalar.style.display = "none";
+});
+
+// Detecta quando o site é instalado
+window.addEventListener("appinstalled", () => {
+  divInstalar.style.display = "none";
+});
+</script>
+
+
+<style>
+  .usuarios-whmer {
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+  }
+  
+  #statusWhmer {
+    color: #999;
+    margin-bottom: 12px;
+    font-size: 13px;
+  }
+  
+  #listaUsuarios {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: mine;
+  }
+  
+  .usuario-card {
+    border: 1px solid #292929;
+    border-radius: 12px;
+    padding: 14px;
+    overflow-wrap: anywhere;
+  }
+  
+  .usuario-card p {
+    margin: 7px 0;
+    font-size: 14px;
+  }
+  
+  .usuario-card strong {
+    color: #999;
+  }
+</style>
+
+  </div>
+ <div class="joguin">
+   <style>
+         * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+  /*  html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #111;
+    }*/
+    
+    #game {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      
+      /*background: url("jpeg") center / cover no-repeat;*/
+    }
+    
+    /* personagem */
+    #player {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      left: 70px;
+      top: 40%;
+      z-index: 5;
+      user-select: none;
+    }
+    
+    /* obstáculos */
+    .obstaculo {
+      position: absolute;
+      border:1px solid #000;
+      width: 70px;
+      background: #222;
+      border-radius: 10px;
+      z-index: 3;
+    }
+    
+    .obstaculo.cima {
+      top: 0;
+    }
+    
+    .obstaculo.baixo {
+      bottom: 0;
+    }
+    
+    .rua{
+      position:absolute;
+     left:0;
+     display:flex;
+     width:450px;
+      padding:10px;
+z-index:100;
+
+    }
+    
+    #pontuacao, .ussrname {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-shadow: 0 2px 5px black;
+    }
+    
+    .nsmejd{
+      margin-left:10px;
+    }
+    
+    #inicio,
+    #gameover {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.65);
+      color: white;
+      z-index: 1000;
+    }
+    
+    #gameover {
+      display: none;
+    }
+    
+    h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+    
+    button {
+      position: relative;
+      z-index: 10;
+      
+      border: 0;
+      padding: 15px 35px;
+      border-radius: 12px;
+      
+      font-size: 20px;
+      font-weight: bold;
+      
+      cursor: pointer;
+      
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    .bordera{
+      position:fixed;
+      padding:10px;
+      left:0;
+      right:0;
+      bottom:0;
+      height:20vh;
+      background:linear-gradient(transparent, #000);
+    z-index:100;
+      
+    }
+    
+    .topa{
+      position:fixed;
+      padding:10px;
+      left:0;
+      right:0;
+      top:0;
+      height:20vh;
+      background:linear-gradient(#000, transparent);
+    z-index:100;
+    }
+    
+    .hdoisos{
+      position:fixed;
+      bottom:0;
+      left:0;
+      right:0;
+      height:15px;
+      background: #00594F;
+      z-index:10;
+    }
+    
+   </style>
+     <div id="game">
+       <div class="estrelas-container" id="estrelas"></div>
+
+<style>
+  .estrelas-container {
+    position: relative;
+    width: 100%;
+    height:100vh;
+    background: #050505;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  
+  .bolinha {
+    position: absolute;
+    right: -10px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 6px white, 0 0 12px white;
+    animation:
+      moverBolinha linear forwards,
+      piscarBolinha ease-in-out infinite alternate;
+    pointer-events: none;
+    will-change: transform, opacity;
+  }
+  
+  @keyframes moverBolinha {
+    from {
+      transform: translateX(0);
+    }
+    
+    to {
+      transform: translateX(-120vw);
+    }
+  }
+  
+  @keyframes piscarBolinha {
+    from {
+      opacity: 0.2;
+    }
+    
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .rua{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 99999;
+  }
+  
+  .timeB{
+    position: fixed;
+    bottom: 0;
+    left: 5px;
+    right: 0;
+    z-index: 99999;
+  }
+  
+  .timeB p{
+    opacity: 0.6;
+    font-size: 10px;
+  }
+  
+
+</style>
+
+<script>
+  const areaEstrelas = document.getElementById("estrelas");
+  
+  function criarBolinha() {
+    const bolinha = document.createElement("span");
+    bolinha.className = "bolinha";
+    
+    // Tamanhos variados
+    const tamanho = Math.random() * 3 + 1;
+    
+    bolinha.style.width = tamanho + "px";
+    bolinha.style.height = tamanho + "px";
+    
+    // Altura aleatória dentro da div
+    bolinha.style.top =
+      Math.random() * 95 + "%";
+    
+    // Movimento lento: entre 7 e 12 segundos
+    const duracao = Math.random() * 5 + 8;
+    
+    bolinha.style.animationDuration =
+      duracao + "s, " +
+      (Math.random() * 1.5 + 0.8) + "s";
+    
+    areaEstrelas.appendChild(bolinha);
+    
+    // Remove quando termina de atravessar
+    setTimeout(() => {
+      bolinha.remove();
+    }, duracao * 1000);
+  }
+  
+  // Aparecem espaçadamente
+  setInterval(criarBolinha, 180);
+</script>
+       <div class="hdoiso">
+       </div>
+       <div class="rua">
+         <div style="display: flex;">
+         <img class="minhaFotoS" src="" alt="" width="50" style="z-index:;" />
+<div class="nsmejd" style="margin-left: 20px;">
+<p class="ussrname">...</p>
+    <p id="pontuacao">0</p>
+    </div>
+
+</div>
+<div style="text-align: end;">
+  <p style="font-size:14px;">User numbers</p>
+  <p style="font-size: 11px;" id="onlineGame">0 Online</p>
+
+</div>
+       </div>
+       <div class="timeB">
+          <p style="font-size:;" id="mexico"></p>
+<p style="font-size:;" id="brasil"></p>
+
+<script>
+  function joraG() {
+    const agora = new Date();
+    const mexico = agora.toLocaleTimeString("pt-BR", {
+      timeZone: "America/Mexico_City"
+    });
+    const brasil = agora.toLocaleTimeString("pt-BR", {
+      timeZone: "America/Sao_Paulo"
+    });
+  //  const amsterda = agora.toLocaleTimeString("pt-BR", {
+   //   timeZone: "Europe/Amsterdam"
+ //   });
+    document.getElementById("mexico").textContent = "• 🇲🇽 México: " + mexico;
+    document.getElementById("brasil").textContent = "• 🇧🇷 Brasil: " + brasil;
+   // document.getElementById("amsterda").textContent = "🇳🇱Amsterdã: " + amsterda;
+  }
+  
+  setInterval(joraG, 1000);
+ joraG();
+</script>
+   
+       </div>
+    <img
+      id="player"
+      class="player"
+      src="./img/IMG_0927.gif"
+      alt="Personagem"
+    >
+
+    <div id="inicio">
+      <h2>Your world starts here</h2>
+      <p style="margin-bottom:20px; opacity: 0.6;">
+        Tap the screen to fly
+      </p>
+
+      <button class="der" id="btnComecar">
+       START
+      </button>
+      <br>
+            <div class="back" onclick="backi()" style="border-bottom:1px solid #fff;">
+      <p style="text-decoration: dotted; font-size:14px;">Back</p>
+      </div>
+
+    </div>
+
+    <div id="gameover">
+      <img src="./img/IMG_0951.gif" width="120"/>
+      <h1>Game Over</h1>
+      <p id="resultado"
+         style="font-size:22px;margin-bottom:10px;">
+       Score: 0
+      </p>
+      <button class="der" id="btnNovamente">
+        PLAY AGAIN
+      </button>
+      <br>
+      <div class="back" onclick="backi()" style="border-bottom:1px solid #fff;">
+      <p style="text-decoration: dotted; font-size:14px;">Back to the beginning</p>
+      </div>
+    </div>
+<div class="bordera"></div>
+<div class="topa"></div>
+  </div>
+
+  <script>
+    const game = document.getElementById("game");
+
+const player = document.getElementById("player");
+
+const pontuacao = document.getElementById("pontuacao");
+
+const inicio = document.getElementById("inicio");
+
+const gameover = document.getElementById("gameover");
+
+const btnComecar = document.getElementById("btnComecar");
+
+const btnNovamente = document.getElementById("btnNovamente");
+
+const resultado = document.getElementById("resultado");
+
+//const imagemPadrao = player.src
+
+
+let jogadorY = 0;
+
+let velocidadeY = 0;
+
+let gravidade = 0.45;
+
+let forcaVoo = -8;
+
+let obstaculos = [];
+
+let arvore = [];
+
+let velocidadeObstaculos = 3;
+
+let pontuacaoAtual = 0;
+
+let jogando = false;
+
+let ultimoObstaculo = 0;
+
+let animationFrame;
+
+let fileplayer = "./img/IMG_0927.gif";
+
+
+
+/* =========================
+   INICIAR
+========================= */
+
+
+function iniciar() {
+
+  console.log("JOGO INICIANDO");
+
+  cancelAnimationFrame(animationFrame);
+
+  // remove obstáculos antigos
+  document
+    .querySelectorAll(".obstaculo")
+    .forEach(el => el.remove());
+
+  obstaculos = [];
+
+  jogadorY = game.clientHeight * 0.4;
+
+  velocidadeY = 0;
+
+  pontuacaoAtual = 0;
+
+  pontuacao.textContent = "0";
+
+  player.style.top = jogadorY + "px";
+  player.src = fileplayer;
+
+
+
+  inicio.style.display = "none";
+
+  gameover.style.display = "none";
+
+  jogando = true;
+
+  ultimoObstaculo = performance.now();
+
+  animationFrame =
+    requestAnimationFrame(loop);
+}
+
+
+/* =========================
+   VOAR
+========================= */
+
+function voar() {
+
+  if (!jogando) return;
+
+  velocidadeY = forcaVoo;
+}
+
+
+/* =========================
+   CRIAR OBSTÁCULO
+========================= */
+
+function criarObstaculo() {
+
+  const alturaGame =
+    game.clientHeight;
+
+  const largura = 70;
+
+  const tamanhoBuraco = 190;
+
+  const margem = 80;
+
+  const maxCima =
+    alturaGame -
+    tamanhoBuraco -
+    margem;
+
+  const alturaCima =
+    Math.random() *
+      (maxCima - margem)
+    + margem;
+
+  const alturaBaixo =
+    alturaGame -
+    alturaCima -
+    tamanhoBuraco;
+
+
+  const cima =
+    document.createElement("div");
+
+  cima.className =
+    "obstaculo cima";
+
+  cima.style.width =
+    largura + "px";
+
+  cima.style.height =
+    alturaCima + "px";
+
+  cima.style.left =
+    game.clientWidth + "px";
+
+
+  const baixo =
+    document.createElement("div");
+
+  baixo.className =
+    "obstaculo baixo";
+
+  baixo.style.width =
+    largura + "px";
+
+  baixo.style.height =
+    alturaBaixo + "px";
+
+  baixo.style.left =
+    game.clientWidth + "px";
+
+
+  game.appendChild(cima);
+
+  game.appendChild(baixo);
+
+
+  obstaculos.push({
+
+    cima: cima,
+
+    baixo: baixo,
+
+    x: game.clientWidth,
+
+    largura: largura,
+
+    passou: false
+
+  });
+}
+
+function criarArvore() {
+  
+  const arvore = document.createElement("div");
+  
+  arvore.className = "arvore";
+  
+  const distante = Math.random() < 0.5;
+  
+  if (distante) {
+    
+    arvore.classList.add("arvoreDistante");
+    
+    arvore.style.left =
+      (game.clientWidth + Math.random() * 300) + "px";
+    
+  } else {
+    
+    arvore.style.left =
+      game.clientWidth + "px";
+    
+  }
+  
+  game.appendChild(arvore);
+  
+  return arvore;
+}
+
+/* =========================
+   COLISÃO
+========================= */
+
+function colisao(a, b) {
+
+  const margem = 8;
+
+  return !(
+    a.right - margem < b.left ||
+    a.left + margem > b.right ||
+    a.bottom - margem < b.top ||
+    a.top + margem > b.bottom
+  );
+}
+
+
+/* =========================
+   PERDEU
+========================= */
+
+function perdeu() {
+
+  jogando = false;
+  player.src = "./img/IMG_0950.gif";
+
+
+  cancelAnimationFrame(animationFrame);
+
+  resultado.textContent =
+    "Score: " + pontuacaoAtual;
+
+  gameover.style.display = "flex";
+}
+
+
+/* =========================
+   LOOP
+========================= */
+
+function loop(tempo) {
+
+  if (!jogando) return;
+
+
+  velocidadeY += gravidade;
+
+  jogadorY += velocidadeY;
+
+  player.style.top =
+    jogadorY + "px";
+
+
+  /* limite da tela */
+
+  if (
+    jogadorY < 0 ||
+    jogadorY + player.offsetHeight >
+      game.clientHeight
+  ) {
+
+    perdeu();
+
+    return;
+  }
+
+
+  /* criar obstáculos */
+
+  if (
+    tempo - ultimoObstaculo > 1600
+  ) {
+
+    criarObstaculo();
+    criarArvore();
+
+    ultimoObstaculo = tempo;
+  }
+
+
+  /* movimentar obstáculos */
+
+  obstaculos.forEach((obj, index) => {
+
+    obj.x -= velocidadeObstaculos;
+
+    obj.cima.style.left =
+      obj.x + "px";
+
+    obj.baixo.style.left =
+      obj.x + "px";
+
+
+    const playerRect =
+      player.getBoundingClientRect();
+
+    const cimaRect =
+      obj.cima.getBoundingClientRect();
+
+    const baixoRect =
+      obj.baixo.getBoundingClientRect();
+
+
+    /* colisão */
+
+    if (
+      colisao(playerRect, cimaRect) ||
+      colisao(playerRect, baixoRect)
+    ) {
+
+      perdeu();
+
+      return;
+    }
+
+
+    /* pontuação */
+
+    if (
+      !obj.passou &&
+      obj.x + obj.largura < 70
+    ) {
+
+      obj.passou = true;
+
+      pontuacaoAtual++;
+
+      pontuacao.textContent =
+        pontuacaoAtual;
+    }
+
+
+    /* remover */
+
+    if (
+      obj.x + obj.largura < 0
+    ) {
+
+      obj.cima.remove();
+
+      obj.baixo.remove();
+
+      obstaculos.splice(index, 1);
+    }
+
+  });
+
+
+  animationFrame =
+    requestAnimationFrame(loop);
+}
+
+
+/* =========================
+   BOTÃO COMEÇAR
+========================= */
+
+btnComecar.addEventListener(
+  "click",
+  function(e) {
+
+    e.stopPropagation();
+
+    iniciar();
+
+  }
+);
+
+
+/* =========================
+   BOTÃO NOVAMENTE
+========================= */
+
+btnNovamente.addEventListener(
+  "click",
+  function(e) {
+
+    e.stopPropagation();
+
+    iniciar();
+
+  }
+);
+
+
+/* =========================
+   TOQUE PARA VOAR
+========================= */
+
+game.addEventListener(
+  "touchstart",
+  function(e) {
+
+    // se tocou em botão, não faz o personagem voar
+    if (
+      e.target.tagName === "BUTTON"
+    ) {
+      return;
+    }
+
+    if (jogando) {
+
+      e.preventDefault();
+
+      voar();
+
+    }
+
+  },
+  {
+    passive: false
+  }
+);
+
+
+/* =========================
+   COMPUTADOR
+========================= */
+
+game.addEventListener(
+  "mousedown",
+  function(e) {
+
+    if (
+      e.target.tagName === "BUTTON"
+    ) {
+      return;
+    }
+
+    if (jogando) {
+
+      voar();
+
+    }
+
+  }
+);
+
+function cip(el){
+              const qik = document.querySelector(".qik");
+              const qig = document.querySelector(".qig");
+              document.querySelector(".bordB").style.display = "none";
+              
+             const player1 = document.querySelector(".player");
+              
+              document.querySelector(".select").classList.toggle("ativo");
+              
+            // const minhaFoto = document.querySelector(".minhaFoto");
+             
+              
+              document.querySelector(".a").classList.toggle("ativo");
+    document.querySelector(".e").classList.toggle("ativo");
+    document.querySelector(".i").classList.toggle("ativo");
+    document.querySelector(".m").classList.toggle("ativo");
+    document.querySelector(".s").classList.toggle("ativo");
+    document.querySelector(".d").classList.toggle("ativo");
+
+              qik.src = el.src;
+              player1.src = el.src;
+           //   qig.src = el.src;
+              qik.width = el.dataset.width;
+              fileplayer = el.src;
+              player.src = fileplayer;
+            }
+
+
+document.querySelector(".start").addEventListener("click", () => {
+ document.querySelector(".painel").style.display = "none";
+ document.querySelector(".joguin").style.display = "block";
+} );
+
+//document.querySelector(".back").addEventListener("click", () => {
+  function backi(){
+ document.querySelector(".painel").style.display = "block";
+ document.querySelector(".joguin").style.display = "none";
+}
+//);
+
+//back
+</script>
+ </div>
+ <style>
+   .chatsT{
+     display:none;
+   }
+   
+   * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  /*overflow: hidden;*/
+  background: #050505;
+  color: white;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+#chat {
+  width: 100%;
+  height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #000;
+}
+
+
+/* =========================
+   TOPO
+========================= */
+
+.topo {
+  height: 55px;
+
+  flex-shrink: 0;
+  background: #000;
+
+  display: flex;
+  align-items: center;
+
+  padding:
+    env(safe-area-inset-top)
+    15px
+    0
+    15px;
+
+  border-bottom: 1px solid #1c1c1c;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.perfil img {
+  width:35px;
+  height: 35px;
+
+
+ border-radius: 50%;
+
+  object-fit: cover;
+  background: #222;
+}
+
+.perfil strong {
+  display: block;
+
+  font-size: 15px;
+}
+
+.perfil span {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 11px;
+
+  color: #777;
+}
+
+
+/* =========================
+   MENSAGENS
+========================= */
+
+#mensagens {
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 15px 12px 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  overscroll-behavior: contain;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.mensagem {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  max-width: 90%;
+}
+
+/*.mensagem.eu {
+  align-self: flex-end;
+
+  flex-direction: row-reverse;
+}*/
+
+.avatar-mensagem {
+  width: 28px;
+  height: 33px;
+  margin-top:10px;
+  border-left:1px solid #fff;
+  border-top:1px solid #fff;
+  border-bottom:1px solid #fff;
+  flex-shrink: 0;
+
+  object-fit: cover;
+
+}
+
+.conteudo-mensagem {
+  min-width: 0;
+}
+
+.nome-mensagem {
+  font-size: 12px;
+
+  color: #999;
+
+  margin: 0 0 4px 3px;
+}
+
+.bolha {
+  padding: 9px 12px;
+
+  border-radius: 15px;
+
+  background: #151515;
+
+  border: 1px solid #222;
+
+  word-break: break-word;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+}
+
+.mensagem.eu .bolha {
+  background: #242424;
+}
+
+
+/* =========================
+   STICKER
+========================= */
+
+.mensagem-sticker {
+  max-width: 160px;
+
+  padding: 0;
+
+  background: transparent;
+
+  border: 0;
+}
+
+.mensagem-sticker img {
+  display: block;
+
+  width: 140px;
+  max-height: 140px;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   ENTRADA
+========================= */
+
+.entrada {
+  flex-shrink: 0;
+
+  min-height: 62px;
+
+  padding:
+    8px
+    10px
+    calc(8px + env(safe-area-inset-bottom))
+    10px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  background: #000;
+
+}
+
+.entrada input {
+  margin-top:5px;
+  flex: 1;
+
+  min-width: 0;
+
+  height: 44px;
+
+  border: 0;
+  outline: 0;
+
+  border-radius: 22px;
+
+  padding: 0 15px;
+  background: transparent;
+border:none;
+
+  color: white;
+
+  font-size: 16px;
+}
+
+.mensage{
+  background: #181818;
+  display: flex;
+  border-radius:100px;
+  width:100%;
+  justify-content: space-between;
+
+}
+
+#btnSticker{
+  width:50px;
+ padding:5px;
+ height:44px;
+ font-size:30px;
+ margin-top:5px;
+ background: transparent;
+}
+
+
+
+.entrada input::placeholder {
+  color: #666;
+}
+
+.entrada button {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #181818;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+#btnEnviar {
+  background: transparent;
+  color: #fff;
+  margin:5px;
+  width:50px;
+  padding:5px;
+  font-size:30px;
+}
+
+
+/* =========================
+   STICKERS
+========================= */
+
+.painel-stickers {
+  position: absolute;
+
+  left: 10px;
+  right: 10px;
+
+  bottom: 70px;
+
+  display: none;
+
+  padding: 12px;
+
+  background: #111;
+
+  border: 1px solid #252525;
+
+  border-radius: 15px;
+
+  z-index: 20;
+}
+
+.painel-stickers.aberto {
+  display: block;
+}
+
+.stickers-titulo {
+  font-size: 13px;
+
+  color: #888;
+
+  margin-bottom: 10px;
+}
+
+#listaStickers {
+  display: grid;
+  overflow: scroll;
+  height:450px;
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 8px;
+}
+
+/*.sticker {
+  height: 65px;
+
+  background: #181818;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+.sticker img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}*/
+
+.sticker {
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.sticker img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================
+   CONFIGURAÇÃO
+========================= */
+
+#configuracao {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: #050505;
+}
+
+.config-box {
+  width: 100%;
+
+  text-align: center;
+}
+
+.config-box h1 {
+  font-size: 32px;
+
+  margin-bottom: 5px;
+}
+
+.config-box p {
+  color: #777;
+
+  margin-bottom: 25px;
+}
+
+#previewFoto {
+
+
+ /* object-fit: cover;
+ width: 85px;
+
+  height: 85px;
+  display: block;
+
+*/
+
+  margin: 0 auto 20px;
+}
+
+.config-box input {
+  width: 100%;
+
+  height: 48px;
+
+  margin-bottom: 10px;
+
+  border: 1px solid #222;
+
+  outline: none;
+
+  border-radius: 10px;
+
+  padding: 0 14px;
+
+  background: #111;
+
+  color: white;
+}
+
+#btnEntrar {
+  width: 100%;
+
+  height: 48px;
+
+  margin-top: 5px;
+
+  border-radius: 10px;
+
+  background: white;
+
+  color: black;
+
+  font-weight: bold;
+}
+
+.pis{
+  font-size:30px;
+}
+
+.mudar{
+  text-align: center;
+  background:#0C0C0CB5;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(750px);
+  transition:0.5s;
+  border-top:1px solid #232323;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  height:450px;
+  overflow: scroll;
+  z-index: 10000;
+}
+
+.mudar.ativo{
+  transform: translateY(0);
+  transition: 0.5a;
+}
+
+.eraeu{
+  background: transparent;
+  color: #fff;
+  width:150px;
+  overflow: hidden;
+  text-align: center;
+  border: none;
+  border-bottom:1px solid #fff;
+  outline: none;
+}
+
+
+.oud{
+  border-radius:100px;
+}
+
+.cachorra{
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #232323;
+  transition: 0.2s;
+}
+
+.cachorra img {
+  width: 80px;
+height: 80px;
+object-fit: cover;
+border-radius: 50%;
+cursor: pointer;
+border: 3px solid transparent;
+transition: 0.2s;
+}
+ </style>
+ <div class="chatsT">
+  <!--meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+<title>Whmer Chat</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body-->
+
+<div id="chat">
+
+  <!-- TOPO -->
+
+  <header class="topo">
+    <div class="mudar">
+      <br>
+      <br>
+      <img src="" class="oud" onclick="dert()" height="120" width="120"/>
+      <br>
+      <input class="eraeu" id="inputNome" maxlength="20"/>
+      <br>
+      <p class="id" style="font-size:13px; opacity: 0.6;">id: ...</p>
+    </div>
+<div id="seletorFotos" class="seletorFotos">
+  <input type="file" id="faiva" accept="image/*,.gif" hidden/>
+  <label for="faiva">
+   <div class="cachorra"></div>
+  </label>
+</div>
+
+<div class="perfil" style="display: flex; justify-content: space-between; width: 100%;">
+<div class="backVz" onclick="o()" style="width:40px;">
+  <script>
+    function o(){
+      document.querySelector(".chatsT").style.display = "none";
+      document.querySelector(".painel").style.display = "block";
+     
+    }
+    
+    function perfi(){
+      document.querySelector(".mudar").classList.toggle("ativo")
+    }
+    
+   
+  </script>
+<p style="font-size:27px;"><</p>  
+</div>
+  <script>
+    function dert(){
+      document.querySelector(".seletorFotos").classList.toggle("ativo");
+    }
+  </script>
+<script>
+ 
+</script>
+  <div onclick="perfi()" style="margin-left:-110px;">
+
+<div style="display: flex;">
+    <div style="margin-left:;">
+      <img
+  class="minhaFoto"
+    id="minhaFoto"
+    onclick=""
+    src=""
+  >
+
+    </div>
+<div style="margin-left:8px;">
+  <strong id="meuNome">Anônimo</strong>
+      <span id="status">
+      conectando...
+    </span>
+</div> 
+<div class="seloV" style="margin-left:5px;"> </div>
+</div>
+
+  </div>
+ <div>
+   <div class="listargdbd" onclick="addlist()" style="display: flex; 
+   padding:7px; justify-content:; background: #121212C7; border-radius: 5px;
+   border: 1px solid #232323; text-align: left;">
+     <div>
+      <ion-icon name="earth-outline"></ion-icon>
+     </div>
+     <div style="margin-left:6px; text-align:right;" class="listd">
+       <p style="font-size:12px;">List of users</p>
+       <p id="onlineCountTop" style="font-size:11px">0 online</p>
+     </div>
+   </div>
+   <style>
+#listaUsuarios {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px; 
+}
+.usuario-card {
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
+.usuario-card p {
+  margin: 7px 0;
+  color:#999;
+}
+.usuario-card strong {
+  color: #9331e4;
+}
+</style>
+   <script>
+     const wsd = new WebSocket("wss://hash-evsl.onrender.com/");
+
+wsd.onmessage = (event) => {
+  const data = JSON.parse(event.data);
+  //document.getElementById("onlineCount").textContent = data.online + " Online";
+  document.getElementById("onlineCountTop").textContent = data.online + " Online";
+  document.getElementById("onlineGame").textContent = data.online + " Online";
+};
+
+   </script>
+ </div>
+
+</div>
+  </header>
+
+
+  <!-- MENSAGENS -->
+      <div class="listo">
+        <div class="" style="display: flex; margin:0 auto 10px; padding:10px; width: 95%;
+        justify-content: space-between;">
+          <div>
+  <h3>Connected users</h3>
+  <div id="statusWhmer">Connecting...</div>
+  </div>
+  <div style="margin-right:5px;" onclick="addlistF()">
+    <span style="font-size:40px;">x</span>
+  </div>
+  </div>
+  <div class="usuarios-whmer" style="overflow-y: scroll; background:; height: 340px;">
+<input
+
+  type="search"
+
+  id="buscarUsuario"
+
+  placeholder="Search user..."
+
+  autocomplete="off"
+
+/>
+<center>
+  <p style="font-size:10px; opacity: 0.6;">Search, you can search by (name, ip, city name, country)</p>
+</center>
+  <div id="listaUsuarios"></div>
+</div>
+    </div>
+
+    <script>
+      const listd = document.querySelector(".listd");
+      function addlist(){
+        document.querySelector(".listo").classList.toggle("ativo");
+        document.querySelector(".plan").classList.toggle("ativo");
+      }
+
+     function addlistF(){
+       document.getElementById("audio2").play();
+       if(document.querySelector(".listo").classList.toggle("ativo")){
+      document.querySelector(".listo").classList.toggle("ativo");
+       }
+      }
+      
+
+    </script>
+
+
+  <main id="mensagens">
+
+    <center>
+      <style>
+      
+      #buscarUsuario{
+        outline: none;
+        border-radius: 100px;
+        padding: 8px;
+        background: #21212199;
+        color: #fff;
+        width: 100%;
+        border: 1px solid #232323;
+      }
+      
+      .listo{
+       position: fixed;
+       left: 0;
+       right: 0;
+       bottom:0;
+       top:30px;
+       height:100vh;
+       transform: translateY(850px);
+       transition: 0.5s;
+       backdrop-filter: blur(10px);
+       border-top-left-radius: 50px;
+       border-top-right-radius: 50px;
+       border-top: 1px solid #232323;
+       overflow: hidden;
+       padding: 10px;
+       display: none;
+       z-index: 999999;
+      }
+      
+      .listo.ativo{
+        transform: translateY(0);
+        transition: 0.5s;
+
+      }
+        .global{
+          padding: 10px;
+          width: 95%;
+          border-radius: 20px;
+          background: #121212C7;
+          border: 1px solid #232323;
+        }
+      </style>
+       <div class="global">
+         <br>
+         <img src="https://raw.githubusercontent.com/trezhywinks/sticker-R/main/E6F82714-A238-402D-A094-89714229FBAA.gif" alt="" 
+         style="border-radius: 100px;" weight="70" height="70"
+         />
+         <div style="display:flex; justify-content: center;">
+           <div>
+             <h4>WELCOME TO SERVER GLOBAL</h4>
+           </div>
+           <div>
+             <img src="./toq/IMG_7308.png" width="15"/>
+           </div>
+       
+         </div>
+   <p style="font-size:11px; opacity:0.6;">Server created on 03/06/2026 by dreq</p>
+<p style="font-size:11px; margin-top:5px;">Welcome to the global server, a public server for users to talk about whatever they want. From politics to religion, from life to dust, everything here can be shared<br>
+<br>What you are looking for can be found in forums like this. Just another common day in this place we call it? Have fun! Your fun is what matters.
+</p>
+<br>
+<div style="display:flex; justify-content: space-around; width:210px;
+padding: 10px; border-radius: 50px; border: 1px solid #232323; background: #0c0c0c;">
+ <div>
+   <ion-icon style="font-size:20px; color:#3193e4;" name="arrow-redo"></ion-icon>
+ </div> 
+ <div>
+   <p style="color:#3193e4;">Share server</p>
+ </div>
+</div>
+ </div>
+    </center>
+  </main>
+<script>
+  document.getElementById("mensagens").addEventListener("click", () => {
+      const repertorio = document.querySelector(".mudar")
+      
+      if (repertorio.classList.toggle("ativo")) {
+          repertorio.classList.toggle("ativo")
+        }
+      })
+</script>
+  <!-- STICKERS -->
+
+  <div
+    id="painelStickers"
+    class="painel-stickers"
+  >
+
+    <div class="stickers-titulo">
+      Stickers
+    </div>
+
+    <div id="listaStickers">
+  <script>
+  const urHl = "https://raw.githubusercontent.com/trezhywinks/sticker-R/refs/heads/main/sticker.json";
+  
+  fetch(urHl)
+    .then(res => {
+      if (!res.ok) throw new Error("Erro ao carregar stickers");
+      return res.json();
+    })
+    .then(data => {
+      const containerg = document.getElementById("listaStickers");
+      
+      data.makima.forEach(link => {
+        const bui = document.createElement("button");
+        const imgt = document.createElement("img");
+        
+        bui.className = "sticker";
+        bui.dataset.img = link.imagem;
+        bui.type = "button";
+        
+        imgt.className = "gggggggg";
+        imgt.src = link.imagem;
+        imgt.style.width = "100%";
+        imgt.style.height = "100%";
+        imgt.style.objectFit = "contain";
+        
+        bui.appendChild(imgt);
+        containerg.appendChild(bui);
+      });
+    })
+    .catch(err => console.error("Erro ao carregar stickers:", err));
+  
+  
+  // CLIQUE NO STICKER
+  document.addEventListener("click", function(e) {
+    const botao = e.target.closest(".sticker");
+    
+    if (!botao) return;
+    
+    const imagem = botao.dataset.img;
+    
+    if (!imagem) return;
+    
+    // Chama a função de envio
+    enviarSticker(imagem);
+  });
+  
+  
+  // ENVIO DO STICKER
+  function enviarSticker(imagem) {
+    console.log("Sticker selecionado:", imagem);
+    
+    // Verifique se o WebSocket está conectado
+    if (typeof wsc !== "undefined" && wsc.readyState === WebSocket.OPEN) {
+      wsc.send(JSON.stringify({
+        tipo: "sticker",
+        imagem: imagem
+      }));
+    } else {
+      console.error("WebSocket desconectado ou indisponível.");
+    }
+  }
+</script>
+
+    </div>
+
+  </div>
+
+
+  <!-- INPUT -->
+
+  <footer class="entrada">
+
+    <button
+      id="btnSticker"
+      type="button"
+    >
+ <ion-icon class="pis" name="happy-outline"></ion-icon>
+    </button>
+    <div class="mensage">
+      <div class="y">
+     
+    <input
+      id="texto"
+      type="text"
+      placeholder="Mensagem..."
+      autocomplete="off"
+    >
+      </div>
+        
+    <button
+      id="btnEnviar"
+      type="button"
+    >
+      <ion-icon class="pis" name="send"></ion-icon>
+    </button>
+    </div>
+  </footer>
+
+</div>
+
+
+<!-- LOGIN -->
+
+<div id="configuracao" style="display:;">
+
+  <div class="config-box">
+
+    <h1>Whmer Chat</h1>
+
+    <p>Chat with other users, join the chat.</p>
+
+    <img
+      id="previewFoto"
+      src="./img/IMG_0964.gif"
+      width="120"
+    >
+
+    <input
+      id=""
+      type="text"
+      placeholder="Your name"
+      maxlength="30"
+      autocomplete="off"
+    >
+    <p style="font-size:11px; color:yellow;">We need you to create a username!</p>
+
+    <button id="btnEntrar">
+      ENTRAR
+    </button>
+
+  </div>
+
+</div>
+<style>
+  #seletorFotos {
+  display: flex;
+  flex-wrap: wrap;
+  z-index:1000000;
+  position:fixed;
+  bottom: 20px;
+  height:460px;
+  overflow: scroll;
+  left:20px;
+right:20px;
+border:1px solid #232323;
+padding:10px;
+border-radius:50px;
+background:#0c0c0c;
+transform:translateY(750px);
+  transition:0.5s;
+}
+
+#seletorFotos.ativo{
+  transform:translateY(0px);
+  transition:0.5s;
+}
+
+
+
+
+#seletorFotos img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: 0.2s;
+}
+
+#seletorFotos img:hover {
+  transform: scale(1.05);
+}
+
+#seletorFotos img.selecionada {
+  border-color: #007bff;
+}
+</style>
+<script>
+  const WS_URL =
+  "wss://cc-6t67.onrender.com";
+
+
+/*
+=========================
+CONFIGURAÇÃO
+=========================
+*/
+
+const imagens = [
+  './img/perfil/IMG_0971.jpeg',
+  './img/perfil/IMG_0972.jpeg',
+  './img/perfil/IMG_0973.jpeg',
+  './img/perfil/IMG_0974.jpeg',
+  './img/perfil/IMG_0975.jpeg',
+  './img/perfil/IMG_0976.jpeg',
+  './img/perfil/IMG_0977.jpeg',
+  './img/perfil/IMG_0978.jpeg',
+  './img/perfil/IMG_0980.jpeg',
+  './img/perfil/IMG_0981.jpeg',
+  './img/perfil/IMG_0982.jpeg',
+  './img/perfil/IMG_0984.jpeg',
+  './img/perfil/IMG_0985.jpeg',
+  './img/perfil/IMG_0987.jpeg',
+  './img/perfil/IMG_0988.jpeg',
+  './img/perfil/IMG_0989.jpeg',
+  './img/perfil/IMG_0990.jpeg',
+  './img/perfil/IMG_0991.jpeg',
+  './img/perfil/IMG_0992.jpeg',
+];
+
+const STORAGE_KEY = 'imagemPadrao';
+
+function obterImagemPadrao() {
+  
+  let imagem = localStorage.getItem(STORAGE_KEY);
+  
+  if (!imagem) {
+    
+    imagem = imagens[Math.floor(Math.random() * imagens.length)];
+    
+    localStorage.setItem(STORAGE_KEY, imagem);
+    
+  }
+  
+  return imagem;
+  
+}
+
+let FOTO_PADRAO = obterImagemPadrao();
+
+const fotoPerfil = document.querySelector('.minhaFoto');
+const casar = document.querySelector(".oud");
+
+const fotoPerfilE = document.querySelector('.minhaFotoS');
+
+const seletorFotos = document.querySelector('#seletorFotos');
+
+fotoPerfil.src = FOTO_PADRAO;
+fotoPerfilE.src = FOTO_PADRAO;
+
+
+// Cria as opções de imagem
+
+imagens.forEach(imagem => {
+  
+  const img = document.createElement('img');
+  
+  img.src = imagem;
+  
+  img.alt = 'Escolher foto';
+  
+  // Se for a foto atualmente selecionada
+  
+  if (imagem === FOTO_PADRAO) {
+    
+    img.classList.add('selecionada');
+    
+  }
+  
+  img.addEventListener('click', () => {
+    
+    // Salva a escolha
+    
+    localStorage.setItem(STORAGE_KEY, imagem);
+    
+    // Atualiza a variável
+    
+    FOTO_PADRAO = imagem;
+    
+    // Atualiza a imagem principal
+    
+    fotoPerfil.src = imagem;
+    fotoPerfilE.src = imagem;
+   casar.src = imagem;
+
+    
+    // Atualiza o destaque visual
+    
+    document
+      
+      .querySelectorAll('#seletorFotos img')
+      
+      .forEach(img => img.classList.remove('selecionada'));
+    
+    img.classList.add('selecionada');
+    document.querySelector(".seletorFotos").classList.toggle("ativo");
+
+    
+  });
+  
+  seletorFotos.appendChild(img);
+  
+});
+
+/*
+=========================
+ELEMENTOS
+=========================
+*/
+
+const mensagens =
+  document.getElementById("mensagens");
+  
+  const ussrname = document.querySelector(".ussrname");
+
+const texto =
+  document.getElementById("texto");
+
+const btnEnviar =
+  document.getElementById("btnEnviar");
+
+const btnSticker =
+  document.getElementById("btnSticker");
+
+const painelStickers =
+  document.getElementById("painelStickers");
+
+const configuracao =
+  document.getElementById("configuracao");
+
+const inputNome =
+  document.getElementById("inputNome");
+
+const btnEntrar =
+  document.getElementById("btnEntrar");
+
+const minhaFoto =
+  document.getElementById("minhaFoto");
+  
+  const id = document.querySelector(".id")
+  
+
+const meuNome =
+  document.getElementById("meuNome");
+  const eraeu = document.querySelector(".eraeu");
+  const oud = document.querySelector(".oud")
+
+const status =
+  document.getElementById("status");
+
+
+/*
+=========================
+ESTADO
+=========================
+*/
+
+let socket = null;
+
+let meuId = null;
+
+//let seloVerificado = false;
+
+let idVerificado = null;
+
+let meuNomeSalvo =
+  localStorage.getItem("whmer_nome") || "";
+  
+
+/*
+=========================
+FOTO PADRÃO
+=========================
+*/
+
+minhaFoto.src = FOTO_PADRAO;
+oud.src = FOTO_PADRAO
+/*
+=========================
+NOME SALVO
+=========================
+*/
+
+if (meuNomeSalvo) {
+    eraeu.value = meuNomeSalvo;
+  inputNome.value =
+    meuNomeSalvo;
+
+  meuNome.textContent =
+    meuNomeSalvo;
+    ussrname.textContent = meuNomeSalvo;
+}
+
+
+
+/*
+=========================
+CONECTAR
+=========================
+*/
+
+function conectar() {
+
+
+  status.textContent =
+    "conectando...";
+
+
+  socket =
+    new WebSocket(WS_URL);
+
+
+  /*
+  =========================
+  ABRIU
+  =========================
+  */
+
+  socket.onopen = () => {
+    status.textContent =
+      "online";
+
+
+    /*
+    Se já existe nome salvo,
+    entra automaticamente.
+    */
+
+    if (meuNomeSalvo) {
+  socket.send(JSON.stringify({
+    
+    tipo: "usuario",
+    
+    nome: meuNomeSalvo,
+    
+    foto: FOTO_PADRAO
+    
+  }));
+  
+  configuracao.style.display = "none";
+  
+}
+  };
+
+
+  /*
+  =========================
+  RECEBEU
+  =========================
+  */
+
+  socket.onmessage = (evento) => {
+
+    try {
+
+      const data =
+        JSON.parse(evento.data);
+        //alert(data.usuario.id)
+        id.textContent = `id : ${data.usuario.id}`
+      /*
+      =========================
+      ID
+      =========================
+      */
+
+      if (data.tipo === "conectado") {
+
+        meuId =
+          data.seuId;
+
+        return;
+      }
+      
+      // VERIFICADO
+      
+if (data.tipo === "resultadoVerificacao") {
+  const status = document.getElementById("statusVerificacao");
+  
+  if (status) {
+    status.textContent = data.mensagem;
+  }
+  
+  if (data.sucesso) {
+    alert("Código resgatado com sucesso!");
+  }
+}
+
+if (data.tipo === "usuarioAtualizado") {
+  const usuario = data.usuario;
+ // seloVerificado = data.usuario.verificado === true;
+ 
+    if (usuario?.id) {
+
+    if (usuario.verificado === true) {
+
+      usuariosVerificados.add(usuario.id);
+
+    } else {
+
+      usuariosVerificados.delete(usuario.id);
+
+    }
+
+  }
+
+  
+  if (usuario.verificado) {
+    
+    //alert("naum")
+    // Atualize ou recrie o nome desse usuário
+    // usando usuario.verificado === true.
+  }
+}
+
+if (data.tipo === "usuarioVerificado" && data.id) {
+  idVerificado = data.id;
+  //seloVerificado = true;
+//  if (data.id) {
+//  usuariosVerificados.add(data.id);
+ // usuariosComSelo.set(data.id, true);
+  
+//}
+  //alert("User verifed!");
+//  alert(data.usuario.verificado)
+ 
+  // Se o usuário já está na tela, atualize o selo dele.
+}
+      ///
+
+//alert(JSON.stringify(data.usuario, null, 2));
+
+      /*
+      =========================
+      USUÁRIO CONFIGURADO
+      =========================
+      */
+
+      if (
+        data.tipo ===
+        "usuario_configurado"
+      ) {
+
+        if (data.usuario) {
+
+          meuNome.textContent =
+            data.usuario.nome;
+        }
+
+        return;
+      }
+
+
+      /*
+      =========================
+      MENSAGEM
+      =========================
+      */
+
+      if (
+        data.tipo ===
+        "mensagem"
+      ) {
+        adicionarMensagem(data);
+        
+        return;
+      }
+
+
+      /*
+      =========================
+      STICKER
+      =========================
+      */
+
+      if (
+        data.tipo ===
+        "sticker"
+      ) {
+
+        adicionarSticker(data);
+
+        return;
+      }
+
+    } catch (erro) {
+
+      console.log(
+        "Erro:",
+        erro
+      );
+
+    }
+
+  };
+
+
+  /*
+  =========================
+  FECHOU
+  =========================
+  */
+
+  socket.onclose = () => {
+
+    status.textContent =
+      "reconectando...";
+
+
+    setTimeout(() => {
+
+      conectar();
+
+    }, 2000);
+
+  };
+
+
+  /*
+  =========================
+  ERRO
+  =========================
+  */
+
+  socket.onerror = () => {
+
+    status.textContent =
+      "erro";
+
+  };
+
+}
+
+
+/*
+=========================
+ENVIAR USUÁRIO
+=========================
+*/
+
+// Declare uma única vez, fora das funções:
+//const usuariosVerificados = new Set();
+
+function criarSeloVerificado() {
+  const selo = document.createElement("div");
+  
+  selo.innerHTML = `
+    <svg viewBox="0 0 18 18" width="14" height="14"
+         style="display:block"
+         xmlns="http://www.w3.org/2000/svg">
+      <polygon fill="#3193e4"
+        points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+      <polygon fill="#000"
+        points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+    </svg>
+  `;
+  
+  selo.title = "Usuário verificado";
+  //selo.style.cssText ="display:inline-flex;align-items:center;flex-shrink:0;";
+  
+  return selo;
+}
+
+function adicionarNomeEVerificacao(usuario, nomeElement) {
+  nomeElement.textContent = usuario.nome || "Anônimo";
+  
+  const verificado = usuariosComSelo.has(usuario.id) ?
+    usuariosComSelo.get(usuario.id) :
+    usuario.verificado === true;
+  
+  if (verificado) {
+    nomeElement.appendChild(criarSeloVerificado());
+  }
+}
+
+function enviarUsuario() {
+  if (!socket || socket.readyState !== WebSocket.OPEN) {
+    return;
+  }
+  
+  if (!meuNomeSalvo) return;
+  
+  socket.send(JSON.stringify({
+    tipo: "usuario",
+    nome: meuNomeSalvo,
+    foto: FOTO_PADRAO
+  }));
+}
+
+
+/*
+=========================
+ENTRAR
+=========================
+*/
+
+btnEntrar.addEventListener(
+  "click",
+  entrar
+);
+
+
+function entrar() {
+
+  const nome =
+    inputNome.value.trim();
+
+
+  if (!nome) {
+
+    inputNome.focus();
+
+    return;
+
+  }
+
+
+  meuNomeSalvo =
+    nome.substring(0, 30);
+
+
+  localStorage.setItem(
+    "whmer_nome",
+    meuNomeSalvo
+  );
+
+
+  meuNome.textContent =
+    meuNomeSalvo;
+
+
+  minhaFoto.src = FOTO_PADRAO;
+
+
+  configuracao.style.display =
+    "none";
+
+
+  enviarUsuario();
+
+}
+
+
+/*
+=========================
+ENTER NO NOME
+=========================
+*/
+
+inputNome.addEventListener(
+  "keydown",
+  (e) => {
+
+    if (e.key === "Enter") {
+
+      e.preventDefault();
+
+      entrar();
+
+    }
+
+  }
+);
+
+
+/*
+=========================
+ENVIAR MENSAGEM
+=========================
+*/
+
+function enviarMensagem() {
+
+  const valor =
+    texto.value.trim();
+
+
+  if (!valor) {
+    return;
+  }
+
+
+  if (
+    !socket ||
+    socket.readyState !==
+      WebSocket.OPEN
+  ) {
+
+    return;
+
+  }
+
+
+  socket.send(
+    JSON.stringify({
+
+      tipo: "mensagem",
+
+      texto: valor
+
+    })
+  );
+
+
+  texto.value = "";
+
+  texto.focus();
+
+}
+
+
+/*
+=========================
+BOTÃO ENVIAR
+=========================
+*/
+
+btnEnviar.addEventListener(
+  "click",
+  enviarMensagem
+);
+
+
+/*
+=========================
+ENTER NO CHAT
+=========================
+*/
+
+texto.addEventListener(
+  "keydown",
+  (e) => {
+
+    if (
+      e.key === "Enter" &&
+      !e.shiftKey
+    ) {
+
+      e.preventDefault();
+
+      enviarMensagem();
+
+    }
+
+  }
+);
+
+
+/*
+=========================
+ABRIR STICKERS
+=========================
+*/
+
+btnSticker.addEventListener(
+  "click",
+  () => {
+
+    painelStickers.classList.toggle(
+      "aberto"
+    );
+
+  }
+);
+
+
+/*
+=========================
+CRIAR MENSAGEM
+=========================
+*/
+
+function adicionarMensagem(data) {
+
+  const mensagem =
+    document.createElement("div");
+    
+//const nomeElement = document.createElement("div");
+
+//adicionarNomeEVerificacao(usuario, nomeElement);
+
+
+  mensagem.className =
+    "mensagem";
+
+
+  /*
+  É MINHA MENSAGEM?
+  */
+
+  if (
+    data.usuario.id ===
+    meuId
+  ) {
+
+    mensagem.classList.add(
+      "eu"
+    );
+
+  }
+
+
+  /*
+  =========================
+  FOTO
+  =========================
+  */
+
+  const avatar =
+    document.createElement("div");
+
+
+  avatar.className =
+    "avatar-mensagem";
+
+
+//avatar.src = FOTO_PADRAO;
+
+  avatar.alt =
+    data.usuario.nome;
+
+
+  /*
+  =========================
+  CONTEÚDO
+  =========================
+  */
+
+  const conteudo =
+    document.createElement("div");
+
+
+  conteudo.className =
+    "conteudo-mensagem";
+
+
+  /*
+  =========================
+  NOME
+  =========================
+  */
+
+const setf = document.createElement("div");
+setf.style.display = "flex";
+//setf.style.alignItems = "center";
+//setf.style.gap = "5px";
+
+const nome = document.createElement("div");
+//nome.textContent = usuario.nome || "Anônimo";
+nome.className =
+    "nome-mensagem";
+
+
+  nome.textContent =
+    data.usuario.nome;
+
+setf.appendChild(nome);
+
+//alert(data.sucesso)
+//const verificado = usuario.verificado === true || usuariosVerificados.has(usuario.id);
+
+//if (verificado) {
+  //nome.appendChild(criarSeloVerificado());
+
+//}
+
+
+
+//if (seloVerificado) { 
+
+//nome.textContent = usuario.nome || "Anônimo";
+
+//setf.appendChild(nome);
+
+//const verificado = usuario.verificado === true || usuariosVerificados.has(usuario.id);
+
+if (idVerificado) {
+  
+  const selo = document.createElement("div");
+  
+  selo.innerHTML = `
+
+    <svg viewBox="0 0 18 18" width="14" height="14"
+
+         xmlns="http://www.w3.org/2000/svg">
+
+      <polygon fill="#3193e4"
+
+        points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+      <polygon fill="#000"
+
+        points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+    </svg>
+
+  `;
+  
+  selo.title = "Usuário verificado";
+  
+  //setf.appendChild(selo);
+  
+}
+// Continue aqui com o restante da criação do balão.
+// Exemplo: balão.appendChild(setf);
+// Adicione setf ao elemento onde o nome deve aparecer:
+//seuContainer.appendChild(setf);
+
+
+  
+  /*
+  =========================
+  BOLHA
+  =========================
+  */
+
+  const bolha =
+    document.createElement("div");
+
+
+  bolha.className =
+    "bolha";
+
+
+const texto = data.texto;
+const regex = /^(https?:\/\/[^\s]+|www\.[^\s]+)$/i;
+if (regex.test(texto.trim())) {
+  const link = document.createElement("a");
+  link.href = texto.trim().startsWith("www.") ?
+    "https://" + texto.trim() :
+    texto.trim();
+  link.textContent = texto;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.style.color = "#008cff";
+  link.style.textDecoration = "underline";
+  link.style.cursor = "pointer";
+  bolha.appendChild(link);
+} else {
+  bolha.textContent = texto;
+}
+
+//  bolha.textContent =data.texto;
+
+
+  /*
+  =========================
+  MONTAR
+  =========================
+  */
+
+// setf.appendChild(nome);
+
+  conteudo.appendChild(
+ setf
+  );
+
+  conteudo.appendChild(
+    bolha
+  );
+
+
+  mensagem.appendChild(
+    avatar
+  );
+
+  mensagem.appendChild(
+    conteudo
+  );
+  
+  //mensagem.appendChild(nomeElement);
+
+
+
+  mensagens.appendChild(
+    mensagem
+  );
+
+
+  /*
+  =========================
+  SCROLL
+  =========================
+  */
+
+  rolarParaBaixo();
+
+}
+
+
+/*
+=========================
+CRIAR STICKER
+=========================
+*/
+
+function adicionarSticker(data) {
+
+  const mensagem =
+    document.createElement("div");
+
+
+
+  mensagem.className =
+    "mensagem";
+
+
+  /*
+  É MINHA MENSAGEM?
+  */
+
+  if (
+    data.usuario.id ===
+    meuId
+  ) {
+
+    mensagem.classList.add(
+      "eu"
+    );
+
+  }
+
+
+  /*
+  =========================
+  FOTO
+  =========================
+  */
+
+  const avatar =
+    document.createElement("div");
+
+
+  avatar.className =
+    "avatar-mensagem";
+
+
+
+//avatar.src = FOTO_PADRAO;
+
+  avatar.alt =
+    data.usuario.nome;
+    
+const setf = document.createElement("div");
+setf.style.display = "flex";
+
+
+
+  /*
+  =========================
+  CONTEÚDO
+  =========================
+  */
+
+  const conteudo =
+    document.createElement("div");
+
+
+  conteudo.className =
+    "conteudo-mensagem";
+
+
+  /*
+  =========================
+  NOME
+  =========================
+  */
+
+  const nome =
+    document.createElement("div");
+
+
+  nome.className =
+    "nome-mensagem";
+
+
+  nome.textContent =
+    data.usuario.nome;
+    
+setf.appendChild( nome);
+
+
+if (idVerificado) {
+  
+  const selo = document.createElement("div");
+  
+  selo.innerHTML = `
+
+    <svg viewBox="0 0 18 18" width="14" height="14"
+
+         xmlns="http://www.w3.org/2000/svg">
+
+      <polygon fill="#3193e4"
+
+        points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+      <polygon fill="#000"
+
+        points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+    </svg>
+
+  `;
+  
+  selo.title = "Usuário verificado";
+  
+  //setf.appendChild(selo);
+  
+}
+  /*
+  =========================
+  STICKER
+  =========================
+  */
+
+  const sticker =
+    document.createElement("div");
+
+
+  sticker.className =
+    "mensagem-sticker";
+
+
+  const imagem =
+    document.createElement("img");
+
+
+  imagem.src =
+    data.imagem;
+
+
+  imagem.loading =
+    "lazy";
+
+
+  imagem.alt =
+    "Sticker";
+
+
+  imagem.onerror = () => {
+
+    sticker.remove();
+
+  };
+
+
+  sticker.appendChild(
+    imagem
+  );
+
+
+  /*
+  =========================
+  MONTAR
+  =========================
+  */
+
+  conteudo.appendChild(setf)
+
+  conteudo.appendChild(
+    sticker
+  );
+
+
+  mensagem.appendChild(
+    avatar
+  );
+
+  mensagem.appendChild(
+    conteudo
+  );
+
+
+  mensagens.appendChild(
+    mensagem
+  );
+
+
+  rolarParaBaixo();
+
+}
+
+
+/*
+=========================
+SCROLL
+=========================
+*/
+
+function rolarParaBaixo() {
+
+  requestAnimationFrame(() => {
+
+    mensagens.scrollTop =
+      mensagens.scrollHeight;
+
+  });
+
+}
+
+
+/*
+=========================
+STICKERS
+=========================
+*/
+
+document
+  .querySelectorAll(".sticker")
+  .forEach((botao) => {
+
+    const imagem =
+      botao.dataset.img;
+
+
+    /*
+    Mostra a imagem no botão
+    */
+
+    botao.innerHTML = "";
+
+
+    const img =
+      document.createElement("img");
+
+
+    img.src =
+      imagem;
+
+
+    img.alt =
+      "Sticker";
+
+
+    botao.appendChild(
+      img
+    );
+
+
+    /*
+    Clique
+    */
+
+    botao.addEventListener(
+      "click",
+      () => {
+
+        enviarSticker(imagem);
+
+      }
+    );
+
+  });
+
+
+/*
+=========================
+ENVIAR STICKER
+=========================
+*/
+
+function enviarSticker(imagem) {
+  if (!socket || socket.readyState !== WebSocket.OPEN) {
+    return;
+  }
+  
+  socket.send(JSON.stringify({
+    tipo: "sticker",
+    imagem: imagem,
+    nome: meuNomeSalvo,
+    foto: FOTO_PADRAO
+  }));
+  
+  painelStickers.classList.remove("aberto");
+}
+
+/*
+=========================
+INICIAR
+=========================
+*/
+
+conectar();
+//enviarUsuario();
+</script>
+
+<!--/body>
+</html--> 
+ </div>
+           <script>
+                     </script>
+<script>
+ const loading = document.querySelector(".carre");
+const conteudo = document.getElementById("conteudo");
+
+window.addEventListener("load", () => {
+  loading.style.display = "none";
+  conteudo.style.display = "block";
+  
+  setTimeout(() => {
+  document.querySelector(".plan").classList.toggle("ativo"); 
+  
+  }, 1000 )
+
+});
+</script>
+  <script>
+    const inoutf = document.getElementById("faiva");
+
+const cachorra = document.querySelector(".cachorra");
+
+const dimheiro = document.querySelector(".minhaFoto");
+const ffgags = document.querySelector(".oud");
+
+const figa = document.querySelector(".oud");
+const imf = document.createElement("div");
+imf.className = "ouro"
+imf.innerHTML = '<ion-icon style="font-size:40px; color:#3193e4;" name="add-circle-outline"></ion-icon>'
+
+        cachorra.appendChild(imf);
+        
+inoutf.addEventListener("change", () => {
+      const arquivo = inoutf.files[0];
+      dimheiro.src = URL.createObjectURL(arquivo);
+     ffgags.src = URL.createObjectURL(arquivo);
+      if (arquivo) {
+       // imf.src = URL.createObjectURL(arquivo);
+        document.querySelector(".seletorFotos").classList.toggle("ativo");
+      }
+})
+
+</script>
+<script>
+(() => {
+
+  const WS_URL = "wss://coisas.onrender.com";
+
+  const lista = document.getElementById("listaUsuarios");
+  const status = document.getElementById("statusWhmer");
+  const campoBusca = document.getElementById("buscarUsuario");
+
+  let socket = null;
+  let reconexao = null;
+  let tentativa = 0;
+  let encerrado = false;
+  let dadosLocalizacao = null;
+
+  // Guarda todos os usuários recebidos do servidor
+  let usuariosRecebidos = [];
+
+  const nomeUsuario =
+    localStorage.getItem("whmer_nome") || "Anônimo";
+
+  async function buscarLocalizacao() {
+    const resposta = await fetch("https://ipapi.co/json/");
+
+    if (!resposta.ok) {
+      throw new Error("Falha ao consultar a localização.");
+    }
+
+    const dados = await resposta.json();
+
+    if (dados.error || !dados.ip) {
+      throw new Error("O serviço não retornou a localização.");
+    }
+
+    return {
+      cidade: dados.city || "Não identificada",
+      regiao: dados.region || "Não identificada",
+      pais: dados.country_name || "Não identificado"
+    };
+  }
+
+  async function prepararLocalizacao() {
+    try {
+      dadosLocalizacao = await buscarLocalizacao();
+    } catch (erro) {
+      console.error("Localização:", erro.message);
+
+      dadosLocalizacao = {
+        cidade: "Não identificada",
+        regiao: "Não identificada",
+        ip: "Não identificado",
+        pais: "Não identificado"
+      };
+    }
+
+    conectar();
+  }
+
+  function conectar() {
+    if (encerrado) return;
+
+    if (
+      socket &&
+      (
+        socket.readyState === WebSocket.OPEN ||
+        socket.readyState === WebSocket.CONNECTING
+      )
+    ) {
+      return;
+    }
+
+    status.textContent = "Connecting to the server...";
+
+    try {
+      socket = new WebSocket(WS_URL);
+    } catch (erro) {
+      agendarReconexao();
+      return;
+    }
+
+    socket.addEventListener("open", () => {
+      tentativa = 0;
+      status.textContent = "Connected";
+
+      socket.send(JSON.stringify({
+        tipo: "usuario",
+        nome: nomeUsuario,
+        ...dadosLocalizacao
+      }));
+    });
+
+    socket.addEventListener("message", evento => {
+      try {
+        const dados = JSON.parse(evento.data);
+
+        if (dados.tipo === "listaUsuarios") {
+          // Atualiza a lista completa recebida do servidor
+          usuariosRecebidos = Array.isArray(dados.usuarios)
+            ? dados.usuarios
+            : [];
+
+          // Aplica a pesquisa atual
+          buscarUsuario();
+        }
+
+      } catch (erro) {
+        console.error("Erro ao processar resposta:", erro);
+      }
+    });
+
+    socket.addEventListener("close", () => {
+      status.textContent = "Disconnected. Reconnecting...";
+      agendarReconexao();
+    });
+
+    socket.addEventListener("error", () => {
+      status.textContent = "Erro na conexão.";
+    });
+  }
+
+  function agendarReconexao() {
+    if (encerrado || reconexao) return;
+
+    const espera = Math.min(
+      2000 * Math.pow(2, tentativa++),
+      30000
+    );
+
+    reconexao = setTimeout(() => {
+      reconexao = null;
+      conectar();
+    }, espera);
+  }
+
+  // Pesquisa e redesenha a lista
+  function buscarUsuario() {
+    const termo = campoBusca.value.trim().toLowerCase();
+
+    const filtrados = usuariosRecebidos.filter(usuario => {
+      return [
+        usuario.nome,
+        usuario.cidade,
+        usuario.regiao,
+        usuario.ip,
+        usuario.pais
+      ].some(valor =>
+        String(valor || "").toLowerCase().includes(termo)
+      );
+    });
+
+    mostrarUsuarios(filtrados, termo);
+  }
+
+  // Exibe somente os usuários encontrados
+  function mostrarUsuarios(usuarios, termo = "") {
+    lista.replaceChildren();
+
+    if (usuarios.length === 0) {
+      const mensagem = document.createElement("p");
+
+      mensagem.textContent = termo
+        ? "No user found."
+        : "No user logged in.";
+
+      lista.appendChild(mensagem);
+      return;
+    }
+
+    usuarios.forEach(usuario => {
+      const card = document.createElement("div");
+      card.className = "usuario-card";
+      card.style.fontFamily = "mine";
+      const campos = [
+        ["Nome", usuario.nome],
+        ["Cidade", usuario.cidade],
+        ["Região", usuario.regiao],
+        ["IP", usuario.ip],
+        ["País", usuario.pais]
+      ];
+
+      campos.forEach(([titulo, valor]) => {
+        const p = document.createElement("p");
+        const strong = document.createElement("strong");
+
+        strong.textContent = titulo + ": ";
+
+        p.append(
+          strong,
+          document.createTextNode(valor || "Não identificado")
+        );
+
+        card.appendChild(p);
+      });
+
+      lista.appendChild(card);
+    });
+  }
+
+  // Pesquisa automaticamente enquanto digita.
+  // Se o input ficar vazio, todos voltam a aparecer.
+  campoBusca.addEventListener("input", buscarUsuario);
+
+  prepararLocalizacao();
+
+  window.addEventListener("pagehide", () => {
+    encerrado = true;
+    clearTimeout(reconexao);
+
+    if (socket) {
+      socket.close();
+    }
+  });
+
+})();
+</script>
+
+<style>
+  .ouro{
+    justify-items: center;
+   justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+</style>
+</body>
+
+</html>
