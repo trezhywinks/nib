@@ -3085,7 +3085,7 @@ padding: 10px; border-radius: 50px; border: 1px solid #232323; background: #0c0c
 
 <!-- LOGIN -->
 
-<div id="configuracao" style="display:;">
+<div id="configuracao" style="display:none;">
 
   <div class="config-box">
 
@@ -3100,10 +3100,10 @@ padding: 10px; border-radius: 50px; border: 1px solid #232323; background: #0c0c
     >
 
     <input
-      id=""
+      id="inputNomeI"
       type="text"
       placeholder="Your name"
-      maxlength="30"
+      maxlength="20"
       autocomplete="off"
     >
     <p style="font-size:11px; color:yellow;">We need you to create a username!</p>
@@ -3303,8 +3303,8 @@ const painelStickers =
 const configuracao =
   document.getElementById("configuracao");
 
-const inputNome =
-  document.getElementById("inputNome");
+const inputNome = document.getElementById("inputNome");
+const inputNomeI = document.getElementById("inputNomeI");
 
 const btnEntrar =
   document.getElementById("btnEntrar");
@@ -3358,11 +3358,10 @@ NOME SALVO
 
 if (meuNomeSalvo) {
     eraeu.value = meuNomeSalvo;
-  inputNome.value =
-    meuNomeSalvo;
+  inputNome.value =  meuNomeSalvo;
+  inputNomeI.value =  meuNomeSalvo;
 
-  meuNome.textContent =
-    meuNomeSalvo;
+  meuNome.textContent = meuNomeSalvo;
     ussrname.textContent = meuNomeSalvo;
 }
 
@@ -3678,11 +3677,13 @@ function entrar() {
 
   const nome =
     inputNome.value.trim();
+    inputNomeI.value.trim();
 
 
   if (!nome) {
 
     inputNome.focus();
+    inputNomeI.focus();
 
     return;
 
@@ -3735,6 +3736,22 @@ inputNome.addEventListener(
 
   }
 );
+
+inputNomeI.addEventListener(
+  "keydown",
+  (e) => {
+
+    if (e.key === "Enter") {
+
+      e.preventDefault();
+
+      entrar();
+
+    }
+
+  }
+);
+
 
 
 /*
