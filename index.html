@@ -54,14 +54,14 @@
   
   .der{
     font-family: mine;
-    background:#9331e4;
+    background: linear-gradient(135deg, #9331e4 60%, #3C0966);
     color: #fff;
+    border: 1px solid #9331e4;
     font-weight: bold;
  text-shadow: 0 1px 1px white;
     padding: 10px 20px;
    border-radius: 10px;
     font-size: 20px;
-    border: #232323;
   }
   .server{
     text-align:center;
@@ -758,7 +758,9 @@ function alternarToggle(icone) {
           </div>
     </center>
     <div class="contros">
-    <div class="start" style="padding:10px; border:1px solid #232323; margin:2px; width:120px;">
+    <div class="start" style="padding:10px; 
+    border:1px solid #232323;
+    margin:2px; width:120px;">
      <p style="color:#fff; font-size:14px;">Start Game</p>
     </div>
     <div class="chatsU" style="padding:10px; width:120px; margin:2px; border:1px solid #232323">
@@ -1169,6 +1171,7 @@ btnVerificar.addEventListener("click", () => {
   seloV.appendChild(selo);
   
 batista.style.display = "none";
+document.querySelector(".cash").style.display = "block";
           batista2.style.display = "block";
           document.querySelector(".mskeurr").classList.toggle("ativo")
         document.querySelector(".paid").classList.toggle("ativo")
@@ -1672,15 +1675,17 @@ z-index:100;
   
   .timeB{
     position: fixed;
-    bottom: 0;
+    bottom: 10px;
     left: 5px;
     right: 0;
+    justify-content: space-between;
+    display: flex;
     z-index: 99999;
   }
   
   .timeB p{
     opacity: 0.6;
-    font-size: 10px;
+    font-size: 14px;
   }
   
 
@@ -1728,19 +1733,26 @@ z-index:100;
          <img class="minhaFotoS" src="" alt="" width="50" style="z-index:;" />
 <div class="nsmejd" style="margin-left: 20px;">
 <p class="ussrname">...</p>
-    <p id="pontuacao">0</p>
+<span>Score: <span id="pontuacao">0</span></span>
     </div>
 
 </div>
-<div style="text-align: end;">
+<div style="text-align: end; margin-top:5px;">
   <p style="font-size:14px;">User numbers</p>
   <p style="font-size: 11px;" id="onlineGame">0 Online</p>
 
 </div>
        </div>
        <div class="timeB">
-          <p style="font-size:;" id="mexico"></p>
+         <div>
+                     <p style="font-size:;" id="mexico"></p>
 <p style="font-size:;" id="brasil"></p>
+
+         </div>
+         <div class="cash" style="display: none">
+           <div id="dinheiro" style="display:;">$ 0,00</div>
+           <p style="opacity:1;">Pro version</p>
+         </div>
 
 <script>
   function joraG() {
@@ -1825,6 +1837,10 @@ const resultado = document.getElementById("resultado");
 
 //const imagemPadrao = player.src
 
+const dinheiro = document.getElementById("dinheiro");
+
+//let dinheiroAtual = 0;
+let dinheiroAtual = Number(localStorage.getItem("dinheiroWhmer")) || 0;
 
 let jogadorY = 0;
 
@@ -1856,7 +1872,11 @@ let fileplayer = "./img/IMG_0927.gif";
    INICIAR
 ========================= */
 
-
+function atualizarDinheiro() {
+  dinheiro.textContent = "$ " + dinheiroAtual.toFixed(2).replace(".", ",");
+  
+  localStorage.setItem("dinheiroWhmer", dinheiroAtual.toFixed(2));
+}
 function iniciar() {
 
   console.log("JOGO INICIANDO");
@@ -1881,6 +1901,8 @@ function iniciar() {
   player.style.top = jogadorY + "px";
   player.src = fileplayer;
 
+//dinheiroAtual = 0;
+//atualizarDinheiro();
 
 
   inicio.style.display = "none";
@@ -2063,6 +2085,8 @@ function loop(tempo) {
   if (!jogando) return;
 
 
+
+
   velocidadeY += gravidade;
 
   jogadorY += velocidadeY;
@@ -2136,18 +2160,21 @@ function loop(tempo) {
 
     /* pontuação */
 
-    if (
-      !obj.passou &&
-      obj.x + obj.largura < 70
-    ) {
-
-      obj.passou = true;
-
-      pontuacaoAtual++;
-
-      pontuacao.textContent =
-        pontuacaoAtual;
-    }
+if (
+  !obj.passou &&
+  obj.x + obj.largura < 70
+) {
+  
+  obj.passou = true;
+  
+  pontuacaoAtual++;
+  
+  pontuacao.textContent = pontuacaoAtual;
+  
+  dinheiroAtual += 0.01;
+  
+  atualizarDinheiro();
+}
 
 
     /* remover */
@@ -3092,15 +3119,19 @@ wsd.onmessage = (event) => {
 <br>What you are looking for can be found in forums like this. Just another common day in this place we call it? Have fun! Your fun is what matters.
 </p>
 <br>
-<div class="sharedD" style="display:flex; justify-content: space-around; width:210px; border:1px solid #3193e4;
-padding: 10px; border-radius: 50px; background: #0c0c0c;">
+<div class="sharedD" style="display:flex; justify-content: space-around; width:210px;
+border:1px solid #9331e4; transition: 0.3s ease;
+padding: 6px; border-radius: 5px;
+background: linear-gradient(135deg, #9331e4 60%, #3C0966);">
  <div>
-   <ion-icon style="font-size:20px; color:#3193e4;" name="arrow-redo"></ion-icon>
+   <ion-icon style="font-size:20px; color:#000;" name="arrow-redo"></ion-icon>
  </div> 
  <div>
-   <p style="color:#3193e4;">Share server</p>
+   <p style="color:#000;">Share server</p>
  </div>
 </div>
+<br>
+
 <script>
   document.querySelector(".sharedD").addEventListener("click", () => {
                 if (navigator.share) {
