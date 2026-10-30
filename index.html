@@ -825,10 +825,139 @@ document.querySelector(".d").classList.toggle("ativo");
     <div class="batista" style="border:1px solid #232323; z-index: 80; width:150px; padding:10px;">
      <p onclick="valet()" style="font-size:14px;">Version Pro</p>
     </div>
-        <div class="batista2" style="border:1px solid #000; z-index:; display: none; 
-        width:150px; padding:10px; color: #000; background: #00c853; border-radius: 3px;">
-     <p onclick="" style="font-size:14px;">Version Paid</p>
+        <div class="batista3" style="border:1px solid #232323; z-index: 80; width:150px; padding:10px; display: none;">
+     <p onclick="Paid()" style="font-size:14px;">Verifed</p>
     </div>
+
+<style>
+.bolha-explosiva {
+  position: fixed;
+  z-index: 99;
+  pointer-events: none;
+  /* Aparência pixelada */
+  border: 2px solid #00e676;
+  border-radius: 0;
+  background: #69ffad;
+  box-shadow: none;
+  image-rendering: pixelated;
+  animation: crescerBolha 450ms steps(4, end) forwards;
+}
+.estilhaco-verde {
+  position: fixed;
+  z-index: 99;
+  pointer-events: none;
+  /* Estilhaços quadrados */
+  background: #00e676;
+  border-radius: 2px;
+  box-shadow: none;
+  image-rendering: pixelated;
+ /* animation: voarEstilhaco 650ms steps(6, end) forwards;*/
+  animation: voarEstilhaco 650ms cubic-bezier(.1,.7,.3,1) forwards;
+}
+
+@keyframes crescerBolha {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes voarEstilhaco {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy))
+               rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+.paid{
+  position: fixed;
+  backdrop-filter: blur(10px);
+  transform: translateY(890px);
+ transition: 0.5s;
+  left: 0;
+  right: 0;
+  top: 20px;
+  border-top: 1px solid #232323;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  z-index: 80;
+ bottom: 0;
+}
+
+.paid.ativo{
+  transform: translateY(0px);
+  transition:0.5s;
+}
+</style>
+
+<div class="paid">
+  <div class="" style="width: 90%; text-align: end; padding:10px;">
+    <span style="font-size: 40px;" onclick="Paid()">x</span>
+  </div>
+  <script>
+    function Paid(){
+      document.querySelector(".paid").classList.toggle("ativo");
+    }
+  </script>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h2>Whmer Section 01</h2>
+  <span style="opacity: 0.6;">You are in the pro version</span>
+  <br>
+  <br>
+  <div class="batista2" style="border:1px solid #000; z-index:1; display:;
+width:150px; padding:10px; color:#000; background:#00c853;
+border-radius:3px; position:relative;">
+  <p style="font-size:14px;">Version Paid</p>
+</div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div style="text-align: left;">
+    <div style="display:flex;">
+      <div>
+        <div style="background: #9331e4; border:1px solid #aaa; margin-top: 7px; height: 10px; width:10px; border-radius:10px;">
+          
+        </div>
+      </div>
+    <div style="margin-left:10px;">
+      <span style="color: #9331e4;;">Verification</span><br>
+      <span>You won the verified seal.</span>
+    </div>  
+    </div>
+    <br>
+      <div style="display:flex;">
+      <div>
+        <div style="background: #9331e4; border:1px solid #aaa; margin-top: 7px; height: 10px; width:10px; border-radius:10px;">
+          
+        </div>
+      </div>
+    <div style="margin-left:10px;">
+      <span style="color:#9331e4;">Find users</span><br>
+      <span>You gained the freedom to get the users' loc.</span>
+
+    </div>  
+    </div>
+
+  </div><br><br>
+<p style="font-size: 12px; border: 1px solid #232323; padding: 10px;">Your code is valid in 3 sections, after 3 sections you should get a new code. Each section you get two new tools for the code.</p>
+</div>
 
     <div style="margin-top: -6px; display:none; margin-left: 20px; background: #00c853; border-radius:10px; padding: 5px ;
     border: 3px solid #000; width:80px; z-index: 90;">
@@ -1041,7 +1170,9 @@ btnVerificar.addEventListener("click", () => {
   
 batista.style.display = "none";
           batista2.style.display = "block";
-   
+          document.querySelector(".mskeurr").classList.toggle("ativo")
+        document.querySelector(".paid").classList.toggle("ativo")
+          document.querySelector(".batista3").style.display = "block"
     //selo.style.cssText = "position:fixed;top:20px;right:20px;z-index:999999;";
 
 
@@ -4667,7 +4798,64 @@ inoutf.addEventListener("change", () => {
 
 })();
 </script>
-
+<script>
+(() => {
+  const div = document.querySelector(".batista2");
+  if (!div) {
+    alert("Não encontrei a div .batista2");
+    return;
+  }
+  function explodirEstilhacos(x, y) {
+    // Estilhaços voando em todas as direções
+    for (let i = 0; i < 16; i++) {
+      const fragmento = document.createElement("span");
+      fragmento.className = "estilhaco-verde";
+      const angulo = (Math.PI * 2 * i / 16)
+                    + (Math.random() * 0.3);
+      const distancia = 35 + Math.random() * 85;
+      const dx = Math.cos(angulo) * distancia;
+      const dy = Math.sin(angulo) * distancia;
+      const largura = 2 + Math.random() * 2;
+      const altura = 2 + Math.random() * 3;
+      fragmento.style.left = x + "px";
+      fragmento.style.top = y + "px";
+      fragmento.style.width = largura + "px";
+      fragmento.style.height = altura + "px";
+      fragmento.style.setProperty("--dx", dx + "px");
+      fragmento.style.setProperty("--dy", dy + "px");
+      fragmento.style.setProperty(
+        "--rot",
+        (Math.random() * 720 - 360) + "deg"
+      );
+      document.body.appendChild(fragmento);
+      setTimeout(() => fragmento.remove(), 700);
+    }
+  }
+  function criarBolha() {
+    if (getComputedStyle(div).display === "none") return;
+    const rect = div.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    const bolha = document.createElement("span");
+    bolha.className = "bolha-explosiva";
+    const tamanho = 4 + Math.random() * 5;
+    // A bolha nasce dentro da div
+    const x = rect.left + Math.random() * rect.width;
+    const y = rect.top + Math.random() * rect.height;
+    bolha.style.width = tamanho + "px";
+    bolha.style.height = tamanho + "px";
+    bolha.style.left = (x - tamanho / 2) + "px";
+    bolha.style.top = (y - tamanho / 2) + "px";
+    document.body.appendChild(bolha);
+    // A bolha explode e solta os estilhaços
+    setTimeout(() => {
+      bolha.remove();
+      explodirEstilhacos(x, y);
+    }, 450);
+  }
+  // Explosões automáticas contínuas
+  setInterval(criarBolha, 70);
+})();
+</script>
 <style>
   .ouro{
     justify-items: center;
