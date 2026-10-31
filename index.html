@@ -83,7 +83,7 @@
   .btnC{
     background:#3193E4;
     border-radius:5px;
-    width:70%;
+    width:250px;
     color:#fff;
     padding:5px 7px;
     font-size:19px;
@@ -419,11 +419,73 @@ carregarUsuarioGitHub();
 <br>
 <style>
   .bords{
-    border:1px solid #232323;
     padding:10px;
     border-radius: 10px;
+    transform: translateX(-980px);
+   transition: 0.5s;
+   width: 100%;
+   animation: --so 0.5s ease-out;
+    display: none;
+  }
+  
+  .bords.ativo{
+    display: block;
+    transform: translateX(0);
+    transition: 0.5s;
+  }
+  
+  @keyframes --so{
+    from{
+      transform: translateY(-970px);
+    }
+    to{
+      transform: translateY(0);
+    }
+  }
+  
+  .solana{
+    padding:10px;
+    width: 100%;
+    border-radius: 10px;
+    animation: --sa 0.5s ease-out;
+    transition:0.5s;
+    display: none;
+  }
+  
+  .solana.ativo{
+   transform: translateX(0); 
+   transition: 0.5s;
+   animation: --sa 0.5s ease-out;
+   display: block;
+  }
+  
+  .solana.remove{
+    display: none;
+    animation: --sa 0.5s ease-out;
+  }
+  
+   @keyframes --sa {
+   from {
+     transform: translateX(-970px);
+   }
+   
+   to {
+     transform: translateX(0);
+   }
+ }
+  
+  .gsjwbdb{
+    padding: 10px;
+    border:1px solid #232323;
+    border-radius: 10px;
+    width: 90%;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto 10px;
+    overflow: hidden;
   }
 </style>
+<div class="gsjwbdb">
 <div class="bords">
          <h2>Version Pro</h2>
          <p>Amount to pay $ 5,50</p>
@@ -434,6 +496,52 @@ carregarUsuarioGitHub();
      <button class="btnC" id="mensagem" onclick="copiarTexto();">Copy code</button>
      <br>
      </div>
+     <div class="solana">
+       <script>
+               </script>
+             <h2>Version Pro</h2>
+         <p>Pay with SOL 5.0</p>
+         <br>
+         <br>
+         <img src="./IMG_7320.jpeg" width="250" style="border-radius:10px;"/><br>
+         <br>
+       <button class="btnC" id="mensagemSol" onclick="copiarTextoSol();">Copy address</button>
+<br>
+     </div>
+     <p style="text-decoration:;" class="gish" onclick="solo()">Pay with pix</p>
+
+     </div>
+     <script>
+       function solo(){
+         const gish = document.querySelector(".gish");
+  if (gish.textContent === "Pay with pix") {
+    
+    gish.textContent = "Pay with SOL";
+    document.querySelector(".bords").classList.toggle("ativo");
+         document.querySelector(".solana").classList.toggle("ativo");
+
+    
+  } else {
+    
+    gish.textContent = "Pay with pix";
+    document.querySelector(".bords").classList.toggle("ativo");
+         document.querySelector(".solana").classList.toggle("ativo");
+
+    
+  }
+  
+             }
+       
+              function picx(){
+      //   .style.display = "none";
+         document.querySelector(".bords").classList.toggle("ativo");
+         document.querySelector(".solana").classList.toggle("ativo");
+
+         //classList.toggle("ativo");
+       }
+
+     </script>
+
      <center>
       <div class="wap" style="margin-top:5px; border-bottom:2px solid #232322; width:80%;">
        <p style="color:#f7f7f7;">I've already made the payment.</p>
@@ -473,6 +581,23 @@ function copiarTexto() {
 
 }
 
+function copiarTextoSol() {
+
+    const texto = "3muKiCE5ycgm9aN9c5pXEzY4hC8UxUNEwvVhaAd74Sgt";
+
+    navigator.clipboard.writeText(texto).then(() => {
+        document.getElementById("mensagemSol").textContent = "Copied!";
+
+        setTimeout(() => {
+
+            document.getElementById("mensagemSol").textContent = "Copy address";
+
+        }, 2000);
+
+    });
+
+}
+
 </script>
      <br>
      <p>Use our pro version of sever T, have fun with the tools of this version.</p>
@@ -496,6 +621,10 @@ function copiarTexto() {
          if(maraA.classList.toggle("ativo")){
            maraA.classList.toggle("ativo");
          }
+       //  setTimeout( () => {
+           document.querySelector(".solana").classList.toggle("ativo");
+        // }, 100 );
+
        }
        </script>
 
@@ -970,7 +1099,12 @@ border-radius:3px; position:relative;">
 
     <script>
       function valet(){
+        
         document.querySelector(".plan").classList.toggle("ativo");
+                setTimeout( () => {
+           document.querySelector(".solana").classList.toggle("ativo");
+        }, 100 );
+
       }
     </script>
     <center>
@@ -1261,10 +1395,7 @@ inputCodigo.addEventListener("input", () => {
         </p>
        </div>
       </div>
-
-
       <p style="font-size:11px; display: none;" id="cidade">Obtaining data...</p>
-      <br>
       <span style="font-size:12px; margin-right:20px; opacity: 0.6;">• Help</span>
       <span class="fim" style="font-size:12px; opacity: 0.6;"> • Redeem code</span>
     <span style="font-size:12px; margin-left:20px; opacity: 0.6;"> • Chat</span>
@@ -1274,6 +1405,7 @@ inputCodigo.addEventListener("input", () => {
     <span style="font-size:12px; margin-left:20px; opacity: 0.6;"> • Status</span>
     <span style="font-size:12px; margin-left:20px; opacity: 0.6;"> • Privacy</span>
     <span style="font-size:12px; margin-left:20px; opacity: 0.6;"> • Games</span>
+    <br>
     <br>
     <span style="font-size:12px; margin-left:20px; opacity: 0.6;">Version: 1.00.1.0</span>
 
@@ -3040,6 +3172,7 @@ wsd.onmessage = (event) => {
       function addlist(){
         document.querySelector(".listo").classList.toggle("ativo");
         document.querySelector(".plan").classList.toggle("ativo");
+        document.querySelector(".solana").classList.toggle("ativo");
       }
 
      function addlistF(){
@@ -4582,9 +4715,16 @@ window.addEventListener("load", () => {
   conteudo.style.display = "block";
   
   setTimeout(() => {
-  document.querySelector(".plan").classList.toggle("ativo"); 
+  document.querySelector(".plan").classList.toggle("ativo");
+  
   
   }, 1000 )
+  
+  const solona = document.querySelector(".solana");
+         setTimeout( () => {
+           solona.classList.toggle("ativo");
+         }, 1000 );
+
 
 });
 </script>
