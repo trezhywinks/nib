@@ -54,17 +54,36 @@
   
   .der{
     font-family: mine;
-    background: linear-gradient(135deg, #9331e4 60%, #3C0966);
+    background: #000;
+   /* background: linear-gradient(135deg, #9331e4 60%, #3C0966);*/
     color: #fff;
     border: 1px solid #9331e4;
     font-weight: bold;
- text-shadow: 0 1px 1px white;
+ text-shadow: 0 1px 1px #000;
     padding: 10px 20px;
-   border-radius: 10px;
+   border-radius:0;
+   width:175px;
     font-size: 20px;
   }
+  
+    .ser{
+    font-family: mine;
+    background: #000;
+   /* background: linear-gradient(135deg, #9331e4 60%, #3C0966);*/
+    color: #fff;
+    border: 1px solid #9331e4;
+    font-weight: bold;
+ text-shadow: 0 1px 1px #000;
+    padding: 10px 20px;
+   border-radius:0;
+   width:175px;
+    font-size: 20px;
+  }
+
+  
   .server{
     text-align:center;
+    width: 100%;
   }
   .botttom{
     position:fixed;
@@ -109,10 +128,12 @@
     transition: 0.5s;
     top: 0;
     height: 100vh;
-    width: 130px;
-    background: #0C0C0C;
+    width: 80px;
+    background: #0c0c0c;
+    box-shadow: 0px 10px 20px #000;
     display: block;
-    text-align:center;
+    text-align:left;
+    z-index: 9999999999;
   }
   .select.ativo{
     transition: 0.5s;
@@ -238,10 +259,259 @@
    height: 100vh;
    display: none;
  }
+ 
+ .ndmr{
+   background: #000;
+   border: ;
+   color: #fff;
+   padding: 2px 6px;
+   font-size: 11px;
+   border-radius: 100px;
+   width:90px !important;
+   height:50px;
+   position: relative;
+   display:;
+ }
+ 
+ .initgames{
+   position: fixed;
+   background: #000;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 100vh;
+   overflow: auto;
+   padding: 10px;
+   z-index: 999999;
+   display: none;
+ }
 </style>
 <body>
-  
+  <div class="initgames">
+    <div style="display: flex; justify-content: space-between; width:; padding: 10px;">
+      <div style="font-size: 35px;" onclick="bomdia()">
+        <
+      </div>
+      <div>
+        <img src="" id="gamesinits" width="45" height="45" onclick="" style="border-radius: 100px; border: 2px solid #00ED4C; padding: 2px;"/>
+      </div>
+    </div>
+    <div style="padding: 10px;">
+    <h2 style="font-size:35px;">Games</h2>
+    <p style="opacity: 0.6; font-size: 12px;">Jogue e divirta-se o maximo!</p>
+    </div>
+
+  <br>
+  <br>
+  <div style="text-align: center;">
+    <div >
+      <img src="./IMG_7375.png" width="90%" height="auto" style="border: 1px solid #232323;"/>
+    </div>
+    <div style="margin-top: -30px;">
+      <button class="ser" onclick="quebrado()" >Jogar</button>
+    </div>
+    <br>
+    <p style="opacity: 0.6; font-size: 11px;">Obtenha mais pontos, vooe mais alto, Divirta-se nesse mundo estrelado.</p>
+<br>
+  </div>
+  </div>
+  <div class="ndjejdyy">
+    
+  </div>
+      <div class="mudar">
+      <br>
+      <br>
+        <label for="faiva">
+      <img src="" class="oud" onclick="" height="120" width="120"/>
+      </label>
+      <input type="file" id="faiva" accept="image/*,.gif" hidden/>
+      <br>
+      <input class="eraeu" type="text" id="inputNome"
+        inputmode="text"
+  enterkeyhint="send"
+      maxlength="20"/>
+      <br>
+      <p class="id" style="font-size:13px; opacity: 0.6;">id: ...</p>
+    </div>
+
+    <div class="Servidores">
+         <div style="display: flex; position: fixed; left: 0; right: 0;
+         background:#0c0c0c; height: 80px;
+    justify-content: space-between; top: 0; font-size:; padding: 10px;">
+      <div style="margin:10px; display:flex;">
+            <div class="" style="font-size: 35px; " onclick="casal()">
+        <
+      </div>
+
+      </div>
+    <div style="margin: 10px;" onclick="perfi()">
+      <img src="" id="setvidoresChat" width="45" height="45" onclick="" style="border-radius: 100px; border: 2px solid #00ED4C; padding: 2px;"/>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+         <div style="margin-left:; padding: 10px;">
+        <h2 style="font-size:30px;">Chats</h2>
+        <p style="opacity: 0.6; font-size: 12px;">converse com outros usuarios.</p>
+     </div>
+    <input type="search" placeholder="Buscar"
+    id="busfc" oninput="buscarUsuario(this.value)"/>
+    <br>
+    <div style="padding: 10px; display: none;" class="mzkenfm">
+  <p style="opacity: 0.6; display:; font-size: 12px;" class="">Nenhum servidor emcontrado.</p>
+    </div>
+    <br>
+    <br>
+    <div class="unoP" onclick="abrirConversa()" data-nome="section 01">
+      <div style="display: flex;">
+        <div>
+              <img src="./photo-output.jpeg" width="65" height="65" style="border-radius:100px;
+        border:2px solid #232323; padding: 2px;"/>
+        </div>
+        <!--div class="contador-mensagens" id="contadorMensagens" style="display:none;">
+  0
+</div-->
+        <div class="contador-mensagens" id="contadorMensagens" style="margin-left:-20px; display: none; margin-top: 40px;">
+      0
+        </div>
+        <style>
+          .contador-mensagens {
+  display: none;
+  background: #25d366;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+        </style>
+        </div>
+      <div class="vagasz">
+        <div style="display:flex;">
+        <div>
+        <span>Section 01 (Global) </span>
+        </div>
+        <div style="margin-left: 5px;">
+                <svg viewBox="0 0 18 18" width="17" height="17"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>
+
+        </div>
+        </div>
+        <p style="opacity: 0.6; font-size: 12px;">Uma nova historia, clique e veja nosso mundo.</p>
+      </div>
+    </div>
+        <div class="unoP" style="opacity: 0.6;" data-nome="section 02">
+      <div style="display: flex;">
+        <div>
+              <img src="./section02.jpeg" width="65" height="65" style="border-radius:100px;
+        border:2px solid #232323; padding: 2px;"/>
+        </div>
+        <div style="margin-left:-20px; display: none; margin-top: 40px;">
+      <span class="ndmr">1</span>
+        </div>
+      </div>
+      <div class="vagasz">
+        <div style="display:flex;">
+        <div>
+        <span>Section 02 (Global) </span>
+        </div>
+        <div style="margin-left: 5px;">
+                <svg viewBox="0 0 18 18" width="17" height="17"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>
+
+        </div>
+        </div>
+        <p style="opacity: 0.6; font-size: 12px;">Uma nova historia, clique e veja nosso mundo.</p>
+      </div>
+    </div>
+
+    <script>
+    //  document.querySelector(".unoP").addEventListener("click", () => {
+        function sec1(){
+        document.querySelector(".chatsT").style.display = "block";
+       document.querySelector(".painel").style.display = "none";
+        document.querySelector(".Servidores").style.display = "none";
+        document.querySelector(".contador-mensagens").textContent = "0"
+        document.querySelector(".contador-mensagens").style.display = "none"
+      }
+      
+      function casal(){
+        document.querySelector(".chatsT").style.display = "none";
+       document.querySelector(".painel").style.display = "block";
+        document.querySelector(".Servidores").style.display = "none";
+
+      }
+    </script>
+    <br>
+    <center>
+      <div style="display: flex; justify-content: center;">
+        <div>
+          <ion-icon style="opacity: 0.6; font-size: 12px;" name="sparkles-outline"></ion-icon>
+        </div>
+        <div style="margin-left: 5px; margin-top: 3px;">
+        <p style="font-size: 12px; opacity: 0.6;">Em breve outros servidores para voce.</p>
+        </div>
+      </div>
+    </center>
+  </div>
+<script>
+    function buscarUsuario(texto) {
+    const usuarios = document.querySelectorAll('.unoP');
+    usuarios.forEach(usuario => {
+      const nome = usuario.getAttribute('data-nome').toLowerCase();
+      if (nome.includes(texto.toLowerCase())) {
+        usuario.style.display = 'flex';
+        document.querySelector(".mzkenfm").style.display = 'none'
+      } else {
+        usuario.style.display = 'none';
+       // document.querySelector(".mzkenfm").style.display = 'block'
+      }
+    });
+  }
+</script>
 <audio id="audio" class="audio" src="./toq/file_0_0.mp3" loop></audio>
+<script>
+  const audio = document.getElementById('audio');
+  
+  if ('mediaSession' in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: 'SECTION 01',
+      artist: 'by: dreqxy...',
+      album: '01',
+      artwork: [
+        { src: './photo-output.jpeg', sizes: '512x512', type: 'image/jpeg' },
+        { src: './photo-output.jpeg', sizes: '1024x1024', type: 'image/jpeg' }
+      ]
+    });
+  }
+</script>
 <audio id="audio2" class="audio2" src="./fechando.mov"></audio>
 <audio id="audio3" class="audio3" src="./abrindo.mov"></audio>
 
@@ -410,7 +680,7 @@ carregarUsuarioGitHub();
         <div class="mdekd">
       <div class="lseld" style="text-align:left; padding-left:10px;">
       <p style="font-size:17px;">Payment</p>
-      <p style="font-size:13px; color:green;">100% secure payment</p>
+      <p style="font-size:13px; color:#00ED4C;">100% secure payment</p>
       </div>
       <div class="mzmedd" onclick="fg()">
      <h2 style="font-size:40px; margin-top:-10px; margin-right:10px;">x</h2>
@@ -421,16 +691,16 @@ carregarUsuarioGitHub();
   .bords{
     padding:10px;
     border-radius: 10px;
-    transform: translateX(-980px);
+    transform: translateY(-980px);
    transition: 0.5s;
    width: 100%;
-   animation: --so 0.5s ease-out;
+   animation: --sa 0.5s ease-out;
     display: none;
   }
   
   .bords.ativo{
     display: block;
-    transform: translateX(0);
+    transform: translateY(0);
     transition: 0.5s;
   }
   
@@ -755,15 +1025,970 @@ function alternarToggle(icone) {
      <br>
      <br>
   </div>
+  <div class="licenseee" style="font-size:14px;">
+    <div class="bakxkdn" style="display: flex; position: fixed; top: 0;
+    left: 0; right: 0; background: #000; height: 55px; z-index: 9999;
+    font-size: 35px;" 
+    onclick="remxoem()">
+      <div>
+        <
+      </div>
+      <div style="margin-left:10px; margin-top: 10px; font-size: 20px;">
+        back
+      </div>
+    </div>
+    
+    <script>
+      function remxoem(){
+        document.querySelector(".licenseee").style.display = "none"
+      }
+    </script>
+    <br>
+    <br>
+    <br>
+    LICENSE — TERMS OF USE
+<br>
+<br>
+<p style="opacity: 0.6;">
+Copyright © 2026. All rights reserved.
+  
+</p>
+<br>
+<br>
+
+This website, including its source code, design, visual elements, graphics, features, content, and other materials, is protected by applicable copyright and intellectual property laws.
+<br>
+<br>
+1. Ownership
+<br>
+<p style="opacity:0.6;">
+All rights to the website and its original materials belong to their respective owner and creator, unless otherwise stated.
+  
+</p>
+<br>
+<br>
+
+2. Restrictions
+<br>
+<p style="opacity: 0.6;">
+  Without prior written permission, you are not allowed to:
+
+</p>
+<br>
+<br>
+
+* Copy, reproduce, or redistribute the source code.<br>
+* Republish or duplicate the website, in whole or in part.<br>
+* Sell, sublicense, or commercially exploit any part of the project.<br>
+* Modify, reverse engineer, or create unauthorized copies of the original project.<br>
+* Claim ownership or authorship of materials belonging to this project.
+<br>
+<br>
+3. Permitted Use
+<br>
+<p style="opacity: 0.6;">
+Users may access and use this website for personal purposes, provided they respect these terms and applicable laws.
+  
+</p>
+<br>
+<br>
+
+4. Third-Party Content
+<br>
+<p style="opacity: 0.6;">
+Some resources, libraries, images, or services may belong to third parties and remain subject to their respective licenses and terms.
+  
+</p>
+<br>
+<br>
+
+5. Disclaimer
+<br>
+<p style="opacity: 0.6;">
+  
+ This website is provided “AS IS”, without warranties of any kind. The owner is not responsible for damages, losses, or interruptions resulting from its use.
+ 
+</p>
+<br>
+<br>
+
+6. Changes to This License
+<br>
+<p style="opacity: 0.6;">
+  The owner reserves the right to modify these terms at any time without prior notice.
+
+</p>
+<br>
+<br>
+
+7. Contact
+<br>
+
+<p style="opacity: 0.6;">
+For permissions, licensing inquiries, or other questions, please contact the website owner.
+  
+</p>
+<br>
+<br>
+
+Unauthorized use, copying, or redistribution of this project is prohibited.
+<br>
+<br>
+By accessing or using this website, you agree to these terms.
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  </div>
+  <div class="sale">
+    <style>
+    .licenseee{
+            height: 100vh;
+      background: #000;
+      overflow: auto;
+      position: fixed;
+      left:0;
+      top: 0;
+      right: 0;
+      z-index: 99999;
+      padding: 10px;
+      display: none;
+    }
+    .sale{
+      height: 100vh;
+      background: #000;
+      position: fixed;
+      left:0;
+      top: 0;
+      right: 0;
+      z-index: 99999;
+    }
+.nyan {
+  position: relative;
+  width: 120px;
+  min-width: 120px;
+  height: 90px;
+  background: transparent;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+}
+
+.rainbow {
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  width: 120px;
+  height: 60px;
+  transform: translateY(-50%);
+  overflow: hidden;
+  animation: flagShake .5s ease-in-out infinite;
+
+  -webkit-mask-image: linear-gradient(
+    to right, transparent, black 15%, black 75%, transparent
+  );
+  mask-image: linear-gradient(
+    to right, transparent, black 15%, black 75%, transparent
+  );
+}
+
+.rainbow span {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 10px;
+  animation: flagStripe .5s steps(5) infinite;
+}
+
+.rainbow span:nth-child(1) {
+  top: 0;
+  background: #ff0000;
+}
+.rainbow span:nth-child(2) {
+  top: 10px;
+  background: #ff9900;
+}
+.rainbow span:nth-child(3) {
+  top: 20px;
+  background: #ffff00;
+}
+.rainbow span:nth-child(4) {
+  top: 30px;
+  background: #33dd00;
+}
+.rainbow span:nth-child(5) {
+  top: 40px;
+  background: #0099ff;
+}
+.rainbow span:nth-child(6) {
+  top: 50px;
+  background: #6633ff;
+}
+
+@keyframes flagShake {
+  0%, 100% {
+    transform: translateY(-50%) skewY(0deg) scaleY(1);
+  }
+  25% {
+    transform: translateY(-48%) skewY(6deg) scaleY(.8);
+  }
+  50% {
+    transform: translateY(-53%) skewY(-8deg) scaleY(1.2);
+  }
+  75% {
+    transform: translateY(-48%) skewY(5deg) scaleY(.9);
+  }
+}
+
+@keyframes flagStripe {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50px); }
+}
+
+.cat {
+  position: absolute;
+  right: 0;
+  width: 110px !important;
+  height: auto !important;
+  max-width: none;
+  z-index: 2;
+  image-rendering: pixelated;
+  animation: catFloat .35s steps(2) infinite;
+}
+
+@keyframes catFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+</style>
+    <div style="display: flex; position: fixed; left: 0; right: 0; top: 0;
+    justify-content: space-around; border-bottom: 1px solid #232323;">
+            <div style="font-size: 35px; margin-top:-2px;" onclick="meufan()">
+      <
+    </div>
+    <div>
+
+        <h2 style="font-size: 16px;">Nyan cat store</h2>
+        <p style="font-size: 11px;opacity: 0.6; ">20 nyan characters to play</p>
+      </div>
+      <div style="display: flex; margin-top: 10px;">
+        <p></p>
+        <p style="margin-left: 10px; opacity:;" class="salegrana" id="mostraDinheiro">$ 0,00</p>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div style="text-align: center;">
+    </div>
+<div style="display:flex; justify-content:space-around; align-items:center; gap:10px;">
+  
+  <div class="nyan">
+    <div class="rainbow">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <img src="./img/IMG_0927.gif" class="cat" id="imagemTopo">
+  </div>
+  
+  <div style="text-align:left;">
+    <span style="opacity:0.6;" id="btnPreco" class="btnPreco">Value: $ 00,00</span>
+    <br>
+    <button class="der" id="derbut" type="button" style="background:#000; border-radius: 0;
+     border: 1px solid #00ED4C; color: #00ED4C; width: 150px;">Select</button>
+    <p id="mensagemP" style="display:none;">...</p>
+  </div>
+  
+</div>    <br>
+    <div class="nzjeyxeudn">
+     <p style="border-bottom: 1px solid #232323;">Characters:</p> 
+   <div class="imagemsnxnne">
+     <div class="miniaturas" style="">
+  <div class="MwkenQQ">
+    <img src="./sale/IMG_7326.gif" 
+    width="90"
+         data-texto="compre esse personagem para usar"
+         data-tipo="preco"
+         data-preco="$ 500,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+  </div>
+    <div class="MwkenQQ">
+    <img src="./sale/IMG_7325.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 500,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+      <div class="MwkenQQ">
+    <img src="./sale/IMG_7327.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco= "$ 500,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+        <div class="MwkenQQ">
+    <img src="./sale/IMG_7329.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 500,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+        <div class="MwkenQQ">
+    <img src="./sale/IMG_7331.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 800,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+      <div class="MwkenQQ">
+    <img src="./sale/IMG_7330.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 800,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+        <div class="MwkenQQ">
+    <img src="./sale/IMG_7332.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 800,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+
+      <div class="MwkenQQ">
+    <img src="./sale/IMG_7334.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 800,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+      <div class="MwkenQQ">
+    <img src="./sale/IMG_7333.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 1.000,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+      <div class="MwkenQQ">
+    <img src="./sale/IMG_7337.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 1.000,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+     <div class="MwkenQQ">
+    <img src="./sale/IMG_7343.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 1.000,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+   <div class="MwkenQQ">
+    <img src="./sale/IMG_7342.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 1.000,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+   <div class="MwkenQQ">
+    <img src="./sale/IMG_7340.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 1.500,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+   <div class="MwkenQQ">
+    <img src="./sale/IMG_7341.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 1.500,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+   <div class="MwkenQQ">
+    <img src="./sale/IMG_7339.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 1.500,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+     <div class="MwkenQQ">
+    <img src="./sale/IMG_7335.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 1.500,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+  
+     <div class="MwkenQQ">
+    <img src="./img/IMG_0936.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 2.000,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+     <div class="MwkenQQ">
+    <img src="./img/IMG_0935.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 2.000,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+     <div class="MwkenQQ">
+    <img src="./img/IMG_0938.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 2.000,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+     <div class="MwkenQQ">
+    <img src="./img/IMG_0939.gif" 
+         data-texto="selecione para ser mostrado em alguns lugares"
+         data-tipo="preco"
+         data-preco="$ 2.500,00"
+         onclick="trocarConteudo(this)">
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+
+  </div>
+
+<!--
+      <img class="mig s" src="./img/IMG_0938.gif" data-nome="file-4" data-width="40" onclick="cip(this)" width="50" alt="" /><br> 
+           <img class="mig d" src="./img/IMG_0939.gif" data-nome="file-5" data-width="40" onclick="cip(this)" width="50" alt="" /><br> 
+           <img class="mig a" src="./img/IMG_0935.gif" data-nome="file-1" data-width="40" onclick="cip(this)" width="50" alt="" /> <br>
+           <img class="mig i" src="./img/IMG_0936.gif" data-nome="file-3" data-width="40" width="50" alt="" onclick="cip(this)" /> <br>
+
+
+-->
+
+</div>
+
+   </div>
+    </div>
+    <script>
+    
+//let dinheiroAtual = Number(localStorage.getItem("dinheiroWhmer")) || 0;
+
+// ESSA FUNÇÃO É A QUE TIRA O BUG - ela atualiza tudo na hora
+</script>
+   
+  </div>
+
+  <div class="borjxjdnn">  </div>
+  <div class="todos">
+    <br>
+    <div class="" style="display: flex; padding: 10px; justify-content: space-between;">
+     <div>
+       <img src="./img/perfil/IMG_0971.jpeg" width="60" height="60" class="tabzmendj"/>
+     </div>
+     <div style="display:; text-align: left; width: 100%;">
+     <p style="font-size:14px; display: none;">Wallet : </p>
+    <div class="coisxmsem" style="padding:0px 10px;">
+      <span class="nobre">Anônimo</span>
+      <!--div class="seloV" style="margin-left:1px;"></div-->
+   <br>
+      <p class="nobreid" style="font-size :11px; opacity:0.6;">id: ...</p>
+  <p class="grana" style="margin-left:; font-size: 11px; opacity: 0.6;">$ 0,00</p>
+
+    </div>
+
+ </div>
+
+    </div>
+    <div class="coisxmem" onclick="dizer()">
+      <div>
+      <span>Sale</span>
+      </div>
+      <div>
+        <p>></p>
+      </div>
+    </div>
+    <script>
+      function dizer(){
+        document.querySelector(".sale").style.display = "block"
+      }
+    </script>
+       <div class="coisxmem" onclick="ndjejfuu()">
+         <div>
+       <span>License</span>
+         </div>
+         <div>
+           <p>></p>
+         </div>
+    </div>
+    <script>
+      function ndjejfuu(){
+        document.querySelector(".licenseee").style.display = "block"
+      }
+    </script>
+   <div class="coisxmem" onclick="elxBmrl()">
+     <div>
+      <span>Updates</span>
+     </div>
+     <div>
+       <p>></p>
+     </div>
+    </div>
+          <script>
+        function elxBmrl(){
+          document.querySelector(".atualizacoemsmen").style.display = "block"
+        }
+      </script>
+
+       <div class="coisxmem">
+         <div>
+         <span>Redeem code</span>
+         </div>
+      <div>
+        <p>></p>
+      </div>
+    </div>
+   <div class="coisxmem" onclick="valet()">
+     <div>
+     <p>Payment</p>
+     </div>
+      <div>
+       <p>></p>
+      </div>
+    </div>
+<br>
+<center>
+ <span style="font-size:11px; margin-left:20px; opacity: 0.6;">Version: 1.00.1.0 <br>Copyright © 2026. All rights reserved.</span>
+    <br>
+      <p style="font-size:11px; display:; opacity: 0.6;" id="cidade">Obtaining data...</p>
+
+</center>
+
+  </div>
+  <div class="atualizacoemsmen" id="">
+    <style>
+    .tabzmendj{
+      border: 2px solid #232323;
+      padding: 2px;
+    }
+    .nsnekjjj{
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+      .atualizacoemsmen{
+        position: fixed;
+        top: 0;
+        left:0;
+        right: 0;
+        height: 100vh;
+        background: #000;
+        z-index: 9999999;
+        display:none;
+      }
+    </style>
+    <div class="star">
+      
+    </div>
+    <div style="text-align: center;">
+      <div class="kik" style="" >
+            <div class="nsnekjjj">
+      <div style="font-size: 35px;" onclick="elxmrl()">
+        <
+      </div>
+      <script>
+        function elxmrl(){
+          document.querySelector(".atualizacoemsmen").style.display = "none"
+        }
+      </script>
+      <div style="margin-right:20px; margin-top:5px; color: #3193e4;">
+        <h2>Atualizacoes</h2>
+
+      </div>
+    </div>
+
+         <div class="" id="estrelasF">
+           
+         </div>
+           <br>
+      <br>
+      <img src="./IMG_7336.gif" width="60" class="shapa" id="shala" />
+      </div>
+      <br>
+      <div class="cRne" style="text-align: left; padding: 10px;">
+     <p>Section 01</p>
+     <p style="opacity: 0.6; color: #dff;">
+       "First version, soon we will bring the second version, where there will be more tools and fun."
+       <br>
+       <br>
+      update coming soon
+     </p> 
+     <br>
+     <br>
+     <br>
+     <br>
+     <p style="font-size: 13px;">Version: 1.00.1.0</p>
+      </div>
+    </div>
+    <div class="" style="position: fixed; display: flex; bottom: 10px;
+    justify-content: space-between;
+    left: 0; right: 0;
+    padding: 10px;">
+      <div class="right" onclick="left()">
+        <
+      </div>
+      <div class="right" onclick="right()">
+        >
+      </div>
+    </div>
+  </div>
+  <script>
+  const shapinha = document.querySelector(".shapa");
+  
+    function right(){
+    shapinha.style.transform = "translateX(150%)";
+    }
+    
+    function left(){
+    shapinha.style.transform = "translateX(-150%)";
+    }
+
+  </script>
+  <style>
+  
+   .shapa{
+    position: absolute;
+    top: 30px;
+    margin-top: 0px;
+    transition: 0.5s;
+    z-index: 20;
+  }
+  
+ 
+  .right{
+       font-size: 45px;
+    padding: 10px;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 2px;
+    width: 120px;
+  }
+
+  .kik{
+    position: fixed;
+    height:180px;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background:#31313130;
+    width: 100%;
+    border-bottom: 1px solid #232423;
+    z-index: 100;
+
+  }
+    #estrelasF{
+  position:relative;
+  background:;
+  width: 100%;
+  z-index:;
+  height: 100vh; /* altura da sua área */
+}
+
+.cRne{
+margin-top: 260px;
+color: #3193e4;
+}
+
+.bolinhaF{
+  position: absolute;
+  top: ;
+  background:#fff;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.8;
+  box-shadow: 0 0 6px white,
+0 0 12px white;
+animation: piscarBolinha ease-in-out infinite linear;
+  animation-name: cair;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+/*box-shadow: 0 0 6px white,
+0 0 12px white;
+animation: moverBolinha linear forwards,
+piscarBolinha ease-in-out infinite alternate;
+pointer-events: none;
+will-change: transform,
+opacity;
+}*/
+
+@keyframes moverBolinha {
+  from {
+    transform: translateX(0);
+  }
+  
+  to {
+    transform: translateX(-120vw);
+  }
+}
+
+@keyframes piscarBolinha {
+  from {
+    opacity: 0.2;
+  }
+  
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes cair {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20vh); /* tem que ser maior que a altura da div */
+    opacity: 1;
+  }
+}
+  </style>
+  <script>
+  const areaEstrelasF = document.getElementById("estrelasF");
+
+function criarBolinhFa() {
+  const bolinhaF = document.createElement("span");
+  bolinhaF.className = "bolinhaF";
+  
+  const tamanhoF = Math.random() * 3 + 1;
+  bolinhaF.style.width = tamanhoF + "px";
+  bolinhaF.style.height = tamanhoF + "px";
+  
+  // AGORA É LEFT QUE É ALEATÓRIO (0 a 100% da largura)
+  bolinhaF.style.left = Math.random() * 100 + "%";
+  
+  // Começa sempre em cima
+  bolinhaF.style.top = "-10px";
+  
+  // Duração da queda
+  const duracaoF = Math.random() * 4 + 4; // 4 a 8 segundos
+  bolinhaF.style.animationDuration = duracaoF + "s";
+  
+  areaEstrelasF.appendChild(bolinhaF);
+  
+  setTimeout(() => {
+    bolinhaF.remove();
+  }, duracaoF * 1000);
+}
+
+setInterval(criarBolinhFa, 210);
+setTimeout(() => {
+ //  document.querySelector(".shapa").classList.toggle("ativo")
+  }, 2700);
+  
+
+  </script>
+
   <div class="server">
     <br>
     <div style="display: flex; height: 59px; justify-content: space-around;">
-         <div>
+<div class="home" onclick="homer()" style="margin-top:10px;">
+  <style type="text/css" media="all">
+  .vagasz{
+    padding: 5px;
+    margin-left:5px;
+  }
+  .unoP{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+  }
+  .vagasz{
+    border-bottom: 1px solid #232323;
+  }
+  #busfc{
+    outline: none;
+border-radius: 100px;
+padding: 8px 10px;
+background: #21212199;
+color: #fff;
+width: 100%;
+border: 1px solid #232323;
+  }
+  .Servidores{
+    background: #000;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    display: none;
+    height: 100vh;
+    z-index: 999;
+  }
+  .kik img{
+   
+       transition: 0.5s;
+   
+  }
+  
+  
+
+      .MwkenQQ img {
+      width: 50px;
+      height: 40px;
+      margin: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .coisxmem{
+      border-bottom: 1px solid #232323;
+      padding: 10px;
+      display: flex;
+      background:;
+      width: 100%;
+      justify-content: space-between;
+    }
+.miniaturas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  overflow: visible;
+}
+
+.imagemsnxnne img{
+    margin: 10px;
+  }
+  
+  .nzjeyxeudn{
+    background: #0c0c0c;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #232323;
+  }
+  .sale{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background:#000;
+    display: none;
+    z-index: 9999;
+  }
+  
+    .kli{
+      height:4px;
+      background: #fff;
+      border-radius: 5px;
+      width:40px;
+      margin-top: 8px;
+    }
+    
+    .borjxjdnn{
+      background: #00000070;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      z-index: 80;
+      display:none;
+    }
+    .todos{
+      position: fixed;
+      padding: 10px;
+      top: 0;
+      left: 0;
+      transform:translateX(-600px);
+      transition: 0.5s;
+      background: #000;
+      box-shadow:0px 10px 20px #000;
+      width: 250px;
+      border-top-right-radius: 20px;
+      height: 100vh;
+      z-index: 999;
+    }
+    
+    .todos.ativo{
+      transform: translateX(0px);
+      transition: 0.5s;
+    }
+  </style>
+  <div class="kli" style="margin-left:;"></div>
+  <div class="kli" style="width: 30px;"></div>
+</div>      
+         <div style="text-align: left;">
+           <script>
+             function homer(){
+               document.querySelector(".todos").classList.toggle("ativo");
+            document.querySelector(".borjxjdnn").style.display = "block"
+             }
+             document.querySelector(".borjxjdnn").addEventListener("click", () => {
+             document.querySelector(".borjxjdnn").style.display = "none";
+             document.querySelector(".todos").classList.toggle("ativo");
+             });
+           </script>
     <h2>Whmer Section 01</h2>
     <h2 style="color:#fff; font-size:12px; opacity: 0.6;">Certain things are not official</h2>
    </div>
-         <div style="margin-top: 20px;">
-      <img class="qik" src="./img/IMG_0927.gif" data-nome="file-paf" width="40"/>
+         <div style="margin-top: 20px; width: 80px; height: 70px; background:; overflow: hidden;">
+      <img class="qik" src="./img/IMG_0927.gif" data-nome="file-paf" width="60"/>
     </div>
     </div>
     <br>
@@ -775,37 +2000,20 @@ function alternarToggle(icone) {
            
           </div>
           <div class="select">
-           <img class="mig a" src="./img/IMG_0935.gif" data-nome="file-1" data-width="40" onclick="cip(this)" width="50" alt="" /> <br>
-           <img class="mig e" src="./img/IMG_0927.gif" data-nome="file-2" width="50" data-width="40" onclick="cip(this)" alt="" /> <br>
-           <img class="mig i" src="./img/IMG_0936.gif" data-nome="file-3" data-width="40" width="50" alt="" onclick="cip(this)" /> <br>
-           <img class="mig m" src="./img/IMG_0933.gif" data-nome="file-4" data-width="30" onclick="cip(this)" width="30" alt="" /><br> 
-           <img class="mig s" src="./img/IMG_0938.gif" data-nome="file-4" data-width="40" onclick="cip(this)" width="50" alt="" /><br> 
-           <img class="mig d" src="./img/IMG_0939.gif" data-nome="file-5" data-width="40" onclick="cip(this)" width="50" alt="" /><br> 
-
-           <style>
+                    <style>
              .a{
                position:relative;
                transition:0.1s;
                left:-50px;
              }
              
-           .e{
-          position: relative;
-          transition: 0.2s;
-          left: -55px;
-        }
         
              .i{
           position: relative;
           transition: 0.3s;
           left: -60px;
         }
-        
-                     .m{
-          position: relative;
-          transition: 0.4s;
-          left: -65px;
-        }
+    
      
                   .s{
           position: relative;
@@ -819,10 +2027,7 @@ function alternarToggle(icone) {
           left: -50px;
         }
         
-              .m.ativo{
-               transition:0.8s;
-               left:0;
-             }
+   
 
       .s.ativo{
                transition:0.8s;
@@ -848,10 +2053,7 @@ function alternarToggle(icone) {
                left:0;
              }
        
-             .e.ativo{
-               transition:0.9s;
-               left:0;
-             }
+  
              
              .bottom{
                padding:10px;
@@ -879,17 +2081,14 @@ function alternarToggle(icone) {
                display: none;
                z-index: 999;
              }
-             
-             .select{
-               z-index: 999;
-             }
+   
            </style>
           </div>
     </center>
-    <div class="contros">
+    <div class="contros" style="display:flex; justify-content: center;">
     <div class="start" style="padding:10px; 
-    border:1px solid #232323;
-    margin:2px; width:120px;">
+    border:1px solid #232323; margin-top:;
+    margin:2px; width:120px; margin-right:;">
      <p style="color:#fff; font-size:14px;">Start Game</p>
     </div>
     <div class="chatsU" style="padding:10px; width:120px; margin:2px; border:1px solid #232323">
@@ -898,45 +2097,32 @@ function alternarToggle(icone) {
     </div>
     <script>
       document.querySelector(".chatsU").addEventListener("click", () =>{
-        document.querySelector(".chatsT").style.display = "block";
+        //document.querySelector(".chatsT").style.display = "block";
         document.querySelector(".painel").style.display = "none";
+        document.querySelector(".Servidores").style.display = "block";
        // document.getElementById("audio").pause();
-      } )
+      });
     </script>
     <div class="o" style="margin-top:10px;">
      <div class="p" style="display:none;" >
        <img src="./img/IMG_0928.gif" width="30"/>
      </div> 
-     <div class="p" style="margin-top:; border: 1px solid #232323; padding:10px; width:150px;">
+     <div class="p" style="margin-top:; height: 45px; border: 1px solid #232323; padding:10px; width:150px;">
       <p onclick="server()" class="btnZ" style="font-size:14px;">Click me Please</p>
       <script>
      function server(){
        const sele = document.querySelector(".select");
        const bordB = document.querySelector(".bordB");
-    const a = document.querySelector(".a");
-    const e = document.querySelector(".e");
-    const i = document.querySelector(".i");
-    const m = document.querySelector(".m");
-    const s = document.querySelector(".s");
-    const d = document.querySelector(".d");
+  
     sele.classList.toggle("ativo");
     bordB.style.display = "block"
-   a.classList.toggle("ativo");
-   e.classList.toggle("ativo");
-   i.classList.toggle("ativo");
-   m.classList.toggle("ativo");
-   s.classList.toggle("ativo");
-   d.classList.toggle("ativo");
+
       }
       const bodyg = document.querySelector(".bordB");
       const selse = document.querySelector(".select");
      bodyg.addEventListener("click", () => {
-       document.querySelector(".a").classList.toggle("ativo");
-document.querySelector(".e").classList.toggle("ativo");
-document.querySelector(".i").classList.toggle("ativo");
-document.querySelector(".m").classList.toggle("ativo");
-document.querySelector(".s").classList.toggle("ativo");
-document.querySelector(".d").classList.toggle("ativo");
+       
+
       // alert(.)
      bodyg.style.display = "none"
        if(selse.classList.toggle("ativo")){
@@ -948,17 +2134,20 @@ document.querySelector(".d").classList.toggle("ativo");
      <div class="p" style="display:none;">
        <img src="./img/IMG_0928.gif" width="30"/>
      </div>
-          <div class="pass" onclick="boneca()" style="border:; margin-top:15px; padding:; width:;">
+          <div class="pass" onclick="boneca()" style="border: 1px solid #232323;
+          padding:10px; width:150px; height:45px;">
             <p style="color:#fff; font-size:14px;">Server Creators</p>
           </div>
     </div>
     <center>
-    <div class="batista" style="border:1px solid #232323; z-index: 80; width:150px; padding:10px;">
-     <p onclick="valet()" style="font-size:14px;">Version Pro</p>
+    <div class="batista" style="border:1px solid #232323; z-index: 80; width:150px; padding:10px; display: none;">
+     <p onclick="" style="font-size:14px;">Version Pro</p>
     </div>
         <div class="batista3" style="border:1px solid #232323; z-index: 80; width:150px; padding:10px; display: none;">
      <p onclick="Paid()" style="font-size:14px;">Verifed</p>
     </div>
+    <br>
+  <span style="font-size:12px; margin-left:20px; opacity: 0.6;">Version: 1.00.1.0</span>
 
 <style>
 .bolha-explosiva {
@@ -1056,6 +2245,7 @@ border-radius:3px; position:relative;">
   <p style="font-size:14px;">Version Paid</p>
 </div>
   <br>
+
   <br>
   <br>
   <br>
@@ -1137,7 +2327,9 @@ border-radius:3px; position:relative;">
            border-top-right-radius: 50px;
            transform: translateY(2970px);
            transition:0.5s;
+           display:;
          }
+         
          .mskeurr.ativo{
            transform: translateY(0px);
            transition:0.5s;
@@ -1305,7 +2497,7 @@ btnVerificar.addEventListener("click", () => {
   seloV.appendChild(selo);
   
 batista.style.display = "none";
-document.querySelector(".cash").style.display = "block";
+//document.querySelector(".cash").style.display = "block";
           batista2.style.display = "block";
           document.querySelector(".mskeurr").classList.toggle("ativo")
         document.querySelector(".paid").classList.toggle("ativo")
@@ -1388,14 +2580,13 @@ inputCodigo.addEventListener("input", () => {
            <div class="mzeiudii">
              <img src="https://count.getloli.com/@Trezhywinks?name=Trezhywinks&theme=booru-lisu&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" width="160"/>
        </div>
-       <div class="nasjdj" style="margin-top:-20px;">
+       <div class="nasjdj" style="margin-top:-20px; margin-left: 10px; text-align: left;">
        <h3 style="color:red; font-family:mine;"><span style="color:white;">Section 01</span></h3>
         <p style="font-size:11px; opacity:0.6;">Developed by whmer for you<br>All rights reserved
         <br>&copy; Copyright 2014 - 2026 | Section 01
         </p>
        </div>
       </div>
-      <p style="font-size:11px; display: none;" id="cidade">Obtaining data...</p>
       <span style="font-size:12px; margin-right:20px; opacity: 0.6;">• Help</span>
       <span class="fim" style="font-size:12px; opacity: 0.6;"> • Redeem code</span>
     <span style="font-size:12px; margin-left:20px; opacity: 0.6;"> • Chat</span>
@@ -1407,7 +2598,6 @@ inputCodigo.addEventListener("input", () => {
     <span style="font-size:12px; margin-left:20px; opacity: 0.6;"> • Games</span>
     <br>
     <br>
-    <span style="font-size:12px; margin-left:20px; opacity: 0.6;">Version: 1.00.1.0</span>
 
    </div>
 
@@ -1627,10 +2817,10 @@ window.addEventListener("appinstalled", () => {
     /* personagem */
     #player {
       position: absolute;
-      width: 70px;
-      height: 70px;
+      width: 80px;
+      height: 80px;
       object-fit: contain;
-      left: 70px;
+      left: 150px;
       top: 40%;
       z-index: 5;
       user-select: none;
@@ -1816,7 +3006,6 @@ z-index:100;
   }
   
   .timeB p{
-    opacity: 0.6;
     font-size: 14px;
   }
   
@@ -1862,7 +3051,7 @@ z-index:100;
        </div>
        <div class="rua">
          <div style="display: flex;">
-         <img class="minhaFotoS" src="" alt="" width="50" style="z-index:;" />
+         <img class="minhaFotoS" src="" alt="" height="60" width="60" style="z-index:; border: 3px solid #232323; padding:1px;" />
 <div class="nsmejd" style="margin-left: 20px;">
 <p class="ussrname">...</p>
 <span>Score: <span id="pontuacao">0</span></span>
@@ -1881,9 +3070,9 @@ z-index:100;
 <p style="font-size:;" id="brasil"></p>
 
          </div>
-         <div class="cash" style="display: none">
+         <div class="cash" style="display:">
            <div id="dinheiro" style="display:;">$ 0,00</div>
-           <p style="opacity:1;">Pro version</p>
+           <p style="opacity:1;">Version BETA</p>
          </div>
 
 <script>
@@ -1898,8 +3087,8 @@ z-index:100;
   //  const amsterda = agora.toLocaleTimeString("pt-BR", {
    //   timeZone: "Europe/Amsterdam"
  //   });
-    document.getElementById("mexico").textContent = "• 🇲🇽 México: " + mexico;
-    document.getElementById("brasil").textContent = "• 🇧🇷 Brasil: " + brasil;
+    document.getElementById("mexico").textContent = "• México: " + mexico;
+    document.getElementById("brasil").textContent = "• Brasil: " + brasil;
    // document.getElementById("amsterda").textContent = "🇳🇱Amsterdã: " + amsterda;
   }
   
@@ -1908,13 +3097,72 @@ z-index:100;
 </script>
    
        </div>
-    <img
-      id="player"
-      class="player"
-      src="./img/IMG_0927.gif"
-      alt="Personagem"
-    >
+<div id="whmerRainbow"></div>
 
+<img
+  id="player"
+  class="player"
+  src="./img/IMG_0927.gif"
+  alt="Personagem"
+>
+<style>
+#whmerRainbow {
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+
+  /* Desaparecer na extremidade esquerda */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0,0,0,.2) 12%,
+    rgba(0,0,0,.7) 25%,
+    black 45%,
+    black 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0,0,0,.2) 12%,
+    rgba(0,0,0,.7) 25%,
+    black 45%,
+    black 100%
+  );
+}
+
+.whmer-column {
+  display: flex;
+  height: 40px;
+  flex-direction: column;
+  width: 10px;
+  flex-shrink: 0;
+
+  animation: rainbowWave .65s steps(10, end) infinite alternate;
+  animation-delay: calc(var(--delay) * -1);
+}
+
+.whmer-pixel {
+  width: 10px;
+  height: 10px;
+   /* Bordas pixeladas pretas */
+ 
+}
+
+@keyframes rainbowWave {
+  0% {
+    transform: translateY(-9px);
+  }
+
+  100% {
+    transform: translateY(9px);
+  }
+}
+
+
+</style>
     <div id="inicio">
       <h2>Your world starts here</h2>
       <p style="margin-bottom:20px; opacity: 0.6;">
@@ -1925,7 +3173,7 @@ z-index:100;
        START
       </button>
       <br>
-            <div class="back" onclick="backi()" style="border-bottom:1px solid #fff;">
+            <div class="back" onclick="bomdiaa()" style="border-bottom:1px solid #fff;">
       <p style="text-decoration: dotted; font-size:14px;">Back</p>
       </div>
 
@@ -1942,7 +3190,7 @@ z-index:100;
         PLAY AGAIN
       </button>
       <br>
-      <div class="back" onclick="backi()" style="border-bottom:1px solid #fff;">
+      <div class="back" onclick="bomdiaa()" style="border-bottom:1px solid #fff;">
       <p style="text-decoration: dotted; font-size:14px;">Back to the beginning</p>
       </div>
     </div>
@@ -1966,13 +3214,80 @@ const btnComecar = document.getElementById("btnComecar");
 const btnNovamente = document.getElementById("btnNovamente");
 
 const resultado = document.getElementById("resultado");
+  const rainbow = document.getElementById("whmerRainbow");
 
-//const imagemPadrao = player.src
+(() => {
+//  const player = document.getElementById("player");
+  //const rainbow = document.getElementById("whmerRainbow");
+  
+  if (!player || !rainbow) return;
+  
+  const cores = [
+    "#ff0000",
+    "#ff9000",
+    "#ffff00",
+    "#00ed00",
+    "#00aaff",
+    "#6330ff"
+  ];
+  
+  // Criar colunas de pixels
+  for (let coluna = 0; coluna < 19; coluna++) {
+    const grupo = document.createElement("div");
+    
+    grupo.className = "whmer-column";
+    
+    grupo.style.setProperty(
+      "--delay",
+      (coluna * 0.045) + "s"
+    );
+    
+    cores.forEach(cor => {
+      const pixel = document.createElement("div");
+      
+      pixel.className = "whmer-pixel";
+      pixel.style.background = cor;
+      
+      grupo.appendChild(pixel);
+    });
+    
+    rainbow.appendChild(grupo);
+  }
+  
+  // Seguir o personagem
+  function acompanhar() {
+    const pos = player.getBoundingClientRect();
+    
+    const largura = rainbow.offsetWidth;
+    const altura = rainbow.offsetHeight;
+    
+   // rainbow.style.left = (pos.left - largura + 8) + "px";
+    rainbow.style.left =
+  (pos.left - largura + pos.width * 0.45) + "px";
+    
+    rainbow.style.top =
+      (pos.top + pos.height / 2 - altura / 2) + "px";
+    
+    requestAnimationFrame(acompanhar);
+  }
+  
+  acompanhar();
+})();
+
 
 const dinheiro = document.getElementById("dinheiro");
+const salegrana = document.querySelector(".salegrana");
+const grana = document.querySelector(".grana");
 
 //let dinheiroAtual = 0;
 let dinheiroAtual = Number(localStorage.getItem("dinheiroWhmer")) || 0;
+
+grana.textContent =  `$ ${dinheiroAtual}`;
+dinheiro.textContent = `$ ${dinheiroAtual}`;
+salegrana.textContent = `$ ${dinheiroAtual}`;
+
+//grana.style.color = "#00ED4C";
+salegrana.style.color = "#00ED4C"
 
 let jogadorY = 0;
 
@@ -1983,6 +3298,7 @@ let gravidade = 0.45;
 let forcaVoo = -8;
 
 let obstaculos = [];
+//let obs = [];
 
 let arvore = [];
 
@@ -2005,10 +3321,206 @@ let fileplayer = "./img/IMG_0927.gif";
 ========================= */
 
 function atualizarDinheiro() {
-  dinheiro.textContent = "$ " + dinheiroAtual.toFixed(2).replace(".", ",");
-  
+  dinheiro.textContent = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+salegrana.textContent = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+grana.textContent = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+  //dinheiro.textContent = "$ " + dinheiroAtual.toFixed(2).replace(".", ",");
+//  grana.textContent = "$ " + dinheiroAtual.toFixed(2).replace(".", ",");
+  //salegrana.textContent = "$ " + dinheiroAtual.toFixed(2).replace(".", ",");
+
   localStorage.setItem("dinheiroWhmer", dinheiroAtual.toFixed(2));
 }
+
+//let dinheiroAtual = Number(localStorage.getItem("dinheiroWhmer")) || 0;
+
+// Pega as compras salvas ou cria uma lista vazia
+//let dinheiroAtual = Number(localStorage.getItem("dinheiroWhmer")) || 0;
+// APAGA SÓ UMA VEZ PRA LIMPAR O BUG ANTIGO - depois pode apagar essa linha
+// localStorage.removeItem("comprasWhmer");
+
+//let dinheiroAtual = Number(localStorage.getItem("dinheiroWhmer")) || 0;
+
+// Pega as compras salvas ou cria uma lista vazia
+
+let compras = JSON.parse(localStorage.getItem("comprasWhmer")) || [];
+let idSelecionado = "";
+
+function salvarCompras() {
+  localStorage.setItem("comprasWhmer", JSON.stringify(compras));
+}
+
+
+// ATUALIZAR DINHEIRO
+function atualizarTela() {
+  localStorage.setItem("dinheiroWhmer", dinheiroAtual);
+
+  let mostra = document.getElementById("mostraDinheiro");
+
+  if (mostra) {
+    mostra.innerText = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
+
+  dinheiro.innerText = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+
+  grana.innerText = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+
+atualizarTela();
+
+
+// SELECIONAR PERSONAGEM
+function trocarConteudo(img) {
+  document.getElementById("imagemTopo").src = img.src;
+
+  idSelecionado = img.dataset.id || img.src;
+
+  document.getElementById("btnPreco").innerText =
+    "Value: " + img.dataset.preco;
+
+  if (compras.some(c => c.id === idSelecionado)) {
+    document.querySelector(".der").textContent = "Comprado!";
+    document.getElementById("btnPreco").innerText = "Comprado!";
+  } else {
+    document.querySelector(".der").textContent = "Comprar";
+  }
+}
+
+
+// COMPRAR
+document.querySelector(".der").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (!idSelecionado) {
+    alert("Escolha um personagem primeiro!");
+    return;
+  }
+
+  if (compras.some(c => c.id === idSelecionado)) {
+    alert("Você já comprou esse personagem!");
+    return;
+  }
+
+  let spanTexto = document.getElementById("btnPreco").innerText;
+
+  let valorTexto = spanTexto
+    .replace("Value:", "")
+    .replace("$", "")
+    .trim();
+
+  let preco = Number(
+    valorTexto.replace(/\./g, "").replace(",", ".")
+  );
+
+  if (!Number.isFinite(preco) || preco <= 0) {
+    alert("Escolha um personagem primeiro!");
+    return;
+  }
+
+  if (dinheiroAtual >= preco) {
+
+    dinheiroAtual -= preco;
+    atualizarTela();
+
+    // SALVAR COMPRA COM ID E IMAGEM
+    compras.push({
+      id: idSelecionado,
+      imagem: document.getElementById("imagemTopo").src
+    });
+
+    salvarCompras();
+
+    // ATUALIZAR DIV DE COMPRADOS
+    mostrarCompras();
+
+    // ATUALIZAR BOTÕES
+    document.getElementById("btnPreco").innerText = "Comprado!";
+    document.querySelector(".der").textContent = "Comprado!";
+
+    marcarComprados();
+
+  } else {
+    alert("Sem dinheiro!");
+  }
+});
+
+
+// MARCAR PERSONAGENS COMPRADOS
+function marcarComprados() {
+  document.querySelectorAll(".MwkenQQ img").forEach(img => {
+
+    let id = img.dataset.id || img.src;
+
+    if (compras.some(c => c.id === id)) {
+
+      img.style.opacity = "0.7";
+
+      let p = img.parentElement.querySelector("p");
+
+      if (p) {
+        p.innerText = "COMPRADO ✓";
+      }
+    }
+  });
+}
+
+
+// MOSTRAR IMAGENS COMPRADAS
+function mostrarCompras() {
+  const seldne = document.querySelector(".select");
+
+  if (!seldne) return;
+
+  seldne.innerHTML =
+  '<img class="mig" src="./img/IMG_0927.gif" data-nome="file-2" width="50" data-width="60" onclick="cip(this)" alt="" /> <br><img class="mig" src="./img/IMG_0933.gif" data-nome="file-4" data-width="30" onclick="cip(this)" width="30" alt="" /><br> ';
+
+  compras.forEach(compra => {
+
+   // const novaImg = document.createElement("div");
+
+    const img = document.createElement("img");
+
+    img.className = "mig";
+    img.src = compra.imagem;
+    img.dataset.id = compra.id;
+    img.dataset.nome = "file-4";
+    img.dataset.width = "60";
+    img.width = 50;
+    img.alt = "";
+
+    img.onclick = function() {
+      cip(this);
+    };
+
+   // novaImg.appendChild(img);
+    seldne.appendChild(img);
+
+  });
+}
+
+
+// RESTAURAR AO ABRIR A PÁGINA
+mostrarCompras();
+marcarComprados();
+
+
 function iniciar() {
 
   console.log("JOGO INICIANDO");
@@ -2021,6 +3533,8 @@ function iniciar() {
     .forEach(el => el.remove());
 
   obstaculos = [];
+  
+//  obs = [];
 
   jogadorY = game.clientHeight * 0.4;
 
@@ -2303,7 +3817,7 @@ if (
   
   pontuacao.textContent = pontuacaoAtual;
   
-  dinheiroAtual += 0.01;
+  dinheiroAtual += 5000.01;
   
   atualizarDinheiro();
 }
@@ -2427,13 +3941,7 @@ function cip(el){
             // const minhaFoto = document.querySelector(".minhaFoto");
              
               
-              document.querySelector(".a").classList.toggle("ativo");
-    document.querySelector(".e").classList.toggle("ativo");
-    document.querySelector(".i").classList.toggle("ativo");
-    document.querySelector(".m").classList.toggle("ativo");
-    document.querySelector(".s").classList.toggle("ativo");
-    document.querySelector(".d").classList.toggle("ativo");
-
+             
               qik.src = el.src;
               player1.src = el.src;
            //   qig.src = el.src;
@@ -2445,13 +3953,35 @@ function cip(el){
 
 document.querySelector(".start").addEventListener("click", () => {
  document.querySelector(".painel").style.display = "none";
- document.querySelector(".joguin").style.display = "block";
+// document.querySelector(".joguin").style.display = "block";
+document.querySelector(".initgames").style.display = "block";
 } );
+
+function bomdia(){
+  document.querySelector(".painel").style.display = "block";
+//document.querySelector(".joguin").style.display = "nne";
+document.querySelector(".initgames").style.display = "none";
+}
+
+function bomdiaa(){
+  document.querySelector(".painel").style.display = "none";
+document.querySelector(".joguin").style.display = "none";
+document.querySelector(".initgames").style.display = "block";
+}
+
+
 
 //document.querySelector(".back").addEventListener("click", () => {
   function backi(){
  document.querySelector(".painel").style.display = "block";
  document.querySelector(".joguin").style.display = "none";
+}
+
+function quebrado(){
+  //document.querySelector(".painel").style.display = "block";
+  document.querySelector(".initgames").style.display = "none";
+ document.querySelector(".joguin").style.display = "block";
+
 }
 //);
 
@@ -2955,13 +4485,27 @@ border:none;
   border-top-right-radius: 50px;
   height:450px;
   overflow: scroll;
-  z-index: 10000;
+  z-index:9999999;
 }
 
 .mudar.ativo{
   transform: translateY(0);
-  transition: 0.5a;
+  transition: 0.5s;
 }
+
+.ndjejdyy{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: #00000078;
+  height: 100vh;
+  z-index: 999999;
+  display: none;
+}
+
+.ndjejdyy.ativo{
+  display: block;
+}
+
 
 .eraeu{
   background: transparent;
@@ -2977,6 +4521,8 @@ border:none;
 
 .oud{
   border-radius:100px;
+  border: 3px solid #00ED4C;
+  padding: 3px;
 }
 
 .cachorra{
@@ -3020,23 +4566,8 @@ transition: 0.2s;
   <!-- TOPO -->
 
   <header class="topo">
-    <div class="mudar">
-      <br>
-      <br>
-      <img src="" class="oud" onclick="dert()" height="120" width="120"/>
-      <br>
-      <input class="eraeu" type="text" id="inputNome"
-        inputmode="text"
-  enterkeyhint="send"
-      maxlength="20"/>
-      <br>
-      <p class="id" style="font-size:13px; opacity: 0.6;">id: ...</p>
-    </div>
-<div id="seletorFotos" class="seletorFotos">
-  <input type="file" id="faiva" accept="image/*,.gif" hidden/>
-  <label for="faiva">
-   <div class="cachorra"></div>
-  </label>
+<div id="seletorFotos" class="seletorFotos" style="display: none;">
+
 </div>
 
 <div class="perfil" style="display: flex; background:; justify-content: space-between; width:100%; overflow:;">
@@ -3044,17 +4575,30 @@ transition: 0.2s;
   <script>
     function o(){
       document.querySelector(".chatsT").style.display = "none";
-      document.querySelector(".painel").style.display = "block";
+      document.querySelector(".Servidores").style.display = "inline";
+     //document.querySelector(".painel").style.display = "block";
      
     }
     
     function perfi(){
+      document.querySelector(".mudar").classList.toggle("ativo");
+      document.querySelector(".ndjejdyy").classList.toggle("ativo");
+    }
+    
+function perfiD(){
+  document.querySelector(".ndjejdyy").classList.toggle("ativo");
       document.querySelector(".mudar").classList.toggle("ativo")
     }
     
+    document.querySelector(".ndjejdyy").addEventListener("click", () => {
+      document.querySelector(".mudar").classList.toggle("ativo");
+      document.querySelector(".ndjejdyy").classList.toggle("ativo");
+    });
+
+    
    
   </script>
-<p style="font-size:40px;"><</p>  
+<p style="font-size:35px;"><</p>  
 </div>
   <script>
     function dert(){
@@ -3245,7 +4789,7 @@ wsd.onmessage = (event) => {
            <div>
              <h4>WELCOME TO SERVER GLOBAL</h4>
            </div>
-           <div>
+           <div style="display:none;">
              <img src="./toq/IMG_7308.png" width="15"/>
            </div>
        
@@ -3256,14 +4800,14 @@ wsd.onmessage = (event) => {
 </p>
 <br>
 <div class="sharedD" style="display:flex; justify-content: space-around; width:210px;
-border:1px solid #9331e4; transition: 0.3s ease;
-padding: 6px; border-radius: 5px;
-background: linear-gradient(135deg, #9331e4 60%, #3C0966);">
+border:1px solid #232323; transition: 0.3s ease;
+padding: 6px; border-radius:;
+background: transparent;">
  <div>
-   <ion-icon style="font-size:20px; color:#000;" name="arrow-redo"></ion-icon>
+   <ion-icon style="font-size:20px; color:#fff;" name="arrow-redo"></ion-icon>
  </div> 
  <div>
-   <p style="color:#000;">Share server</p>
+   <p style="color:#fff;">Share server</p>
  </div>
 </div>
 <br>
@@ -3523,10 +5067,13 @@ const imagens = [
 ];
 
 const STORAGE_KEY = 'imagemPadrao';
+//const migmig = 'faiva'
+//let migf = localStorage.getItem(hmig);
+   //const hmig = localStorage.setItem(arquivo);
 
 function obterImagemPadrao() {
-  
   let imagem = localStorage.getItem(STORAGE_KEY);
+
   
   if (!imagem) {
     
@@ -3540,7 +5087,8 @@ function obterImagemPadrao() {
   
 }
 
-let FOTO_PADRAO = obterImagemPadrao();
+let FOTO_PADRAO = "./img/perfil/IMG_0971.jpeg"
+//obterImagemPadrao();
 
 const fotoPerfil = document.querySelector('.minhaFoto');
 const casar = document.querySelector(".oud");
@@ -3642,7 +5190,10 @@ const minhaFoto =
   document.getElementById("minhaFoto");
   
   const id = document.querySelector(".id")
-  
+
+  const nobre = document.querySelector(".nobre")
+  const nobreid = document.querySelector(".nobreid")
+
 
 const meuNome =
   document.getElementById("meuNome");
@@ -3667,8 +5218,7 @@ let meuId = null;
 
 let idVerificado = null;
 
-let meuNomeSalvo =
-  localStorage.getItem("whmer_nome") || "";
+let meuNomeSalvo = localStorage.getItem("whmer_nome") || "";
   
 
 /*
@@ -3689,6 +5239,7 @@ if (meuNomeSalvo) {
     eraeu.value = meuNomeSalvo;
   inputNome.value =  meuNomeSalvo;
   inputNomeI.value =  meuNomeSalvo;
+  nobre.textContent = meuNomeSalvo;
 
   meuNome.textContent = meuNomeSalvo;
     ussrname.textContent = meuNomeSalvo;
@@ -3759,7 +5310,8 @@ function conectar() {
       const data =
         JSON.parse(evento.data);
         //alert(data.usuario.id)
-        id.textContent = `id : ${data.usuario.id}`
+        id.textContent =`id : ${data.usuario.id}`;
+        nobreid.textContent = `id : ${data.usuario.id}`;
       /*
       =========================
       ID
@@ -3845,8 +5397,9 @@ if (data.tipo === "usuarioVerificado" && data.id) {
 
         if (data.usuario) {
 
-          meuNome.textContent =
-            data.usuario.nome;
+          meuNome.textContent = data.usuario.nome;
+            nobre.textContent = data.usuario.nome;
+            ussrname.textContent = data.usuario.nome;
         }
 
         return;
@@ -4029,8 +5582,10 @@ function entrar() {
   );
 
 
-  meuNome.textContent =
-    meuNomeSalvo;
+  meuNome.textContent = meuNomeSalvo;
+ nobre.textContent = meuNomeSalvo;
+ ussrname.textContent = meuNomeSalvo;
+
 
 
   minhaFoto.src = FOTO_PADRAO;
@@ -4732,29 +6287,62 @@ window.addEventListener("load", () => {
 });
 </script>
   <script>
+  
     const inoutf = document.getElementById("faiva");
-
 const cachorra = document.querySelector(".cachorra");
 
 const dimheiro = document.querySelector(".minhaFoto");
 const ffgags = document.querySelector(".oud");
+const tabzmendj = document.querySelector(".tabzmendj");
+const minhaFotoSD = document.querySelector(".minhaFotoS");
+const setvidoresChat = document.getElementById("setvidoresChat");
+const gamesinits = document.getElementById("gamesinits");
 
-const figa = document.querySelector(".oud");
-const imf = document.createElement("div");
-imf.className = "ouro"
-imf.innerHTML = '<ion-icon style="font-size:40px; color:#3193e4;" name="add-circle-outline"></ion-icon>'
+//const figa = document.querySelector(".oud");
+//const imf = document.createElement("div");
+//imf.className = "ouro"
+//imf.innerHTML = '<ion-icon style="font-size:40px; color:#3193e4;" name="add-circle-outline"></ion-icon>'
 
-        cachorra.appendChild(imf);
-        
+      //  cachorra.appendChild(imf);
+      
+      const fotoSalva = localStorage.getItem("minhaFotoSalva");
+
+if (fotoSalva) {
+  dimheiro.src = fotoSalva;
+  ffgags.src = fotoSalva;
+  tabzmendj.src = fotoSalva;
+  minhaFotoSD.src = fotoSalva;
+  setvidoresChat.src = fotoSalva;
+  gamesinits.src = fotoSalva
+}
+
 inoutf.addEventListener("change", () => {
-      const arquivo = inoutf.files[0];
-      dimheiro.src = URL.createObjectURL(arquivo);
-     ffgags.src = URL.createObjectURL(arquivo);
-      if (arquivo) {
-       // imf.src = URL.createObjectURL(arquivo);
-        document.querySelector(".seletorFotos").classList.toggle("ativo");
-      }
-})
+  const arquivo = inoutf.files[0];
+  if (!arquivo) return;
+  
+  const reader = new FileReader();
+  
+  reader.onload = () => {
+    const base64 = reader.result; // aqui já é a imagem em texto
+    
+    // 1. Salva
+    localStorage.setItem("minhaFotoSalva", base64);
+    
+    // 2. Usa na hora
+    dimheiro.src = base64;
+    ffgags.src = base64;
+    tabzmendj.src = base64;
+    gamesinits.src = base64;
+    //const setvidoresChat = document.getElementById("setvidoresChat");
+
+    minhaFotoSD.src = base64;
+    setvidoresChat.src = base64;
+    
+   // document.querySelector(".seletorFotos").classList.toggle("ativo");
+  };
+  
+  reader.readAsDataURL(arquivo); // converte o arquivo pra base64
+});
 
 </script>
 <script>
@@ -5029,6 +6617,95 @@ inoutf.addEventListener("change", () => {
   // Explosões automáticas contínuas
   setInterval(criarBolha, 70);
 })();
+</script>
+  <script>
+let imagemAtual = null;
+
+function trocarConteudoF(elemento) {
+    imagemAtual = elemento;
+
+  //document.getElementById("imagemTopo").src = elemento.src;
+
+//    document.getElementById("descricao").textContent = elemento.dataset.texto;
+    document.getElementById("mensagemP").textContent = "";
+
+    //document.getElementById("ShinG").style.display = "none";
+   // document.getElementById("btnPreco").style.display = "none";
+
+    if (elemento.dataset.tipo === "preco") {
+      //document.getElementById("mensagemP").textContent = "💰 Preço: " + imagemAtual.dataset.preco;
+       document.querySelector("btnPreco").textContent = `Value: ` + imagemAtual.dataset.preco
+        //imagemAtual.dataset.preco;
+       // mostrarPreco();
+    } else if (elemento.dataset.tipo === "selecionar") {
+        //document.getElementById("ShinG").style.display = "inline-block";
+    }
+}
+
+function selecionar() {
+    document.getElementById("mensagemP").textContent =
+        "✅ Item selecionado com sucesso!";
+}
+
+
+//function trocarConteudo(elemento) {
+    // Troca imagem
+   // document.getElementById("imagemTopo").src = elemento.src;
+    //document.getElementById("ShinG").textContent = elemento.dataset.texto;
+
+    // Troca texto
+   // document.getElementById("descricao").textContent = elemento.dataset.texto;
+//}
+
+function meufan(){
+  document.querySelector(".sale").style.display = "none";
+}
+</script>
+<script>
+  let mensagensNaoLidas = 0;
+
+const contador = document.getElementById("contadorMensagens");
+const conversas = document.getElementById("chat");
+
+function atualizarContador() {
+contador.textContent = mensagensNaoLidas;
+contador.style.display = mensagensNaoLidas > 0 ? "flex" : "none";
+}
+
+// Detecta novas mensagens
+const observer = new MutationObserver((mutations) => {
+mutations.forEach((mutation) => {
+mutation.addedNodes.forEach((node) => {
+if (node.nodeType !== 1) return;
+
+if (node.matches(".avatar-mensagem")) {
+mensagensNaoLidas++;
+}
+
+mensagensNaoLidas += node.querySelectorAll?.(".avatar-mensagem").length || 0;
+});
+});
+
+atualizarContador();
+});
+
+observer.observe(conversas, {
+childList: true,
+subtree: true
+});
+
+// Ao abrir a conversa
+function abrirConversa() {
+mensagensNaoLidas = 0;
+document.querySelector(".chatsT").style.display = "block";
+       document.querySelector(".painel").style.display = "none";
+        document.querySelector(".Servidores").style.display = "none";
+        document.querySelector(".contador-mensagens").textContent = "0"
+        document.querySelector(".contador-mensagens").style.display = "none"
+
+atualizarContador();
+}
+
 </script>
 <style>
   .ouro{
