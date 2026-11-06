@@ -298,7 +298,7 @@
     </div>
     <div style="padding: 10px;">
     <h2 style="font-size:35px;">Games</h2>
-    <p style="opacity: 0.6; font-size: 12px;">Jogue e divirta-se o maximo!</p>
+    <p style="opacity: 0.6; font-size: 12px;">Play and have fun to the fullest with our games.</p>
     </div>
 
   <br>
@@ -308,10 +308,10 @@
       <img src="./IMG_7375.png" width="90%" height="auto" style="border: 1px solid #232323;"/>
     </div>
     <div style="margin-top: -30px;">
-      <button class="ser" onclick="quebrado()" >Jogar</button>
+      <button class="ser" onclick="quebrado()" >Play</button>
     </div>
     <br>
-    <p style="opacity: 0.6; font-size: 11px;">Obtenha mais pontos, vooe mais alto, Divirta-se nesse mundo estrelado.</p>
+    <p style="opacity: 0.6; font-size: 11px;">Get more points, climb higher, have fun in this starry world.</p>
 <br>
   </div>
   </div>
@@ -353,9 +353,9 @@
     <br>
          <div style="margin-left:; padding: 10px;">
         <h2 style="font-size:30px;">Chats</h2>
-        <p style="opacity: 0.6; font-size: 12px;">converse com outros usuarios.</p>
+        <p style="opacity: 0.6; font-size: 12px;">Chat with other users.</p>
      </div>
-    <input type="search" placeholder="Buscar"
+    <input type="search" placeholder="Search"
     id="busfc" oninput="buscarUsuario(this.value)"/>
     <br>
     <div style="padding: 10px; display: none;" class="mzkenfm">
@@ -413,7 +413,7 @@
 
         </div>
         </div>
-        <p style="opacity: 0.6; font-size: 12px;">Uma nova historia, clique e veja nosso mundo.</p>
+        <p style="opacity: 0.6; font-size: 12px;">A new story, click and see our world.</p>
       </div>
     </div>
         <div class="unoP" style="opacity: 0.6;" data-nome="section 02">
@@ -448,7 +448,7 @@
 
         </div>
         </div>
-        <p style="opacity: 0.6; font-size: 12px;">Uma nova historia, clique e veja nosso mundo.</p>
+        <p style="opacity: 0.6; font-size: 12px;">A new story, click and see our world.</p>
       </div>
     </div>
 
@@ -476,7 +476,7 @@
           <ion-icon style="opacity: 0.6; font-size: 12px;" name="sparkles-outline"></ion-icon>
         </div>
         <div style="margin-left: 5px; margin-top: 3px;">
-        <p style="font-size: 12px; opacity: 0.6;">Em breve outros servidores para voce.</p>
+        <p style="font-size: 12px; opacity: 0.6;">Soon other servers for you.</p>
         </div>
       </div>
     </center>
@@ -3396,10 +3396,10 @@ function trocarConteudo(img) {
     "Value: " + img.dataset.preco;
 
   if (compras.some(c => c.id === idSelecionado)) {
-    document.querySelector(".der").textContent = "Comprado!";
-    document.getElementById("btnPreco").innerText = "Comprado!";
+    document.querySelector(".der").textContent = "Purchased!";
+    document.getElementById("btnPreco").innerText = "Purchased!";
   } else {
-    document.querySelector(".der").textContent = "Comprar";
+    document.querySelector(".der").textContent = "To buy";
   }
 }
 
@@ -3409,7 +3409,7 @@ document.querySelector(".der").addEventListener("click", (e) => {
   e.preventDefault();
 
   if (!idSelecionado) {
-    alert("Escolha um personagem primeiro!");
+    alert("Choose an image first!");
     return;
   }
 
@@ -3430,7 +3430,7 @@ document.querySelector(".der").addEventListener("click", (e) => {
   );
 
   if (!Number.isFinite(preco) || preco <= 0) {
-    alert("Escolha um personagem primeiro!");
+    alert("Choose an image first!");
     return;
   }
 
@@ -3451,13 +3451,13 @@ document.querySelector(".der").addEventListener("click", (e) => {
     mostrarCompras();
 
     // ATUALIZAR BOTÕES
-    document.getElementById("btnPreco").innerText = "Comprado!";
-    document.querySelector(".der").textContent = "Comprado!";
+    document.getElementById("btnPreco").innerText = "Purchased!";
+    document.querySelector(".der").textContent = "Purchased!";
 
     marcarComprados();
 
   } else {
-    alert("Sem dinheiro!");
+    alert("No money!");
   }
 });
 
@@ -3475,7 +3475,7 @@ function marcarComprados() {
       let p = img.parentElement.querySelector("p");
 
       if (p) {
-        p.innerText = "COMPRADO ✓";
+        p.innerText = "Purchased✓";
       }
     }
   });
