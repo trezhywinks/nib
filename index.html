@@ -334,7 +334,7 @@
   top: 30%;
   transform: translateY(-50%);
   object-fit: contain;
-  z-index: 10;
+  z-index:99999;
   pointer-events: none;
   transition: top .13s ease-out;
   will-change: top;
@@ -344,7 +344,7 @@
 #navGameObstacles {
   position: absolute;
   inset: 0;
-  z-index: 5;
+  z-index: 999;
   pointer-events: none;
 }
 
@@ -358,6 +358,7 @@
   border: 1px solid #000;
   overflow: visible;
   will-change: transform;
+  z-index: 999;
 }
 
 /* Pontas das pedras, mesma cor */
@@ -407,7 +408,7 @@
 .navGameOverlay {
   position: absolute;
   inset: 0;
-  z-index: 30;
+  z-index: 9999999;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -599,7 +600,7 @@
     <div id="navGameScore" style="z-index:999999; position: fixed; top:0;">0</div>
 <div id="navGame">
 <div id="navGameStars"></div>
-
+  <img class="ping" src="./img/IMG_0933.gif" width="70" style=""/>
   <div class="whmerRainbow"></div>
   <img
     id="navGamePlayer"
@@ -912,7 +913,7 @@ const VELOCIDADE_MAXIMA = 3000;
       animationFrame = null;
     }
 
-    resultElement.textContent = "Pontuação: " + pontuacao;
+    resultElement.textContent = "Score: " + pontuacao;
     overScreen.style.display = "flex";
   }
 
@@ -2041,6 +2042,33 @@ By accessing or using this website, you agree to these terms.
   50% { transform: translateY(-2px); }
 }
 
+
+.imagemsnxnne{
+margin-top:10px;
+  overflow-y: scroll;
+  height:100vh;
+}
+
+.msmeuyu{
+  position: absolute;
+  margin-top:-20px;
+  background:linear-gradient(#000, transparent);
+  height:6vh;
+  width:100%;
+  z-index:999999;
+}
+
+.msmeuyuo{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:linear-gradient(transparent, #000);
+  height:13vh;
+  width:100%;
+  z-index:999999;
+
+}
 </style>
     <div style="display: flex; position: fixed; left: 0; right: 0; top: 0;
     justify-content: space-around; border-bottom: 1px solid #232323;">
@@ -2089,15 +2117,20 @@ By accessing or using this website, you agree to these terms.
     <div class="nzjeyxeudn">
      <p style="border-bottom: 1px solid #232323;">Characters:</p> 
    <div class="imagemsnxnne">
+     <div class="msmeuyu">     </div>
      <div class="miniaturas" style="">
   <div class="MwkenQQ">
     <img src="./sale/IMG_7326.gif" 
-    width="90"
          data-texto="compre esse personagem para usar"
          data-tipo="preco"
          data-preco="$ 500,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+         <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 01 ) <br>Value: $ 500,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
+         <br>
+         <br>
+         <br>
   </div>
     <div class="MwkenQQ">
     <img src="./sale/IMG_7325.gif" 
@@ -2105,16 +2138,20 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 500,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+            <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 02 ) <br>Value: $ 500,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
       <div class="MwkenQQ">
-    <img src="./sale/IMG_7327.gif" 
+    <img src="./img/IMG_0939.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
          data-preco= "$ 500,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+             <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 03 ) <br>Value: $ 500,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
         <div class="MwkenQQ">
@@ -2123,7 +2160,9 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 500,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+              <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 04 ) <br>Value: $ 500,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
         <div class="MwkenQQ">
@@ -2132,16 +2171,19 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 800,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
-
-  </div>
+             <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 05 ) <br>Value: $ 800,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
+</div>
       <div class="MwkenQQ">
     <img src="./sale/IMG_7330.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
          data-preco="$ 800,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+      <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 06 ) <br>Value: $ 800,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
         <div class="MwkenQQ">
@@ -2150,7 +2192,9 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 800,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+         <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 07 ) <br>Value: $ 800,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
 
@@ -2160,7 +2204,9 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 800,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+         <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 08 ) <br>Value: $ 800,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
       <div class="MwkenQQ">
@@ -2169,7 +2215,9 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 1.000,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+        <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 09 ) <br>Value: $ 1.000,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
       <div class="MwkenQQ">
@@ -2178,7 +2226,9 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 1.000,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+         <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 10 ) <br>Value: $ 1.000,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
      <div class="MwkenQQ">
@@ -2187,7 +2237,9 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 1.000,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+          <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 11 ) <br>Value: $ 1.000,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
    <div class="MwkenQQ">
@@ -2196,7 +2248,9 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 1.000,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+           <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 12 ) <br>Value: $ 1.000,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
    <div class="MwkenQQ">
@@ -2205,8 +2259,9 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 1.500,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
-
+          <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 13 ) <br>Value: $ 1.500,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
   </div>
    <div class="MwkenQQ">
     <img src="./sale/IMG_7341.gif" 
@@ -2214,7 +2269,9 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 1.500,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+            <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 14 ) <br>Value: $ 1.500,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
    <div class="MwkenQQ">
@@ -2223,7 +2280,9 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 1.500,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+           <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 15 ) <br>Value: $ 1.500,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
      <div class="MwkenQQ">
@@ -2232,7 +2291,9 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 1.500,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+           <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 16 ) <br>Value: $ 1.500,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
   
@@ -2242,7 +2303,9 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 2.000,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+            <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 17 ) <br>Value: $ 2.000,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
      <div class="MwkenQQ">
@@ -2251,7 +2314,9 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 2.000,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+             <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 18 ) <br>Value: $ 2.000,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
      <div class="MwkenQQ">
@@ -2260,18 +2325,22 @@ By accessing or using this website, you agree to these terms.
          data-tipo="preco"
          data-preco="$ 2.000,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
+            <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 19 ) <br>Value: $ 2.000,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
      <div class="MwkenQQ">
-    <img src="./img/IMG_0939.gif" 
+    <img src="./sale/IMG_7327.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
          data-preco="$ 2.500,00"
          onclick="trocarConteudo(this)">
-         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:-20px;"></p>
-
+         <br>
+        <span style="font-size:12px; opacity:0.6;">Player ( 20 ) <br>Value: $ 2.500,00</span>
+         <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
   </div>
+
 
 <!--
       <img class="mig s" src="./img/IMG_0938.gif" data-nome="file-4" data-width="40" onclick="cip(this)" width="50" alt="" /><br> 
@@ -2283,7 +2352,7 @@ By accessing or using this website, you agree to these terms.
 -->
 
 </div>
-
+     <div class="msmeuyuo">     </div>
    </div>
     </div>
     <script>
@@ -2292,7 +2361,6 @@ By accessing or using this website, you agree to these terms.
 
 // ESSA FUNÇÃO É A QUE TIRA O BUG - ela atualiza tudo na hora
 </script>
-   
   </div>
 
   <div class="borjxjdnn">  </div>
@@ -2658,14 +2726,7 @@ border: 1px solid #232323;
   
   
 
-      .MwkenQQ img {
-      width: 50px;
-      height: 40px;
-      margin: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    
+
     .coisxmem{
       border-bottom: 1px solid #232323;
       padding: 10px;
@@ -2674,6 +2735,27 @@ border: 1px solid #232323;
       width: 100%;
       justify-content: space-between;
     }
+    
+    .MwkenQQ{
+  width:170px;
+height:220px;
+padding:10px;
+overflow-x: hidden;
+text-align:center;
+border-radius:5px;
+border:1px solid #232323;
+}
+
+    
+      .MwkenQQ img {
+      width: 80px;
+      height:80px;
+      margin: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+ 
+    
 .miniaturas {
   display: flex;
   justify-content: center;
@@ -2682,18 +2764,20 @@ border: 1px solid #232323;
   flex-wrap: wrap;
   gap: 10px;
   width: 100%;
-  overflow: visible;
+  /*overflow: visible;*/
+
 }
+
 
 .imagemsnxnne img{
     margin: 10px;
   }
   
-  .nzjeyxeudn{
-    background: #0c0c0c;
-    padding: 10px;
-    border-radius: 20px;
-    border: 1px solid #232323;
+  .imagemsnxnne{
+height:480px;
+padding-top:10px;
+overflow-x: hidden;
+padding-bottom:120px;
   }
   .sale{
     position: fixed;
@@ -3597,14 +3681,45 @@ max-height: 850px;
       object-fit: contain;
       left: 150px;
       top: 40%;
-      z-index: 5;
       user-select: none;
+      z-index: 150;
     }
     
     #navGamePlayer{
    width:80px;
    height:80px;
    left: 150px;
+   z-index: 150;
+    }
+    
+    .ping{
+      position: absolute;
+width: 20px;
+height: auto;
+top: 20%;
+left: 10px;
+animation: -hav 15s infinite linear;
+display:;
+z-index:100;
+         }
+    .ping.ativo{
+      position: absolute;
+      width: 20px;
+height: auto;
+top: 20%;
+left: 10px;
+animation: -hav 15s infinite linear;
+display:inline;
+      z-index:100;
+    }
+    
+    @keyframes -hav{
+      from{
+        transform: translateX(790px);
+      }
+      to{
+        transform: translateX(-790px);
+      }
     }
     
     /* obstáculos */
@@ -3614,7 +3729,7 @@ max-height: 850px;
       width: 80px;
       background: #222;
       border-radius: 10px;
-      z-index: 3;
+      z-index: 100;
     }
     
     .obstaculo.cima {
@@ -3693,7 +3808,7 @@ z-index:100;
       bottom:0;
       height:20vh;
       background:linear-gradient(transparent, #000);
-    z-index:100;
+    z-index:999;
       
     }
     
@@ -3705,7 +3820,7 @@ z-index:100;
       top:0;
       height:20vh;
       background:linear-gradient(#000, transparent);
-    z-index:100;
+    z-index:999;
     }
     
     .hdoisos{
@@ -3857,8 +3972,8 @@ z-index:100;
 
 </div>
        </div>
-       
-  <div id="whmerRainbow"></div>
+       <img class="ping" src="./img/IMG_0933.gif" width="" style=""/>
+  <div id="whmerRainbow" ></div>
 
 <img
   id="player"
@@ -3866,6 +3981,7 @@ z-index:100;
   src="./img/IMG_0927.gif"
   alt="Personagem"
 >
+
     <div id="inicio">
       <h2>Your world starts here</h2>
       <p style="margin-bottom:20px; opacity: 0.6;">
@@ -7431,6 +7547,8 @@ document.querySelector(".start").addEventListener("click", () => {
   // document.querySelector(".joguin").style.display = "block";
   document.querySelector(".initgames").style.display = "block";
 });
+</script>
+<script>
 </script>
 <style>
   .ouro{
