@@ -702,7 +702,6 @@ function criarBalao(texto, nome, foto, propria, tipo = "mensagem") {
     avatar.className = "avatar-mensagem";
     avatar.src = foto || fotoSalva;
     avatar.onerror = () => avatar.src = fotoSalva;
-    
     wrapper.appendChild(avatar);
   }
   
@@ -752,41 +751,43 @@ function criarBalao(texto, nome, foto, propria, tipo = "mensagem") {
 // Enviar mensagem
 function enviar() {
   const texto = input.value.trim();
-
+  
   if (!texto) return;
-
+  
   const id = gerarId();
-
+  
+  const fotoBase64 = localStorage.getItem("fotoUsuario");
+  
   const bubble = criarBalao(
     texto,
     meuNome,
-    minhaFoto,
+    fotoBase64,
     true
   );
-
+  
   const status = document.createElement("div");
   status.className = "status-msg enviando";
-  //status.textContent = "◷ Enviando...";
   status.innerHTML = `<ion-icon name="time-outline"></ion-icon>`;
-
-
+  
   bubble.appendChild(status);
-
+  
   const item = {
     id,
     bubble,
     mensagem: {
       id,
       tipo: "mensagem",
-      texto
+      texto,
+      nome: meuNome,
+      foto: fotoBase64
     },
     timer: null
   };
-
+  
   pendentes.set(id, item);
-
+  
   input.value = "";
-
+  
   transmitir(item);
 }
 
@@ -859,20 +860,20 @@ const tentar = document.createElement("button");
 // Receber mensagens de outros usuários
 function receber(dados) {
   const usuario = dados.usuario || {};
-
+  
   const idUsuario = usuario.id || dados.usuarioId;
-
+  
   const propria =
     meuId !== null &&
     idUsuario != null &&
     String(idUsuario) === String(meuId);
-
+  
   if (propria) return;
-
-  const texto = dados.tipo === "sticker"
-    ? dados.imagem
-    : dados.texto;
-
+  
+  const texto = dados.tipo === "sticker" ?
+    dados.imagem :
+    dados.texto;
+  
   criarBalao(
     texto || "",
     usuario.nome || dados.nome || "Usuário sem nome",
@@ -881,7 +882,6 @@ function receber(dados) {
     dados.tipo
   );
 }
-
 // Animação automática de todos os balões
 const observador = new IntersectionObserver(entradas => {
   entradas.forEach(entrada => {
