@@ -440,15 +440,10 @@ const input = document.getElementById("input");
 const statusGlobal = document.getElementById("statusGlobal");
 
 let meuNomeSalvo = localStorage.getItem("whmer_nome") || "usuário sem nome";
-
 const meuNome = meuNomeSalvo
 //localStorage.getItem("nomeUsuario") || "Anônimo";
 const fotoSalva = localStorage.getItem("minhaFotoSalva") || "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
-
-
-const minhaFoto =
-  localStorage.getItem("minhaFotoSalva") ||
-  "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
+const minhaFoto = localStorage.getItem("minhaFotoSalva") ||  "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
 
 const FOTO_PADRAO =
   "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
@@ -834,8 +829,8 @@ function receber(dados) {
 
   criarBalao(
     texto || "",
-    usuario.nome || dados.nome || "Anônimo",
-    usuario.foto || dados.foto || FOTO_PADRAO,
+    usuario.nome || dados.nome || "Usuário sem nome",
+    usuario.foto || dados.foto || minhaFoto,
     false,
     dados.tipo
   );
