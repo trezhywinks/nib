@@ -439,10 +439,15 @@ const messages = document.getElementById("messages");
 const input = document.getElementById("input");
 const statusGlobal = document.getElementById("statusGlobal");
 
-const meuNome = localStorage.getItem("nomeUsuario") || "Anônimo";
+let meuNomeSalvo = localStorage.getItem("whmer_nome") || "usuário sem nome";
+
+const meuNome = meuNomeSalvo
+//localStorage.getItem("nomeUsuario") || "Anônimo";
+const fotoSalva = localStorage.getItem("minhaFotoSalva") || "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
+
 
 const minhaFoto =
-  localStorage.getItem("fotoUsuario") ||
+  localStorage.getItem("minhaFotoSalva") ||
   "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
 
 const FOTO_PADRAO =
@@ -654,8 +659,8 @@ function criarBalao(texto, nome, foto, propria, tipo = "mensagem") {
     const avatar = document.createElement("img");
     
     avatar.className = "avatar-mensagem";
-    avatar.src = foto || FOTO_PADRAO;
-    avatar.onerror = () => avatar.src = FOTO_PADRAO;
+    avatar.src = foto || fotoSalva;
+    avatar.onerror = () => avatar.src = fotoSalva;
     
     wrapper.appendChild(avatar);
   }
