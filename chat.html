@@ -645,73 +645,64 @@ function adicionarTextoComLinks(container, texto) {
 }
 
 function criarBalao(texto, nome, foto, propria, tipo = "mensagem") {
+  
+  const wrapper = document.createElement("div");
+  wrapper.className = propria ? "mensagem-wrapper propria" : "mensagem-wrapper outra";
+  
+  // Avatar fora do balão
+  if (!propria) {
+    const avatar = document.createElement("img");
+    
+    avatar.className = "avatar-mensagem";
+    avatar.src = foto || FOTO_PADRAO;
+    avatar.onerror = () => avatar.src = FOTO_PADRAO;
+    
+    wrapper.appendChild(avatar);
+  }
+  
   const bubble = document.createElement("div");
-
   bubble.className = propria ? "bubble user" : "bubble bot";
-
+  
   if (!propria) {
     const sender = document.createElement("div");
     sender.className = "sender";
-
-    const avatar = document.createElement("img");
-    avatar.src = foto || FOTO_PADRAO;
-    avatar.onerror = () => avatar.src = FOTO_PADRAO;
-
-    const nomeEl = document.createElement("span");
-    nomeEl.textContent = nome || "Anônimo";
-
-    sender.append(avatar, nomeEl);
+    sender.textContent = nome || "Anônimo";
+    
     bubble.appendChild(sender);
   }
-if (tipo === "sticker") {
-  const sticker = document.createElement("div");
-  sticker.className = "mensagem-sticker";
   
-  const img = document.createElement("img");
-  img.src = texto;
-  img.className = "sticker-img";
-  
-  sticker.appendChild(img);
-  
-  const time = document.createElement("span");
-  time.className = "time";
-  time.textContent = new Date().toLocaleTimeString("pt-BR", {
-    hour: "2-digit",
-    minute: "2-digit"
-  });
-  
-  sticker.appendChild(time);
-  
-  messages.appendChild(sticker);
-  messages.scrollTop = messages.scrollHeight;
-  
-  return sticker;
-} else {
-    const conteudo = document.createElement("div");
-    conteudo.textContent = texto;
+  if (tipo === "sticker") {
+    
+    const img = document.createElement("img");
+    img.src = texto;
+    img.className = "sticker-img";
+    
+    bubble.appendChild(img);
+    
+  } else {
     adicionarTextoComLinks(bubble, texto);
-  //  bubble.appendChild(conteudo);
   }
-
-
+  
   const hora = document.createElement("div");
   hora.className = "time";
+  
   hora.textContent = new Date().toLocaleTimeString("pt-BR", {
     hour: "2-digit",
     minute: "2-digit"
   });
-
+  
   bubble.appendChild(hora);
-
-  messages.appendChild(bubble);
-
-  observarBalao(bubble);
-
+  
+  wrapper.appendChild(bubble);
+  
+  messages.appendChild(wrapper);
+  
+  observarBalao(wrapper);
+  
   messages.scrollTop = messages.scrollHeight;
-
-  return bubble;
+  
+  return wrapper;
 }
-
 // Enviar mensagem
 function enviar() {
   const texto = input.value.trim();
@@ -729,7 +720,9 @@ function enviar() {
 
   const status = document.createElement("div");
   status.className = "status-msg enviando";
-  status.textContent = "◷ Enviando...";
+  //status.textContent = "◷ Enviando...";
+  status.innerHTML = `<ion-icon name="time-outline"></ion-icon>`;
+
 
   bubble.appendChild(status);
 
@@ -757,7 +750,8 @@ function transmitir(item) {
   const status = item.bubble.querySelector(".status-msg");
 
   status.className = "status-msg enviando";
-  status.textContent = "◷ Enviando...";
+  //status.textContent = "◷ Enviando...";
+  status.innerHTML = `<ion-icon name="time-outline"></ion-icon>`;
 
   if (!socket || socket.readyState !== WebSocket.OPEN) {
     marcarErro(item);
@@ -784,8 +778,13 @@ function confirmar(id) {
 
   const status = item.bubble.querySelector(".status-msg");
 
-  status.className = "status-msg enviada";
-  status.textContent = "✓ Enviada";
+  //status.className = "status-msg enviada";
+  //status.textContent = "✓ Enviada";
+  status.className = "status-enviado";
+
+status.innerHTML = `<ion-icon name="checkmark-done-outline"></ion-icon>`;
+
+
 
   pendentes.delete(id);
 }

@@ -789,98 +789,207 @@ width: 100%;
   color: #55aaff;
   text-decoration: underline;
   overflow-wrap: anywhere;
-}
-
-.texto-mensagem {
-  overflow-wrap: anywhere;
-  white-space: pre-wrap;
-}
-
-
-.texto-mensagem {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
-.link-mensagem {
-  color: #55aaff;
-  text-decoration: underline;
   cursor: pointer;
+  text-align: left;
 }
 
 .link-mensagem:active {
   opacity: .7;
 }
 
+.texto-mensagem {
+  text-align: left;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Prévia padrão */
 .preview-link {
-  display: block;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 10px;
+  
   margin-top: 9px;
   max-width: 280px;
+  padding: 9px;
+  
   overflow: hidden;
   border-radius: 5px;
   background: #9321E40F;
-border-left:4px solid #9331e4;
-border-bottom: none;
+  border-left: 4px solid #9331e4;
+  
   color: white;
-  border-top: none;
-  border-right: none;
   font-size: 11px;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
-/* PERFIL: imagem à esquerda */
+/* Imagem pequena à esquerda */
+.preview-link .preview-imagem {
+  width: 65px;
+  height: 65px;
+  min-width: 65px;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+}
+
+/* Informações ao lado da imagem */
+.preview-informacoes {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  overflow: hidden;
+}
+
+.preview-informacoes strong {
+  display: block;
+  color: white;
+  font-size: 12px;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.preview-informacoes p {
+  color: white;
+  opacity: .6;
+  font-size: 11px;
+  text-align: left;
+  margin: 5px 0 0;
+  overflow-wrap: anywhere;
+}
+
+/* Perfil */
 .preview-link.preview-perfil {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 10px;
-  padding: 9px;
 }
 
 .preview-perfil .preview-imagem {
   width: 52px;
   height: 52px;
   min-width: 52px;
-  object-fit: cover;
-  border-radius:50%;
-}
-
-/* Balão de prévia com imagem grande */
-.preview-link.preview-grande {
-  display: flex;
-  flex-direction: column;
-  background: #9321E40F;
-  border-left:4px solid #9331e4;
-  border-bottom: none;
-  border-top: none;
-  border-right: none;
-  border-radius: 3px;
-  padding: 5px;
-  overflow: hidden;
-  max-width: 100%;
-  box-sizing: border-box;
+  border-radius: 50%;
 }
 
 /* Imagem grande */
+.preview-link.preview-grande {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 280px;
+  width: 100%;
+  padding: 5px;
+  gap: 0;
+}
+
+/* Foto grande */
 .preview-grande .preview-imagem {
   width: 100%;
   height: 180px;
+  min-width: 0;
   object-fit: cover;
   border-radius: 5px;
-  display: block;
 }
 
-/* Texto abaixo da imagem */
+/* Informações abaixo da foto */
 .preview-grande .preview-informacoes {
   padding: 10px 4px 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.mensagem-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  gap: 7px;
 }
 
-.preview-grande .preview-informacoes strong {
-  color: white;
-  font-size: 11px;
+.mensagem-wrapper.outra .bubble {
+  text-align: left !important;
+  align-items: flex-start !important;
 }
 
-.preview-grande .preview-informacoes p {
-  color:white;
-  opacity: 0.6;
-  font-size: 11px;
+.mensagem-wrapper.outra .bubble .texto-mensagem,
+.mensagem-wrapper.outra .bubble .link-mensagem {
+  text-align: left !important;
+  color: #55aaff !important;
+}
+
+.mensagem-wrapper.outra .bubble .preview-link {
+  display: flex;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  align-self: flex-start !important;
+  text-align: left !important;
+  background: #9321E40F !important;
+  color: white !important;
+}
+
+.mensagem-wrapper.outra .bubble .preview-informacoes {
+  text-align: left !important;
+}
+
+.bubble {
+  width: fit-content;
+  max-width: 75%;
+  min-width: 0;
+  flex: 0 1 auto;
+  overflow-wrap: anywhere;
+}
+
+.mensagem-wrapper.outra .bubble {
+  margin-left: 0;
+}
+
+.mensagem-wrapper.propria .bubble {
+  margin-left: auto;
+}
+
+.status-enviado {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+  font-size: 15px;
+  color: #8b8b8b;
+}
+
+
+.mensagem-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  gap: 7px;
+  margin: 5px 0;
+}
+
+.mensagem-wrapper.outra {
+  justify-content: flex-start;
+}
+
+.mensagem-wrapper.propria {
+  justify-content: flex-end;
+}
+
+/* Foto fora do balão */
+.avatar-mensagem {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2px;
+}
+
+/* Balão recebido */
+.mensagem-wrapper.outra .bubble {
+  margin-left: 0;
+}
+
+/* Balão enviado */
+.mensagem-wrapper.propria .bubble {
+  margin-left: auto;
 }
