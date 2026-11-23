@@ -8,6 +8,8 @@
                      |__/ 
  [-] server 06
  [-] version : 0.0.1 / 1.0.0
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 -->
 <html>
 <head>
@@ -26,15 +28,24 @@
     <meta property="og:image:height" content="300" />
     <meta property="og:image:alt" content="Not for Drugs" />
   <link rel="shortcut icon" href="./img/3d376001-ac30-4b95-8203-4fc5c0254467-1.ico" type="image/x-icon" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
  <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/figlet@1.8.0/dist/figlet.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/figlet@1.8.0/dist/figlet.min.js"></script>
   <link rel="manifest" href="manifest.json">
   <title>SECTION 01</title>
 </head>
+<body>
 <style>
 *{
+box-sizing:border-box;
   margin:0; padding:0;
+
 }
 @font-face{
   font-family: mine;
@@ -44,29 +55,25 @@
 :root{
   --ser: --wer: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
-  body{
-    background:#0C0C0C;
+  html, body{
     font-family:mine;
+    overflow-x: hidden;
+    height:100%;
+background:#4C4877;
+    width: 100%;
     font-weight:800;
     font-size:17px;
-    color: #8C8C8C;
+    color: white;
   }
   
   .def{
     font-family: mine;
-    background: #000;
    /* background: linear-gradient(135deg, #9331e4 60%, #3C0966);*/
-    color: #fff;
-    border: 1px solid #9331e4;
     font-weight: bold;
- text-shadow: 0 1px 1px #000;
-    padding: 10px 20px;
-   border-radius:0;
-   width:175px;
     font-size: 20px;
   }
   
-    .ser, .der{
+   .der{
         padding: 14px 60px;
   border: 0;
   border-radius: 10px;
@@ -126,6 +133,8 @@
     transition: 0.5s;
     top: 0;
     height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 120px;
     width: 80px;
     background: #0c0c0c;
     box-shadow: 0px 10px 20px #000;
@@ -165,12 +174,14 @@
       text-align:center;
       left:0;
       right:0;
+    overflow-y:auto;
       top:20px;
       transition:0.5s;
       background:#0C0C0C80;
       backdrop-filter:blur(10px);
       transform:translateY(2950px);
       height:100vh;
+      padding-bottom:50px;
       border-top-left-radius:50px;
       border-top-right-radius:50px;
       border-top:1px solid #676767A1;
@@ -273,7 +284,7 @@
  
  .initgames{
    position: fixed;
-   background: #000;
+   background:linear-gradient(#000, #4C4877, #4C4877);
    top: 0;
    left: 0;
    right: 0;
@@ -558,19 +569,102 @@
   }
 }
 
+.ksjwu{
+  position:fixed;
+  bottom:-5px;
+  margin-right:-35px;
+  right:-10px;
+  z-index:1;
+  display:none;
+}
+
+.msmendmii{
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+  height:10vh;
+  background-size:auto;
+  background-image:url('./toq/IMG_7450.jpeg);
+  z-index:9999999;
+}
+
+.chatIA{
+  display: none;
+}
+
 
 </style>
+<div class="iframemdmChat">
+  <div class="bokyandnd" onclick="abrirChathlobalVoltar()">
+    VOLTAR
+  </div>
+  <iframe src="./chat.html"></iframe>
+</div>
 
-<body>
+<div class="iframemdm">
+  <div class="bokyandnd" onclick="HatsuneVoltar()">
+    VOLTAR
+  </div>
+  <iframe src="./bob.html"></iframe>
+</div>
+
+<style>
+
+.bokyandnd{
+  position: fixed;
+  font-family: Arial, sans-serif;
+  top: 0;
+  background:#7655DC6E;
+  font-size: 12px;
+  right: 0;
+  color:#7655dc;
+  border-radius:10px;
+  padding:5px 10px;
+  margin-top: 14px;
+  margin-right: 20px;
+  z-index: 999999999999;
+}
+
+.iframemdm, .iframemdmChat {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  display: none;
+  z-index: 999999999;
+}
+
+.iframemdm iframe, .iframemdmChat iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+</style>
+<div class="ksjwu">
+    <img src="./toq/D4D69894-9B1B-4DEB-A2DA-DE194EEF5576.png" width="160" height="auto"/>
+  </div>
       <div class="timeB">
          <div>
-                     <p style="font-size:;" id="mexico"></p>
-<p style="font-size:;" id="brasil"></p>
+                     <p style="font-size:; text-shadow:1px 1px #000;" id="mexico"></p>
+<p style="font-size:; text-shadow:1px 1px #000;" id="brasil"></p>
 
          </div>
-         <div class="cash" style="display:">
-           <div id="dinheiro" style="display:;">$ 0,00</div>
-           <p style="opacity:1;">Version BETA</p>
+         <div class="cash" style="">
+           <div id="dinheiro" style="display:; text-shadow:1px 1px #000;"></div>
+           <p style="opacity:1; text-shadow:1px 1px #000;">Version BETA</p>
          </div>
 
 <script>
@@ -600,7 +694,8 @@
         
 <div id="floatGame">
 
-  <div id="floatGameScore" style="font-size:45px; color:#9331e4;">0</div>
+  <div id="floatGameScore" style="font-size:45px; color:#9331e4;
+  text-shadow:1px 1px #000; z-index:9999">0</div>
   <div id="floatGameStars"></div>
   <div id="floatGameObstacleLayer"></div>
 <div id="floatGameBonusLayer"></div>
@@ -617,7 +712,9 @@
     <h2>FLOAT GAME</h2>
     <p>Toque na tela para voar. Solte e deixe a gravidade agir.</p>
   <br>
-    <button id="floatGameStartBtn">COMEÇAR</button>
+  <img id="floatGameStartBtn" src="./trs/IMG_7496.png" width="150" height="" onclick="
+  "/>
+    <!--button id="" class="ser">Start</button-->
         <div class="back" onclick="bomdiaa()" style="border-bottom: ;">
      <br>
       <p style="text-decoration:; opacity:0.6; font-size:;">back</p>
@@ -625,18 +722,146 @@
   </div>
 
   <div id="floatGameOver" class="floatGameOverlay">
-    <h2>GAME OVER</h2>
+    <h2>Game Over</h2>
     <p id="floatGameResult">Tempo: 0 segundos</p>
-    <button id="floatGameRestartBtn">JOGAR NOVAMENTE</button>
+    <img id="floatGameRestartBtn" src="./trs/IMG_7497.png" width="195"/>
+    <!--button id="floatGameRestartBtn" class="ser">Play Again</button-->
         <br>
         <div class="back" onclick="bomdiaa()" style="border-bottom: ;">
-      <span style="text-decoration:; opacity:0.6; font-size:;">back</span>
+      <span style="text-decoration:; opacity:0.6; font-size:;">Back to the beginning</span>
       </div>
 
   </div>
+    <div class="damcinhad">
+  <div class="damcinha-faixad"></div>
+  <div class="damcinha-faixad"></div>
+</div>
 
+<div class="damcinhaV">
+  <div class="damcinha-grupo">
+    <span></span>
+    <span></span>
+  </div>
+  
+  <div class="damcinha-grupo">
+    <span></span>
+    <span></span>
+  </div>
+</div>
+  <div class="damcinha">
+  <div class="damcinha-faixa"></div>
+  <div class="damcinha-faixa"></div>
+</div>
 </div>
 <style>
+.damcinhaV {
+  position: fixed;
+  bottom: -25px;
+  left: 0;
+  width: 100%;
+  height: 320px;
+  overflow:;
+  z-index: 1;
+}
+
+.damcinha-grupo {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  animation: damcinhaMove 15s linear infinite;
+}
+
+.damcinha-grupo:nth-child(2) {
+  left: 100%;
+}
+
+.damcinha-grupo span {
+  display: block;
+  width: 100%;
+  height: 340px;
+  background-image: url('./toq/IMG_7473.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+}
+
+.damcinha-grupo span:nth-child(1) {
+  height: 150px;
+}
+
+.damcinha-grupo span:nth-child(2) {
+  height: 540px;
+  display:none ;
+}
+
+@keyframes damcinhaMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+.damcinhad{
+    position: fixed;
+  left: 0;
+ top: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  z-index: 999;
+  display: flex;
+}
+.damcinha {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  z-index: 999;
+  display: flex;
+}
+
+.damcinha-faixad {
+  flex: 0 0 100%;
+  height: 100%;
+  
+  background-image: url('./toq/cinza.png');
+  background-repeat: repeat-x;
+  background-position: left top;
+  background-size: auto 120px;
+  
+  animation: damcinhaMove 15s linear infinite;
+}
+
+
+.damcinha-faixa {
+  flex: 0 0 100%;
+  height: 100%;
+  
+  background-image: url('./toq/IMG_7456.webp');
+  background-repeat: repeat-x;
+  background-position: left top;
+  background-size: auto 120px;
+  
+  animation: damcinhaMove 15s linear infinite;
+}
+
+@keyframes damcinhaMove {
+  from {
+    transform: translateX(0);
+  }
+  
+  to {
+    transform: translateX(-100%);
+  }
+}
 
 #floatGameObstacleLayer {
   position: absolute;
@@ -649,8 +874,8 @@
 .floatGameObstacle {
   position: absolute;
   left: 0;
-  bottom: -10px;
-  width: 150px;
+  bottom: -5px;
+  width: 250px;
   height:auto;
   object-fit: contain;
   pointer-events: none;
@@ -667,6 +892,7 @@
 
 #floatGameStars {
   position: absolute;
+  background:linear-gradient(##2B0761AB, #000000);
   inset: 0;
   z-index: 1;
   overflow: hidden;
@@ -769,7 +995,7 @@
   height: 100dvh;
   max-height: 850px;
   overflow: hidden;
-  background: #000;
+  background:#000;
   touch-action: none;
   user-select: none;
   -webkit-user-select: none;
@@ -838,7 +1064,7 @@
   margin-bottom: 25px;
 }
 
-.floatGameOverlay button {
+/*.floatGameOverlay button {
   padding: 14px 30px;
   border: none;
   border-radius: 10px;
@@ -847,7 +1073,7 @@
   font-weight: bold;
   cursor: pointer;
   touch-action: manipulation;
-}
+}*/
 
 #floatGameOver {
   display: none;
@@ -1415,7 +1641,9 @@ obstaculo.x -= velocidadeAtual * delta;
       <div style="font-size: 35px;" onclick="bomdia()">
         <
       </div>
-      <div>
+         <div style="display:flex;">
+                  <div style="margin-top:15px;  width:60px; height: 40px; background:; overflow:;">
+    </div>
         <img src="" id="gamesinits" width="45" height="45" onclick="" style="border-radius: 100px; border: 2px solid #00ED4C; padding: 2px;"/>
       </div>
     </div>
@@ -1428,18 +1656,7 @@ obstaculo.x -= velocidadeAtual * delta;
 
   <br>
   <br>
-  <div style="text-align: center;">
-    <div >
-      <img src="./IMG_7410.png" width="90%" height="auto" style="border: 1px solid #232323;"/>
-    </div>
-    <div style="margin-top: -30px;">
-      <button class="ser" onclick="quebrado()" >Play</button>
-    </div>
-    <br>
-    <p style="opacity: 0.6; font-size: 11px;">Get more points, climb higher, have fun in this starry world.</p>
-<br>
-  </div>
-    <div style="text-align: center;">
+      <!--div style="text-align: center;">
     <div >
       <img src="./IMG_7411.png" width="90%" height="auto" style="border: 1px solid #232323;"/>
     </div>
@@ -1449,18 +1666,47 @@ obstaculo.x -= velocidadeAtual * delta;
     <br>
     <p style="opacity: 0.6; font-size: 11px;">Get more points, climb higher, have fun in this starry world.</p>
 <br>
-  </div>
+  </div-->
+  
     <div style="text-align: center;">
     <div >
-      <img src="./IMG_7429.png" width="90%" height="auto" style="border: 1px solid #232323;"/>
+      <img src="./trs/IMG_7511.png" width="150" height="160" style=""/>
     </div>
+    <br>
     <div style="margin-top: -30px;">
-      <button class="ser" onclick="quebradotres()" >Play</button>
+        <img src="./trs/IMG_7496.png" width="150" height="" onclick="quebradotres()"/>
     </div>
     <br>
     <p style="opacity: 0.6; font-size: 11px;">Get more points, climb higher, have fun in this starry world.</p>
 <br>
   </div>
+  <div style="text-align: center; opacity:0.4;">
+    <div >
+      <img src="./trs/IMG_7489.png" width="150" height="160" style=""/>
+    </div>
+    <br>
+    <div style="margin-top: -30px;">
+   
+      <img src="./trs/IMG_7496.png" width="150" height="" onclick="kimba()"/>
+    </div>
+    <br>
+    <p style="opacity: 0.6; font-size: 11px;">Get more points, climb higher, have fun in this starry world.</p>
+<br>
+  </div>
+  <div class="alerfkfn" style="position:fixed; display:none; top:30%; text-align:center; left:0; right:0; z-index:9999;">
+   <img src="./cmc/IMG_7528.png"  width="90%"/>
+  </div>
+  <script type="text/javascript" charset="utf-8">
+  function kimba(){
+    document.querySelector(".alerfkfn").style.display = "block";
+    
+    setTimeout(() => {
+      document.querySelector(".alerfkfn").style.display = "none"
+    }, 1000);
+   // alert("estamos trabalhando nesse game.");
+  }
+  </script>
+
 <br>
 <br>
 <br>
@@ -1471,22 +1717,7 @@ obstaculo.x -= velocidadeAtual * delta;
   <div class="ndjejdyy">
     
   </div>
-      <div class="mudar">
-      <br>
-      <br>
-        <label for="faiva">
-      <img src="" class="oud" onclick="" height="120" width="120"/>
-      </label>
-      <input type="file" id="faiva" accept="image/*,.gif" hidden/>
-      <br>
-      <input class="eraeu" type="text" id="inputNome"
-        inputmode="text"
-  enterkeyhint="send"
-      maxlength="20"/>
-      <br>
-      <p class="id" style="font-size:13px; opacity: 0.6;">id: ...</p>
-    </div>
-
+    
     <div class="Servidores">
          <div style="display: flex; position: fixed; left: 0; right: 0;
          background:#0c0c0c; height: 80px;
@@ -1497,7 +1728,7 @@ obstaculo.x -= velocidadeAtual * delta;
       </div>
 
       </div>
-    <div style="margin: 10px;" onclick="perfi()">
+    <div style="margin: 10px;" onclick="">
       <img src="" id="setvidoresChat" width="45" height="45" onclick="" style="border-radius: 100px; border: 2px solid #00ED4C; padding: 2px;"/>
     </div>
     </div>
@@ -1516,10 +1747,10 @@ obstaculo.x -= velocidadeAtual * delta;
     </div>
     <br>
     <br>
-    <div class="unoP" onclick="abrirConversa()" data-nome="section 01">
+    <div class="unoP" onclick="abrirChathlobal()" data-nome="section 01">
       <div style="display: flex;">
         <div>
-              <img src="./photo-output.jpeg" width="65" height="65" style="border-radius:100px;
+              <img src="./toq/IMG_7432.jpeg" width="65" height="65" style="border-radius:100px;
         border:2px solid #232323; padding: 2px;"/>
         </div>
         <!--div class="contador-mensagens" id="contadorMensagens" style="display:none;">
@@ -1568,11 +1799,12 @@ obstaculo.x -= velocidadeAtual * delta;
         </div>
         <p style="opacity: 0.6; font-size: 12px;">A new story, click and see our world.</p>
       </div>
+      
     </div>
         <div class="unoP" style="opacity: 0.6;" data-nome="section 02">
       <div style="display: flex;">
         <div>
-              <img src="./section02.jpeg" width="65" height="65" style="border-radius:100px;
+              <img src="./toq/IMG_7432.jpeg" width="65" height="65" style="border-radius:100px;
         border:2px solid #232323; padding: 2px;"/>
         </div>
         <div style="margin-left:-20px; display: none; margin-top: 40px;">
@@ -1583,6 +1815,42 @@ obstaculo.x -= velocidadeAtual * delta;
         <div style="display:flex;">
         <div>
         <span>Section 02 (Global) </span>
+        </div>
+        <div style="margin-left: 5px;">
+                <svg viewBox="0 0 18 18" width="17" height="17"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>
+
+        </div>
+        </div>
+        <p style="opacity: 0.6; font-size: 12px;">A new story, click and see our world.</p>
+      </div>
+    </div>
+
+     <div class="unoP" onclick="abrirConversaHatsune()" style="opacity:;" data-nome="Hatsune Miku">
+      <div style="display: flex;">
+        <div>
+              <img src="./bot/5c77c952-c184-1276-7602-7ba120ff0644.jpeg" width="65" height="65" style="border-radius:100px;
+        border:2px solid #232323; padding: 2px;"/>
+        </div>
+        <div style="margin-left:-20px; display: none; margin-top: 40px;">
+      <span class="ndmr">1</span>
+        </div>
+      </div>
+      <div class="vagasz">
+        <div style="display:flex;">
+        <div>
+        <span>Hatsune Miku Bot</span>
         </div>
         <div style="margin-left: 5px;">
                 <svg viewBox="0 0 18 18" width="17" height="17"
@@ -1659,8 +1927,8 @@ obstaculo.x -= velocidadeAtual * delta;
       artist: 'by: dreqxy...',
       album: '01',
       artwork: [
-        { src: './photo-output.jpeg', sizes: '512x512', type: 'image/jpeg' },
-        { src: './photo-output.jpeg', sizes: '1024x1024', type: 'image/jpeg' }
+        { src: './toq/IMG_7432.jpeg', sizes: '512x512', type: 'image/jpeg' },
+        { src: './toq/IMG_7432.jpeg', sizes: '1024x1024', type: 'image/jpeg' }
       ]
     });
   }
@@ -1706,7 +1974,7 @@ obstaculo.x -= velocidadeAtual * delta;
 <p id="estadoGitHub"></p>
 
 <script>
-const API = "https://SEU-SERVIDOR.onrender.com";
+//const API = "https://teste.onrender.com";
 
 const botao = document.getElementById("conectarGitHub");
 const estado = document.getElementById("estadoGitHub");
@@ -1781,7 +2049,6 @@ carregarUsuarioGitHub();
 
     <br><br><br><br><br><br>
 
-
     <div class="loading">
   <span></span>
   <span></span>
@@ -1793,8 +2060,19 @@ carregarUsuarioGitHub();
   display: flex;
   align-items: center;
   justify-content: center;
+  background:;
+  height:100vh;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:9999999;
   gap: 7px;
 }
+
+.carre{
+}
+
 
 .loading span {
   width: 10px;
@@ -1829,7 +2107,24 @@ carregarUsuarioGitHub();
 }
 </style>
   </div>
-  <div class="plan">
+   <div class="mudar" style="display:;">
+      <br>
+      <br>
+        <label for="faiva">
+      <img src="" class="oud" onclick="" height="120" width="120"/>
+      </label>
+      <input type="file" id="faiva" accept="image/*,.gif" hidden/>
+      <br>
+      <input class="eraeu" type="text" id="inputNome"
+        inputmode="text"
+  enterkeyhint="send"
+      maxlength="20"/>
+      <br>
+      <p class="id" style="font-size:13px; opacity: 0.6;">id: ...</p>
+    </div>
+
+
+     <div class="plan">
         <div class="mdekd">
       <div class="lseld" style="text-align:left; padding-left:10px;">
       <p style="font-size:17px;">Payment</p>
@@ -1923,7 +2218,7 @@ carregarUsuarioGitHub();
        <script>
                </script>
              <h2>Version Pro</h2>
-         <p>Pay with SOL 5.0</p>
+         <p>Pay with SOL</p>
          <br>
          <br>
          <img src="./IMG_7320.jpeg" width="250" style="border-radius:10px;"/><br>
@@ -1931,13 +2226,13 @@ carregarUsuarioGitHub();
        <button class="btnC" id="mensagemSol" onclick="copiarTextoSol();">Copy address</button>
 <br>
      </div>
-     <p style="text-decoration:;" class="gish" onclick="solo()">Pay with pix</p>
+     <p style="text-decoration:;" class="gish" onclick="solo()">Pay with PIX</p>
 
      </div>
      <script>
        function solo(){
          const gish = document.querySelector(".gish");
-  if (gish.textContent === "Pay with pix") {
+  if (gish.textContent === "Pay with PIX") {
     
     gish.textContent = "Pay with SOL";
     document.querySelector(".bords").classList.toggle("ativo");
@@ -1946,7 +2241,7 @@ carregarUsuarioGitHub();
     
   } else {
     
-    gish.textContent = "Pay with pix";
+    gish.textContent = "Pay with PIX";
     document.querySelector(".bords").classList.toggle("ativo");
          document.querySelector(".solana").classList.toggle("ativo");
 
@@ -2040,7 +2335,8 @@ function copiarTextoSol() {
        <script>
        function fg(){
          const maraA = document.querySelector(".plan");
-         document.getElementById("audio2").play();
+         document.querySelector(".server").style.display = "block";
+       //  document.getElementById("audio2").play();
          if(maraA.classList.toggle("ativo")){
            maraA.classList.toggle("ativo");
          }
@@ -2061,7 +2357,7 @@ function copiarTextoSol() {
      <h2 onclick="bonequinha()" style="font-size:40px; margin-top:-10px; margin-right:10px;">x</h2>
      <script>
        function bonequinha(){
-         document.getElementById("audio2").play();
+        // document.getElementById("audio2").play();
           const mara = document.querySelector(".coladin");
          const maravilha = document.querySelector(".select");
          if(mara.classList.toggle("ativo")){
@@ -2199,6 +2495,7 @@ function alternarToggle(icone) {
     <br>
     <br>
     <br>
+    <img src="./toq/IMG_7432.jpeg" width="70"/><br><br>
     LICENSE — TERMS OF USE
 <br>
 <br>
@@ -2430,45 +2727,70 @@ margin-top:10px;
 .msmeuyu{
   position: absolute;
   margin-top:-20px;
-  background:linear-gradient(#000, transparent);
-  height:6vh;
+background-image:url('./toq/cinza.png');
+ /* background:linear-gradient(#000, transparent);*/
+background-size:contain;
+  height:80px;
   width:100%;
   z-index:999999;
 }
 
-.msmeuyuo{
+.fancinhaf{
   position:fixed;
   bottom:0;
   left:0;
   right:0;
-  background:linear-gradient(transparent, #000);
-  height:13vh;
-  width:100%;
+  background-image:url('./toq/cinza-bottom.png');
+  background-size:contain;
+  height:120px;
   z-index:999999;
-
 }
+
+.damcinhaf {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  z-index: 999999;
+  display: flex;
+}
+
+.damcinha-faixaf {
+  flex: 0 0 100%;
+  height: 100%;
+  
+  background-image: url('./toq/cinza-bottom.png');
+  background-repeat: repeat-x;
+  background-position: left top;
+  background-size: auto 120px;
+  
+  animation: damcinhaMove 15s linear infinite;
+}
+
 </style>
     <div style="display: flex; position: fixed; left: 0; right: 0; top: 0;
-    justify-content: space-around; border-bottom: 1px solid #232323;">
-            <div style="font-size: 35px; margin-top:-2px;" onclick="meufan()">
+    justify-content: space-between; background:#4E386A;
+    border-bottom: ;">
+            <div style="font-size: 35px; margin-top:-2px; margin-left:15px;" onclick="meufan()">
       <
     </div>
     <div>
 
-        <h2 style="font-size: 16px;">Nyan cat store</h2>
-        <p style="font-size: 11px;opacity: 0.6; ">20 nyan characters to play</p>
+        <!--h2 style="font-size: 16px;">Nyan cat store</h2-->
       </div>
       <div style="display: flex; margin-top: 10px;">
         <p></p>
-        <p style="margin-left: 10px; opacity:;" class="salegrana" id="mostraDinheiro">$ 0,00</p>
+        <p style="margin-left: 10px; opacity:; color:#fff; margin-right:15px;" class="salegrana" id="mostraDinheiro">$ 0,00</p>
       </div>
     </div>
     <br>
-    <br>
-    <br>
     <div style="text-align: center;">
     </div>
-<div style="display:flex; justify-content:space-around; align-items:center; gap:10px;">
+<div style="display:flex; background:#4E386A;
+justify-content:space-around; margin:0; padding:10px; height:160px; overflow:hidden;
+align-items:center; gap:10px;">
   
   <div class="nyan">
     <div class="rainbow">
@@ -2486,25 +2808,33 @@ margin-top:10px;
   <div style="text-align:left;">
     <span style="opacity:0.6;" id="btnPreco" class="btnPreco">Value: $ 00,00</span>
     <br>
-    <button class="def" id="derbut" type="button" style="background:#000; border-radius: 0;
-     border: 1px solid #00ED4C; color: #00ED4C; width: 150px;">Select</button>
+    <img class="def" src="./cmc/3be3b176-c533-e3f6-571a-4f1477546316.png" id="derbut" height="" width="150"/>
+    <!--button class="def" id="derbut" type="button" style="background:#fff;
+color:#000; width: 150px;">Select</button-->
     <p id="mensagemP" style="display:none;">...</p>
   </div>
   
-</div>    <br>
-    <div class="nzjeyxeudn">
-     <p style="border-bottom: 1px solid #232323;">Characters:</p> 
+</div> 
+    <div class="nzjeyxeudn" style="background:#443B58">
+   <div style="margin-left:20px;">
+     <p style="">Characters:</p> 
+     <p style="font-size: 11px;opacity: 0.6; ">20 nyan characters to play</p>
+   </div>
    <div class="imagemsnxnne">
+       <div class="damcinhaf">
+  <div class="damcinha-faixaf"></div>
+  <div class="damcinha-faixaf"></div>
+</div>
      <div class="msmeuyu">     </div>
      <div class="miniaturas" style="">
   <div class="MwkenQQ">
     <img src="./sale/IMG_7326.gif" 
          data-texto="compre esse personagem para usar"
          data-tipo="preco"
-         data-preco="$ 500,00"
+         data-preco="$ 20.000,00"
          onclick="trocarConteudo(this)">
          <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 01 ) <br>Value: $ 500,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 01 ) <br>Value: $ 20.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
          <br>
          <br>
@@ -2514,10 +2844,10 @@ margin-top:10px;
     <img src="./sale/IMG_7325.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 500,00"
+         data-preco="$ 20.000,00"
          onclick="trocarConteudo(this)">
             <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 02 ) <br>Value: $ 500,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 02 ) <br>Value: $ 20.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
@@ -2525,10 +2855,10 @@ margin-top:10px;
     <img src="./img/IMG_0939.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco= "$ 500,00"
+  data-preco="$ 20.000,00"
          onclick="trocarConteudo(this)">
              <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 03 ) <br>Value: $ 500,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 03 ) <br>Value: $ 20.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
@@ -2536,10 +2866,10 @@ margin-top:10px;
     <img src="./sale/IMG_7329.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 500,00"
+         data-preco="$ 20.000,00"
          onclick="trocarConteudo(this)">
               <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 04 ) <br>Value: $ 500,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 04 ) <br>Value: $ 20.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
@@ -2547,20 +2877,20 @@ margin-top:10px;
     <img src="./sale/IMG_7331.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 800,00"
+data-preco="$ 40.000,00"
          onclick="trocarConteudo(this)">
              <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 05 ) <br>Value: $ 800,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 05 ) <br>Value: $ 40.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 </div>
       <div class="MwkenQQ">
     <img src="./sale/IMG_7330.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 800,00"
+data-preco="$ 40.000,00"
          onclick="trocarConteudo(this)">
       <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 06 ) <br>Value: $ 800,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 06 ) <br>Value: $ 40.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
@@ -2568,22 +2898,22 @@ margin-top:10px;
     <img src="./sale/IMG_7332.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 800,00"
+data-preco="$ 40.000,00"
          onclick="trocarConteudo(this)">
          <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 07 ) <br>Value: $ 800,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 07 ) <br>Value: $ 40.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
 
       <div class="MwkenQQ">
-    <img src="./sale/IMG_7406.gif" 
+    <img src="./sale/IMG_7424.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 800,00"
+data-preco="$ 40.000,00"
          onclick="trocarConteudo(this)">
          <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 08 ) <br>Value: $ 800,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 08 ) <br>Value: $ 40.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
@@ -2591,10 +2921,10 @@ margin-top:10px;
     <img src="./sale/IMG_7333.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 1.000,00"
+         data-preco="$ 55.000,00"
          onclick="trocarConteudo(this)">
         <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 09 ) <br>Value: $ 1.000,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 09 ) <br>Value: $ 55.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
@@ -2602,10 +2932,10 @@ margin-top:10px;
     <img src="./sale/IMG_7337.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 1.000,00"
+data-preco="$ 55.000,00"
          onclick="trocarConteudo(this)">
          <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 10 ) <br>Value: $ 1.000,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 10 ) <br>Value: $ 55.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
@@ -2613,10 +2943,10 @@ margin-top:10px;
     <img src="./sale/IMG_7405.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 1.000,00"
+       data-preco="$ 55.000,00"
          onclick="trocarConteudo(this)">
           <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 11 ) <br>Value: $ 1.000,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 11 ) <br>Value: $ 55.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
@@ -2624,10 +2954,10 @@ margin-top:10px;
     <img src="./sale/IMG_7342.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 1.000,00"
+data-preco="$ 55.000,00"
          onclick="trocarConteudo(this)">
            <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 12 ) <br>Value: $ 1.000,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 12 ) <br>Value: $ 55.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
@@ -2635,20 +2965,20 @@ margin-top:10px;
     <img src="./sale/IMG_7340.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 1.500,00"
+         data-preco="$ 55.500,00"
          onclick="trocarConteudo(this)">
           <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 13 ) <br>Value: $ 1.500,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 13 ) <br>Value: $ 55.500,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
   </div>
    <div class="MwkenQQ">
     <img src="./sale/IMG_7341.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 1.500,00"
+         data-preco="$ 55.500,00"
          onclick="trocarConteudo(this)">
             <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 14 ) <br>Value: $ 1.500,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 14 ) <br>Value: $ 55.500,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
@@ -2656,10 +2986,10 @@ margin-top:10px;
     <img src="./sale/IMG_7339.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 1.500,00"
+         data-preco="$ 55.500,00"
          onclick="trocarConteudo(this)">
            <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 15 ) <br>Value: $ 1.500,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 15 ) <br>Value: $ 55.500,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
@@ -2667,10 +2997,10 @@ margin-top:10px;
     <img src="./sale/IMG_7335.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 1.500,00"
+         data-preco="$ 55.500,00"
          onclick="trocarConteudo(this)">
            <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 16 ) <br>Value: $ 1.500,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 16 ) <br>Value: $ 55.500,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
@@ -2679,21 +3009,22 @@ margin-top:10px;
     <img src="./img/IMG_0936.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 2.000,00"
+         data-preco="$ 100.000,00"
          onclick="trocarConteudo(this)">
             <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 17 ) <br>Value: $ 2.000,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 17 ) <br>Value: $ 100.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
      <div class="MwkenQQ">
-    <img src="./img/IMG_0935.gif" 
+    <img src="./sale/cat.gif" 
+    width="120"
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 2.000,00"
+         data-preco="$ 100.000,00"
          onclick="trocarConteudo(this)">
              <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 18 ) <br>Value: $ 2.000,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 18 ) <br>Value: $ 100.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
@@ -2701,10 +3032,10 @@ margin-top:10px;
     <img src="./img/IMG_0938.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 2.000,00"
+         data-preco="$ 100.000,00"
          onclick="trocarConteudo(this)">
             <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 19 ) <br>Value: $ 2.000,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 19 ) <br>Value: $ 100.000,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
 
   </div>
@@ -2712,10 +3043,10 @@ margin-top:10px;
     <img src="./sale/IMG_7327.gif" 
          data-texto="selecione para ser mostrado em alguns lugares"
          data-tipo="preco"
-         data-preco="$ 2.500,00"
+         data-preco="$ 100.500,00"
          onclick="trocarConteudo(this)">
          <br>
-        <span style="font-size:12px; opacity:0.6;">Player ( 20 ) <br>Value: $ 2.500,00</span>
+        <span style="font-size:12px; opacity:0.6;">Player ( 20 ) <br>Value: $ 100.500,00</span>
          <p id="Fejdnd" style="font-size:10px; z-index: 9999; margin-top:;"></p>
   </div>
 
@@ -2762,9 +3093,21 @@ margin-top:10px;
  </div>
 
     </div>
+    <style>
+      .zx{
+        color:#5A5A5A;
+        margin-top:1px;
+        font-size:20px;
+      }
+    </style>
     <div class="coisxmem" onclick="dizer()">
-      <div>
-      <span>Sale</span>
+      <div style="display:flex;">
+          <div class="zx">
+            <img src="./trs/IMG_7507.png" alt="" width="20" />
+        </div>
+        <div style="margin-left:10px;">
+       <span>Sale</span>
+        </div>
       </div>
       <div>
         <p>></p>
@@ -2776,8 +3119,14 @@ margin-top:10px;
       }
     </script>
        <div class="coisxmem" onclick="ndjejfuu()">
-         <div>
-       <span>License</span>
+         <div style="display:flex;">
+             <div class="zx">
+               <img src="./trs/IMG_7508.png" alt="" width="20" />
+           </div>
+           <div style="margin-left:10px;">
+             <span>License</span>
+
+           </div>
          </div>
          <div>
            <p>></p>
@@ -2789,8 +3138,13 @@ margin-top:10px;
       }
     </script>
    <div class="coisxmem" onclick="elxBmrl()">
-     <div>
+     <div style="display:flex;">
+              <div class="zx">
+                <img src="./trs/IMG_7509.png" alt="" width="20" />
+     </div>
+     <div style="margin-left:10px;">
       <span>Updates</span>
+     </div>
      </div>
      <div>
        <p>></p>
@@ -2803,16 +3157,27 @@ margin-top:10px;
       </script>
 
        <div class="coisxmem">
-         <div>
-         <span>Redeem code</span>
+         <div style="display:flex;">
+           <div class="zx">
+             <img src="./trs/IMG_7506.png" alt="" width="23" />
+           </div>
+           <div style="margin-left:10px;">
+            <span>Redeem code</span>
+           </div>
          </div>
       <div>
         <p>></p>
       </div>
     </div>
    <div class="coisxmem" onclick="valet()">
-     <div>
+     <div style="display:flex;">
+       <div class="zx">
+         <img src="./trs/IMG_7505.png" alt="" width="20" />
+         <!--ion-icon name="sparkles"></ion-icon-->
+       </div>
+       <div style="margin-left:10px;">
      <p>Payment</p>
+       </div>
      </div>
       <div>
        <p>></p>
@@ -2820,6 +3185,7 @@ margin-top:10px;
     </div>
 <br>
 <center>
+  <img src="./toq/IMG_7475.png" width="70"/><br>
  <span style="font-size:11px; margin-left:20px; opacity: 0.6;">Version: 1.00.1.0 <br>Copyright © 2026. All rights reserved.</span>
     <br>
       <p style="font-size:11px; display:; opacity: 0.6;" id="cidade">Obtaining data...</p>
@@ -2849,9 +3215,7 @@ margin-top:10px;
         display:none;
       }
     </style>
-    <div class="star">
-      
-    </div>
+    <div class="star"></div>
     <div style="text-align: center;">
       <div class="kik" style="" >
             <div class="nsnekjjj">
@@ -2864,17 +3228,13 @@ margin-top:10px;
         }
       </script>
       <div style="margin-right:20px; margin-top:5px; color: #3193e4;">
-        <h2>Atualizacoes</h2>
-
+        <h2>Updates</h2>
       </div>
     </div>
-
-         <div class="" id="estrelasF">
-           
-         </div>
+         <!--div class="" id="estrelasF"> </div>
+         <img src="./IMG_7336.gif" width="60" class="shapa" id="shala" />-->
            <br>
       <br>
-      <img src="./IMG_7336.gif" width="60" class="shapa" id="shala" />
       </div>
       <br>
       <div class="cRne" style="text-align: left; padding: 10px;">
@@ -2896,12 +3256,12 @@ margin-top:10px;
     justify-content: space-between;
     left: 0; right: 0;
     padding: 10px;">
-      <div class="right" onclick="left()">
+      <!--div class="right" onclick="left()">
         <
       </div>
       <div class="right" onclick="right()">
         >
-      </div>
+      </div-->
     </div>
   </div>
   <script>
@@ -2942,11 +3302,7 @@ margin-top:10px;
     height:180px;
     left: 0;
     right: 0;
-    overflow: hidden;
-    background:#31313130;
     width: 100%;
-    border-bottom: 1px solid #232423;
-    z-index: 100;
 
   }
     #estrelasF{
@@ -2958,7 +3314,7 @@ margin-top:10px;
 }
 
 .cRne{
-margin-top: 260px;
+  margin-top:120px;
 color: #3193e4;
 }
 
@@ -3061,7 +3417,7 @@ setTimeout(() => {
 
   <div class="server">
     <br>
-    <div style="display: flex; height: 59px; justify-content: space-around;">
+    <div class="armas" style="display: flex; height: 59px; margin-left:20px; ">
 <div class="home" onclick="homer()" style="margin-top:10px;">
   <style type="text/css" media="all">
   .vagasz{
@@ -3073,7 +3429,13 @@ setTimeout(() => {
     width: 100%;
     padding: 10px;
   }
+  
+  .armas{
+    display: flex;
+    justify-content: space-between;
+  }
   .vagasz{
+    width:100%;
     border-bottom: 1px solid #232323;
   }
   #busfc{
@@ -3085,6 +3447,7 @@ color: #fff;
 width: 100%;
 border: 1px solid #232323;
   }
+  
   .Servidores{
     background: #000;
     padding: 10px;
@@ -3092,9 +3455,9 @@ border: 1px solid #232323;
     left: 0;
     top: 0;
     right: 0;
-    display: none;
     height: 100vh;
-    z-index: 999;
+    display: none;
+    z-index: 1;
   }
   .kik img{
    
@@ -3155,6 +3518,7 @@ border:1px solid #232323;
 height:480px;
 padding-top:10px;
 overflow-x: hidden;
+background:#443B58;
 padding-bottom:120px;
   }
   .sale{
@@ -3205,11 +3569,15 @@ padding-bottom:120px;
       transform: translateX(0px);
       transition: 0.5s;
     }
+    .escuras{
+      margin:10px;
+    }
   </style>
   <div class="kli" style="margin-left:;"></div>
   <div class="kli" style="width: 30px;"></div>
 </div>      
-         <div style="text-align: left;">
+         <div class="escuras" onclick="dizer()" style="text-align:;">
+           <img src="./trs/IMG_7507.png" width="50"/>
            <script>
              function homer(){
                document.querySelector(".todos").classList.toggle("ativo");
@@ -3220,20 +3588,16 @@ padding-bottom:120px;
              document.querySelector(".todos").classList.toggle("ativo");
              });
            </script>
-    <h2>Whmer Section 01</h2>
-    <h2 style="color:#fff; font-size:12px; opacity: 0.6;">Certain things are not official</h2>
+    <!--h2>Whmer Section 01</h2-->
+    <!--h2 style="color:#fff; font-size:12px; opacity: 0.6;">Certain things are not official</h2>
+   -->
    </div>
-         <div style="margin-top: 20px; width: 80px; height: 70px; background:; overflow: hidden;">
-      <img class="qik" src="./img/IMG_0927.gif" data-nome="file-paf" width="60"/>
-    </div>
-    </div>
-    <br>
-    <br>
-    <br>
-
+       </div>
+       <div align="right" style="margin-right:5px; right:0; margin-top:14px; position:fixed;">
+         <img class="qik" src="./img/IMG_0927.gif" data-nome="file-paf" width="60"/>
+       </div>
         <center>
           <div class="bordB">
-           
           </div>
           <div class="select">
                     <style>
@@ -3321,30 +3685,33 @@ padding-bottom:120px;
            </style>
           </div>
     </center>
+    <img src="./trs/IMG_7527.png" width="190" style="margin-top:-35px;"/>
     <div class="contros" style="display:flex; justify-content: center;">
     <div class="start" style="padding:10px; 
-    border:1px solid #232323; margin-top:;
-    margin:2px; width:120px; margin-right:;">
-     <p style="color:#fff; font-size:14px;">Start Game</p>
+    border:; margin-top:;
+    margin:2px; width:; margin-right:;">
+      <img src="./cmc/IMG_7519.png" height="" width="160"/>
     </div>
-    <div class="chatsU" style="padding:10px; width:120px; margin:2px; border:1px solid #232323">
-     <p style="color:#fff; font-size:14px;">Init Chat</p>
+    <div class="chatsU" style="padding:10px; width:; margin:2px; border:">
+     <img src="./cmc/IMG_7522.png" width="160"/>
+     <!--p style="color:#fff; font-size:14px;">Init Chat</p-->
     </div>
     </div>
     <script>
       document.querySelector(".chatsU").addEventListener("click", () =>{
-        //document.querySelector(".chatsT").style.display = "block";
+     //   document.querySelector(".chatsT").style.display = "block";
         document.querySelector(".painel").style.display = "none";
         document.querySelector(".Servidores").style.display = "block";
        // document.getElementById("audio").pause();
       });
     </script>
-    <div class="o" style="margin-top:10px;">
+    <div class="o" style="margin-top:;">
      <div class="p" style="display:none;" >
        <img src="./img/IMG_0928.gif" width="30"/>
      </div> 
-     <div class="p" style="margin-top:; height: 45px; border: 1px solid #232323; padding:10px; width:150px;">
-      <p onclick="server()" class="btnZ" style="font-size:14px;">Click me Please</p>
+     <div class="" style="margin-top:; height:; border:; padding:; width:;">
+     <img onclick="server()" src="./cmc/IMG_7517.png" width="150"/>
+      <!--p onclick="server()" class="btnZ" style="font-size:14px;">Click me Please</p-->
       <script>
      function server(){
        const sele = document.querySelector(".select");
@@ -3370,9 +3737,12 @@ padding-bottom:120px;
      <div class="p" style="display:none;">
        <img src="./img/IMG_0928.gif" width="30"/>
      </div>
-          <div class="pass" onclick="boneca()" style="border: 1px solid #232323;
-          padding:10px; width:150px; height:45px;">
-            <p style="color:#fff; font-size:14px;">Server Creators</p>
+     <div>
+      <img src="./cmc/IMG_7516.png" width="80"/>
+     </div>
+          <div class="pass" onclick="boneca()" style="border:;
+          padding:; width:; height:;">
+            <img src="./cmc/IMG_7515.png" width="150"/>
           </div>
     </div>
     <center>
@@ -3525,8 +3895,8 @@ border-radius:3px; position:relative;">
 
     <script>
       function valet(){
-        
         document.querySelector(".plan").classList.toggle("ativo");
+        document.querySelector(".server").style.display = "none";
                 setTimeout( () => {
            document.querySelector(".solana").classList.toggle("ativo");
         }, 100 );
@@ -3806,17 +4176,17 @@ inputCodigo.addEventListener("input", () => {
 <style>
   .zfast{
     position: fixed;
-    bottom:30px;
+    bottom:120px;
     left: 0;
     right: 0;
   }
 </style>
 <div class="zfast">
-     <div class="bottom" style="display:flex; text-align:center; width: 100%; background:;">
+     <div class="bottom" style="display:; text-align:center; width: 100%; background:;">
            <div class="mzeiudii">
              <img src="https://count.getloli.com/@Trezhywinks?name=Trezhywinks&theme=booru-lisu&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" width="160"/>
        </div>
-       <div class="nasjdj" style="margin-top:-20px; margin-left: 10px; text-align: left;">
+       <div class="nasjdj" style="margin-top:-20px; display:none; margin-left: 10px; text-align: left;">
        <h3 style="color:red; font-family:mine;"><span style="color:white;">Section 01</span></h3>
         <p style="font-size:11px; opacity:0.6;">Developed by whmer for you<br>All rights reserved
         <br>&copy; Copyright 2014 - 2026 | Section 01
@@ -3836,13 +4206,17 @@ inputCodigo.addEventListener("input", () => {
     <br>
 
    </div>
+  <div class="damcinha">
+  <div class="damcinha-faixa"></div>
+  <div class="damcinha-faixa"></div>
+</div>
 
     <script>
     
       const mskeurr = document.querySelector(".mskeurr");
       
       function remotu(){
-        document.getElementById("audio2").play();
+     //   document.getElementById("audio2").play();
         if(mskeurr.classList.toggle("ativo")){
           mskeurr.classList.toggle("ativo");
         }
@@ -4288,8 +4662,8 @@ z-index:100;
     left: 5px;
     right: 0;
     justify-content: space-between;
-    display:none;
     z-index: 999999999;
+    display:none;
   }
   
   .timeB p{
@@ -4488,7 +4862,7 @@ dinheiro.textContent = `$ ${dinheiroAtual}`;
 salegrana.textContent = `$ ${dinheiroAtual}`;
 
 //grana.style.color = "#00ED4C";
-salegrana.style.color = "#00ED4C"
+salegrana.style.color = "#fff"
 
 let jogadorY = 0;
 
@@ -4593,14 +4967,13 @@ function trocarConteudo(img) {
 
   idSelecionado = img.dataset.id || img.src;
 
-  document.getElementById("btnPreco").innerText =
-    "Value: " + img.dataset.preco;
+  document.getElementById("btnPreco").innerText = img.dataset.preco;
 
   if (compras.some(c => c.id === idSelecionado)) {
-    document.querySelector(".def").textContent = "Purchased!";
+    document.querySelector(".def").src = "./cmc/IMG_7525.png";
     document.getElementById("btnPreco").innerText = "Purchased!";
   } else {
-    document.querySelector(".derf").textContent = "To buy";
+    document.querySelector(".def").src = "./cmc/3be3b176-c533-e3f6-571a-4f1477546316.png";
   }
 }
 
@@ -4653,7 +5026,7 @@ document.querySelector(".def").addEventListener("click", (e) => {
 
     // ATUALIZAR BOTÕES
     document.getElementById("btnPreco").innerText = "Purchased!";
-    document.querySelector(".def").textContent = "Purchased!";
+    document.querySelector(".def").src = "./cmc/IMG_7525.png";
 
     marcarComprados();
 
@@ -4690,7 +5063,7 @@ function mostrarCompras() {
   if (!seldne) return;
 
   seldne.innerHTML =
-  '<img class="mig" src="./img/IMG_0927.gif" data-nome="file-2" width="50" data-width="60" onclick="cip(this)" alt="" /> <br><img class="mig" src="./img/IMG_0933.gif" data-nome="file-4" data-width="30" onclick="cip(this)" width="30" alt="" /><br> ';
+  '<img class="mig" src="./img/IMG_0927.gif" data-nome="file-2" width="40" data-width="70" onclick="cip(this)" alt="" /> <br><img class="mig" src="./img/IMG_0933.gif" data-nome="file-4" data-width="40" onclick="cip(this)" width="30" alt="" /><br> ';
 
   compras.forEach(compra => {
 
@@ -4703,7 +5076,7 @@ function mostrarCompras() {
     img.dataset.id = compra.id;
     img.dataset.nome = "file-4";
     img.dataset.width = "60";
-    img.width = 50;
+    img.width = 40;
     img.alt = "";
 
     img.onclick = function() {
@@ -5019,7 +5392,7 @@ if (
   
   pontuacao.textContent = pontuacaoAtual;
   
-  dinheiroAtual += 5000.01;
+  dinheiroAtual += 0.10;
   
   atualizarDinheiro();
 }
@@ -5223,15 +5596,6 @@ document.querySelector(".game3").style.display = "block";
   padding: 0;
 }
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-  /*overflow: hidden;*/
-  background: #000;
-  color: white;
-}
-
 button,
 input {
   font: inherit;
@@ -5242,7 +5606,10 @@ button {
 }
 
 #chat {
-  width: 100%;
+  position:fixed;
+  left: 0;
+  right: 0;
+  width:100%;
   height: 100dvh;
 
   display: flex;
@@ -5257,21 +5624,20 @@ button {
 ========================= */
 
 .topo {
-  height: 55px;
   margin-top: 10px;
   flex-shrink: 0;
   background: #000;
-
   display: flex;
   align-items: center;
-
   padding:
     env(safe-area-inset-top)
     15px
     0
     15px;
-
-  border-bottom: 1px solid #1c1c1c;
+    border-bottom: 1px solid #292929;
+  padding: 16px;
+  height: 55px;
+  font-weight: bold;
 }
 
 .perfil {
@@ -5314,18 +5680,21 @@ button {
 
 #mensagens {
   flex: 1;
-
+   gap: 14px;
   overflow-y: auto;
-
+  overscroll-behavior: contain;
   padding: 15px 12px 20px;
-
+  margin: auto;
+-webkit-overflow-scrolling: touch;
+font-weight: 500;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-
-  overscroll-behavior: contain;
-
-  -webkit-overflow-scrolling: touch;
+  background-color: #000;
+  background-image:url("./IMG_7589.png");
+  background-size: cover;
+width: 100%;
+  max-width: 600px;
+  height: 100dvh;
 }
 
 .mensagem {
@@ -5348,9 +5717,9 @@ button {
   width: 28px;
   height: 33px;
   margin-top:10px;
-  border-left:1px solid #fff;
-  border-top:1px solid #fff;
-  border-bottom:1px solid #fff;
+  border-left:1px solid #232323;
+  border-top:1px solid #232323;
+  border-bottom:1px solid #232323;
   flex-shrink: 0;
 
   object-fit: cover;
@@ -5428,15 +5797,10 @@ button {
     10px
     calc(8px + env(safe-area-inset-bottom))
     10px;
-
   display: flex;
-
   align-items: center;
-
   gap: 8px;
-
-  background: #000;
-
+  background:#000;
 }
 
 .entrada input {
@@ -5462,11 +5826,12 @@ border:none;
 }
 
 .mensage{
-  background: #0c0c0c;
+  background: transparent;
   display: flex;
   border-radius:100px;
   width:100%;
   justify-content: space-between;
+  z-index:99999 ;
 
 }
 
@@ -5495,14 +5860,14 @@ border:none;
 
   background: #181818;
 
-  color: white;
+  color: #9331e4;
 
   cursor: pointer;
 }
 
 #btnEnviar {
   background: transparent;
-  color: #fff;
+  color: #9331e4;
   margin:5px;
   width:50px;
   padding:5px;
@@ -5702,7 +6067,7 @@ border:none;
   left: 0;
   right: 0;
   bottom: 0;
-  transform: translateY(750px);
+  transform: translateY(2350px);
   transition:0.5s;
   border-top:1px solid #232323;
   border-top-left-radius: 50px;
@@ -5768,6 +6133,10 @@ cursor: pointer;
 border: 3px solid transparent;
 transition: 0.2s;
 }
+
+
+
+
  </style>
  <div class="chatsT">
   <!--meta charset="UTF-8">
@@ -5785,7 +6154,7 @@ transition: 0.2s;
 
 <body-->
 
-<div id="chat">
+<div id="chat" style="font-family: Arial, sans-serif;">
 
   <!-- TOPO -->
 
@@ -5822,7 +6191,9 @@ function perfiD(){
     
    
   </script>
-<p style="font-size:35px;"><</p>  
+<p style="font-size:35px; margin-top:12px;">
+  <ion-icon name="chevron-back-outline"></ion-icon>
+</p>  
 </div>
   <script>
     function dert(){
@@ -5841,6 +6212,7 @@ function perfiD(){
     id="minhaFoto"
     onclick=""
     src=""
+    width="35" height="35"
   >
 
     </div>
@@ -5865,8 +6237,7 @@ function perfiD(){
       <ion-icon name="earth-outline"></ion-icon>
      </div>
      <div style="margin-left:6px; text-align:right;" class="listd">
-       <p style="font-size:12px;">List of users</p>
-       <p id="onlineCountTop" style="font-size:11px">0 online</p>
+       <p id="onlineCountTop" style="font-size:10px">0 online</p>
      </div>
    </div>
    <style>
@@ -5947,7 +6318,7 @@ wsd.onmessage = (event) => {
       }
 
      function addlistF(){
-       document.getElementById("audio2").play();
+   //    document.getElementById("audio2").play();
        if(document.querySelector(".listo").classList.toggle("ativo")){
       document.querySelector(".listo").classList.toggle("ativo");
        }
@@ -6006,9 +6377,11 @@ wsd.onmessage = (event) => {
       </style>
        <div class="global">
          <br>
-         <img src="https://raw.githubusercontent.com/trezhywinks/sticker-R/main/E6F82714-A238-402D-A094-89714229FBAA.gif" alt="" 
+         <img src="./toq/IMG_7432.jpeg" alt="" 
          style="border-radius: 100px;" weight="70" height="70"
          />
+         <br>
+         <br>
          <div style="display:flex; justify-content: center;">
            <div>
              <h4>WELCOME TO SERVER GLOBAL</h4>
@@ -6023,19 +6396,17 @@ wsd.onmessage = (event) => {
 <br>What you are looking for can be found in forums like this. Just another common day in this place we call it? Have fun! Your fun is what matters.
 </p>
 <br>
-<div class="sharedD" style="display:flex; justify-content: space-around; width:210px;
-border:1px solid #232323; transition: 0.3s ease;
+<div class="sharedD" style="display:; justify-content: center; width:100%;
+border-top:1px solid #232323; transition: 0.3s ease;
 padding: 6px; border-radius:;
 background: transparent;">
- <div>
+ <!--div>
    <ion-icon style="font-size:20px; color:#fff;" name="arrow-redo"></ion-icon>
- </div> 
+ </div--> 
  <div>
-   <p style="color:#fff;">Share server</p>
+   <p style="color:#7655dc;">Share server</p>
  </div>
 </div>
-<br>
-
 <script>
   document.querySelector(".sharedD").addEventListener("click", () => {
                 if (navigator.share) {
@@ -7159,10 +7530,8 @@ if (regex.test(texto.trim())) {
   );
 
 
-  mensagem.appendChild(
-    avatar
-  );
-
+ // mensagem.appendChild(  avatar );
+  
   mensagem.appendChild(
     conteudo
   );
@@ -7495,19 +7864,14 @@ const conteudo = document.getElementById("conteudo");
 window.addEventListener("load", () => {
   loading.style.display = "none";
   conteudo.style.display = "block";
-  
   setTimeout(() => {
   document.querySelector(".plan").classList.toggle("ativo");
-  
-  
   }, 1000 )
   
   const solona = document.querySelector(".solana");
          setTimeout( () => {
            solona.classList.toggle("ativo");
          }, 1000 );
-
-
 });
 </script>
   <script>
@@ -7923,11 +8287,46 @@ function abrirConversa() {
 mensagensNaoLidas = 0;
 document.querySelector(".chatsT").style.display = "block";
        document.querySelector(".painel").style.display = "none";
-        document.querySelector(".Servidores").style.display = "none";
+       document.querySelector(".Servidores").style.display = "none";
         document.querySelector(".contador-mensagens").textContent = "0"
         document.querySelector(".contador-mensagens").style.display = "none"
 
 atualizarContador();
+}
+
+function abrirConversaHatsune() {
+document.querySelector(".iframemdm").style.display = "block";
+       document.querySelector(".painel").style.display = "none";
+       document.querySelector(".Servidores").style.display = "none";
+        document.querySelector(".contador-mensagens").textContent = "0"
+        document.querySelector(".contador-mensagens").style.display = "none"
+}
+
+function abrirChathlobal() {
+document.querySelector(".iframemdmChat").style.display = "block";
+       document.querySelector(".painel").style.display = "none";
+       document.querySelector(".Servidores").style.display = "none";
+        document.querySelector(".contador-mensagens").textContent = "0"
+        document.querySelector(".contador-mensagens").style.display = "none"
+}
+
+function abrirChathlobalVoltar(){
+  document.querySelector(".iframemdmChat").style.display = "none";
+       document.querySelector(".painel").style.display = "none";
+       document.querySelector(".Servidores").style.display = "block";
+        document.querySelector(".contador-mensagens").textContent = "0"
+        document.querySelector(".contador-mensagens").style.display = "none"
+}
+
+
+
+function HatsuneVoltar(){
+  document.querySelector(".iframemdm").style.display = "none";
+     //  document.querySelector(".painel").style.display = "none";
+       document.querySelector(".Servidores").style.display = "block";
+        document.querySelector(".contador-mensagens").textContent = "0"
+        document.querySelector(".contador-mensagens").style.display = "none"
+
 }
 
 
@@ -7949,8 +8348,37 @@ document.querySelector(".start").addEventListener("click", () => {
   const floatRestartBtn = document.getElementById("floatGameRestartBtn");
   const floatResult = document.getElementById("floatGameResult");
   const floatBonusLayer = document.getElementById("floatGameBonusLayer");
-floatPlayer.src = "./IMG_7424.gif";
+floatPlayer.src = "./cat.gif";
 
+let dinheiroAtual = Number(localStorage.getItem("dinheiroWhmer")) || 0;
+
+function adicionarDinheiro(valor) {
+  dinheiroAtual += valor;
+  
+  localStorage.setItem("dinheiroWhmer", dinheiroAtual);
+  
+  // Atualiza o elemento que mostra o dinheiro
+  const mostra = document.getElementById("mostraDinheiro");
+  
+  if (mostra) {
+    mostra.textContent = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+    dinheiro.textContent = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+salegrana.textContent = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+grana.textContent = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+  }
+}
 const rainbow = document.querySelector(".whmerRainbow");
 
 (() => {
@@ -8020,7 +8448,7 @@ const floatObstacleLayer = document.getElementById("floatGameObstacleLayer");
 
   if (!floatGame || !floatPlayer || !floatBonusLayer) return;
  
- const FLOAT_OBSTACLE_IMAGE = "batreira.png";
+ const FLOAT_OBSTACLE_IMAGE = "./toq/IMG_7459.png";
 const FLOAT_OBSTACLE_SIZE = 85;
 const FLOAT_OBSTACLE_SPEED = 230;
 
@@ -8130,12 +8558,14 @@ if (colidiu) {
   
   floatCreateExplosion(explosaoX, explosaoY);
   
+  adicionarDinheiro(50.00);
+  
   floatBonusPoints += 50;
   floatUpdateScore();
+  
   floatRemoveBonus();
   return;
 }
-
     // Remove quando sair da tela
     if (floatBonus.x < -BONUS_SIZE) {
       floatRemoveBonus();
@@ -8153,7 +8583,7 @@ if (colidiu) {
     floatRemoveBonus();
 
     floatResult.textContent =
-      "Pontuação: " + (floatScore + floatBonusPoints);
+      "Score: " + (floatScore + floatBonusPoints);
 
     floatOver.style.display = "flex";
     floatRemoveObstacle();
@@ -8228,7 +8658,7 @@ function floatUpdateObstacle(delta) {
     
     // Próximo obstáculo entre 10 e 20 segundos
     floatNextObstacle =
-      10000 + Math.random() * 10000;
+      70 + Math.random() * 70;
   }
   
   return true;

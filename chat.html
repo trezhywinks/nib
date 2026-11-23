@@ -1,0 +1,899 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./style.css">
+ <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+ <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+
+<title>Chat T7.000</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #080808;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+/*
+
+.chat {
+  width: 100%;
+  max-width: 999px;
+  height: 100dvh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.topo {
+  padding: 16px;
+  background: #111;
+  border-bottom: 1px solid #222;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status {
+  font-size: 12px;
+  color: #888;
+}
+
+.status.online {
+  color: #35c879;
+}
+
+.convers {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: auto;
+}
+
+.linha {
+  display: flex;
+  width: 100%;
+}
+
+.linha.esquerda {
+  justify-content: flex-start;
+}
+
+.linha.direita {
+  justify-content: flex-end;
+}
+
+.bubble {
+  position: relative;
+  max-width: 80%;
+  padding: 10px 13px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  opacity: 0;
+  transform: translate3d(-18px, 18px, 0) scale(.15);
+  transform-origin: left bottom;
+  transition:
+    opacity .35s ease,
+    transform .6s cubic-bezier(.16, 1.3, .3, 1);
+  will-change: transform, opacity;
+}
+
+.bubble.visivel {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.bubble.bot {
+  background: #222;
+  border-radius: 12px 12px 12px 3px;
+}
+
+.bubble.bot::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: -12px;
+  width: 22px;
+  height: 22px;
+  background: #222;
+  border-radius: 0 0 18px 18px;
+  clip-path: path("M 22 0 C 22 12 15 22 0 22 C 10 22 12 12 12 0 Z");
+}
+
+.bubble.user {
+  background: #3193e4;
+  border-radius: 12px 12px 3px 12px;
+  transform-origin: right bottom;
+}
+
+.bubble.user:not(.visivel) {
+  transform: translate3d(18px, 18px, 0) scale(.15);
+}
+
+.bubble.user.visivel {
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.bubble.user::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  right: -12px;
+  width: 22px;
+  height: 22px;
+  background: #3193e4;
+  border-radius: 0 0 18px 18px;
+  clip-path: path("M 0 0 C 0 12 7 22 22 22 C 12 22 10 12 10 0 Z");
+}
+
+.sender {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  opacity: .8;
+}
+
+.sender img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.texto {
+  white-space: pre-wrap;
+}
+
+.hora {
+  font-size: 10px;
+  opacity: .6;
+  text-align: right;
+  margin-top: 4px;
+}
+
+.entrada {
+  padding: 12px;
+  display: flex;
+  gap: 8px;
+  background: #111;
+  border-top: 1px solid #222;
+}
+
+.entrada input {
+  flex: 1;
+  min-width: 0;
+  background: #222;
+  border: 0;
+  outline: none;
+  color: white;
+  padding: 13px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.entrada button {
+  border: 0;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  background: #3193e4;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.sticker-chat {
+  max-width: 160px;
+  max-height: 160px;
+  object-fit: contain;
+  display: block;
+}*/
+   .global{
+          padding: 10px;
+          width: 95%;
+          text-align: center;
+          margin: 0 auto 10px;
+          border-radius: 20px;
+          background: #121212C7;
+          border: 1px solid #232323;
+        }
+
+</style>
+</head>
+
+<body>
+
+
+<div class="chat" style="
+width: 100%;
+  max-width: 600px;
+  height: 100dvh;
+  margin: auto;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  background-color:#000;
+  background-image:url(./bot/IMG_7589.png);
+  background-size:cover;
+">
+
+  <header class="header">
+    <div style="margin-top:-3px;">
+      <img
+        id="fotoGlobal"
+        src="./bot/124c1d40-ddd9-36fb-0ea4-a9b133901a35.jpeg"
+        width="35"
+        height="35"
+        class="atitude"
+      />
+    </div>
+
+    <div style="display:flex; margin-top:-3px;">
+      <div>
+        <p>Grupo T 7.000</p>
+        <span id="statusGlobal" style="font-size:10px;">
+          Conectando...
+        </span>
+      </div>
+
+      <div style="margin:2px 2px;">
+        <svg viewBox="0 0 18 18" width="15" height="15"
+          xmlns="http://www.w3.org/2000/svg">
+          <polygon fill="#3193e4"
+            points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+          <polygon fill="#000"
+            points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <main class="messages" id="messages">
+       <div class="global">
+         <br>
+         <img src="./toq/IMG_7432.jpeg" alt="" 
+         style="border-radius: 100px;" weight="70" height="70"
+         />
+         <br>
+         <br>
+         <div style="display:flex; justify-content: center;">
+           <div>
+             <h4>WELCOME TO SERVER GLOBAL</h4>
+           </div>
+           <div style="display:none;">
+             <img src="./toq/IMG_7308.png" width="15"/>
+           </div>
+       
+         </div>
+   <p style="font-size:11px; opacity:0.6;">Server created on 03/06/2026 by dreq</p>
+<p style="font-size:11px; margin-top:5px;">Welcome to the global server, a public server for users to talk about whatever they want. From politics to religion, from life to dust, everything here can be shared<br>
+<br>What you are looking for can be found in forums like this. Just another common day in this place we call it? Have fun! Your fun is what matters.
+</p>
+<br>
+<div class="sharedD" style="display:; justify-content: center; width:100%;
+border-top:1px solid #232323; transition: 0.3s ease;
+padding: 6px; border-radius:;
+background: transparent;">
+ <!--div>
+   <ion-icon style="font-size:20px; color:#fff;" name="arrow-redo"></ion-icon>
+ </div--> 
+ <div>
+   <p style="color:#7655dc;">Share server</p>
+ </div>
+</div>
+<script>
+  document.querySelector(".sharedD").addEventListener("click", () => {
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Check out this link!',
+                        text: 'Take a look at this content:',
+                        url: 'https://peituda-web.onrender.com/'
+                    }).then(() => {
+                        console.log('Successful sharing');
+                    }).catch((error) => {
+                        console.error('Error when sharing', error);
+                    });
+                } else {
+                    alert("Your browser does not support native sharing.");
+                }
+  } );
+
+
+</script>
+ </div>
+  </main>
+
+<footer class="footer" style="background: #000;">
+
+  <button id="btnSticker" type="button" style="background: transparent;">
+    <ion-icon class="pis" name="happy-outline"></ion-icon>
+  </button>
+
+  <input
+    id="input"
+    placeholder="Digite uma mensagem..."
+    autocomplete="off"
+  >
+
+  <button onclick="enviar()" style="display:flex;align-items:center;justify-content:center;">
+    <div class="fjjrfjj" style="height:5px;"></div>
+    <div class="fjjrfjj" style="height:12px;"></div>
+    <div class="fjjrfjj"></div>
+    <div class="fjjrfjj" style="height:5px;"></div>
+  </button>
+
+</footer>
+</div>
+<div id="listaStickers"></div>
+<script>
+  const urHl = "https://raw.githubusercontent.com/trezhywinks/sticker-R/refs/heads/main/sticker.json";
+
+const listaStickers = document.getElementById("listaStickers");
+const btnSticker = document.getElementById("btnSticker");
+
+// Abrir e fechar lista
+btnSticker.addEventListener("click", () => {
+  listaStickers.classList.toggle("aberto");
+});
+
+// Carregar figurinhas
+fetch(urHl)
+  .then(res => {
+    if (!res.ok) throw new Error("Erro ao carregar stickers");
+    return res.json();
+  })
+  .then(data => {
+    data.makima.forEach(link => {
+      const bui = document.createElement("button");
+      const imgt = document.createElement("img");
+      
+      bui.className = "sticker";
+      bui.dataset.img = link.imagem;
+      bui.type = "button";
+      
+      imgt.className = "gggggggg";
+      imgt.src = link.imagem;
+      imgt.style.width = "100%";
+      imgt.style.height = "100%";
+      imgt.style.objectFit = "contain";
+      
+      bui.appendChild(imgt);
+      listaStickers.appendChild(bui);
+    });
+  })
+  .catch(err => console.error("Erro ao carregar stickers:", err));
+
+// Selecionar figurinha
+listaStickers.addEventListener("click", e => {
+  const botao = e.target.closest(".sticker");
+  
+  if (!botao) return;
+  
+  const imagem = botao.dataset.img;
+  
+  if (!imagem) return;
+  
+  enviarSticker(imagem);
+  
+  listaStickers.classList.remove("aberto");
+});
+
+// Enviar figurinha
+function enviarSticker(imagem) {
+  const id = gerarId();
+  
+  // Cria o balão imediatamente
+  const bubble = criarBalao(
+    imagem,
+    meuNome,
+    minhaFoto,
+    true,
+    "sticker"
+  );
+  
+  // Verifica conexão antes de tentar enviar
+  if (typeof wsc === "undefined" || wsc.readyState !== WebSocket.OPEN) {
+    const status = document.createElement("div");
+    status.className = "status-msg erro";
+    status.innerHTML = `
+      <ion-icon name="alert-circle"></ion-icon>
+    `;
+    
+    bubble.appendChild(status);
+    return;
+  }
+  
+  // Só chega aqui se estiver conectado
+  wsc.send(JSON.stringify({
+    tipo: "sticker",
+    id,
+    imagem,
+    nome: meuNome,
+    foto: minhaFoto
+  }));
+}
+</script>
+<script>
+
+//const WS_URL = "wss://coisas.onrender.com";
+const WS_URL = "wss://hash-1-761o.onrender.com";
+
+
+const messages = document.getElementById("messages");
+const input = document.getElementById("input");
+const statusGlobal = document.getElementById("statusGlobal");
+
+const meuNome = localStorage.getItem("nomeUsuario") || "Anônimo";
+
+const minhaFoto =
+  localStorage.getItem("fotoUsuario") ||
+  "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
+
+const FOTO_PADRAO =
+  "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
+
+let socket;
+let meuId = null;
+
+const pendentes = new Map();
+
+function gerarId() {
+  return Date.now().toString(36) +
+    Math.random().toString(36).slice(2);
+}
+
+function conectar() {
+  socket = new WebSocket(WS_URL);
+
+  socket.onopen = () => {
+    statusGlobal.textContent = "Global • Online";
+
+    socket.send(JSON.stringify({
+      tipo: "usuario",
+      nome: meuNome,
+      foto: minhaFoto
+    }));
+  };
+
+  socket.onmessage = event => {
+    let dados;
+
+    try {
+      dados = JSON.parse(event.data);
+    } catch {
+      return;
+    }
+
+    if (dados.tipo === "conectado") {
+      meuId = dados.seuId || dados.id;
+      return;
+    }
+
+    if (dados.tipo === "usuario_configurado") {
+      meuId = dados.usuario?.id || dados.id || meuId;
+      return;
+    }
+
+    if (dados.tipo === "confirmacao") {
+      confirmar(dados.id);
+      return;
+    }
+
+    if (dados.tipo === "mensagem") {
+      if (dados.id && pendentes.has(dados.id)) {
+        confirmar(dados.id);
+        return;
+      }
+
+      receber(dados);
+      return;
+    }
+
+if (tipo === "sticker") {
+  bubble.classList.add("bubble-sticker");
+  
+  const img = document.createElement("img");
+  img.src = texto;
+  img.className = "sticker-img";
+  
+  bubble.appendChild(img);
+} else {
+  //bubble.textContent = texto;
+  adicionarTextoComLinks(bubble, texto);
+}
+  };
+
+  socket.onclose = () => {
+    statusGlobal.textContent = "Global • Desconectado";
+
+    pendentes.forEach(item => marcarErro(item));
+
+    setTimeout(conectar, 3000);
+  };
+
+  socket.onerror = () => {
+    statusGlobal.textContent = "Global • Erro de conexão";
+  };
+}
+
+// Criar balão usando o mesmo padrão visual do bot
+
+async function carregarPreview(url, area) {
+  try {
+    const resposta = await fetch(
+      `https://hash-evsl.onrender.com/preview?url=${encodeURIComponent(url)}`
+    );
+    
+    if (!resposta.ok) return;
+    
+    const dados = await resposta.json();
+    
+    if (dados.error) return;
+    
+    const preview = document.createElement("a");
+    preview.className = "preview-link";
+    preview.href = url;
+    preview.target = "_blank";
+    preview.rel = "noopener noreferrer";
+    
+    const info = document.createElement("div");
+    info.className = "preview-informacoes";
+    
+    const titulo = document.createElement("strong");
+    titulo.textContent = dados.title || url;
+    
+    const descricao = document.createElement("p");
+    descricao.textContent = dados.description || "";
+    
+    info.append(titulo, descricao);
+    
+    if (dados.image) {
+      const img = document.createElement("img");
+      
+      img.className = "preview-imagem";
+      img.src = dados.image;
+      img.alt = dados.title || "Prévia do link";
+      
+      img.onload = () => {
+        const proporcao = img.naturalWidth / img.naturalHeight;
+        
+        if (proporcao <= 1.15) {
+          // Perfil: imagem pequena ao lado do texto
+          preview.classList.add("preview-perfil");
+          preview.prepend(img);
+          preview.appendChild(info);
+        } else {
+          // YouTube e páginas: imagem grande em cima
+          preview.classList.add("preview-grande");
+          preview.prepend(img);
+          preview.appendChild(info);
+        }
+      };
+      
+      img.onerror = () => {
+        img.remove();
+        preview.classList.add("preview-perfil");
+        preview.appendChild(info);
+      };
+      
+    } else {
+      preview.classList.add("preview-perfil");
+      preview.appendChild(info);
+    }
+    
+    area.appendChild(preview);
+    
+  } catch (erro) {
+    console.error("Erro ao criar prévia:", erro);
+  }
+}
+function adicionarTextoComLinks(container, texto) {
+  const area = document.createElement("div");
+  area.className = "texto-mensagem";
+  
+  const regex = /(https?:\/\/[^\s]+|www\.[^\s]+)/gi;
+  const partes = texto.split(regex);
+  
+  partes.forEach(parte => {
+    if (!parte) return;
+    
+    if (/^(https?:\/\/|www\.)/i.test(parte)) {
+      const urlLimpa = parte.replace(/[.,!?;:]+$/, "");
+      const pontuacao = parte.slice(urlLimpa.length);
+      
+      const url = urlLimpa.startsWith("www.") ?
+        "https://" + urlLimpa :
+        urlLimpa;
+      
+      const link = document.createElement("a");
+      link.href = url;
+      link.textContent = urlLimpa;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.className = "link-mensagem";
+      
+      area.appendChild(link);
+      
+      if (pontuacao) {
+        area.appendChild(document.createTextNode(pontuacao));
+      }
+      
+      carregarPreview(url, area);
+      
+    } else {
+      area.appendChild(document.createTextNode(parte));
+    }
+  });
+  
+  container.appendChild(area);
+}
+
+function criarBalao(texto, nome, foto, propria, tipo = "mensagem") {
+  const bubble = document.createElement("div");
+
+  bubble.className = propria ? "bubble user" : "bubble bot";
+
+  if (!propria) {
+    const sender = document.createElement("div");
+    sender.className = "sender";
+
+    const avatar = document.createElement("img");
+    avatar.src = foto || FOTO_PADRAO;
+    avatar.onerror = () => avatar.src = FOTO_PADRAO;
+
+    const nomeEl = document.createElement("span");
+    nomeEl.textContent = nome || "Anônimo";
+
+    sender.append(avatar, nomeEl);
+    bubble.appendChild(sender);
+  }
+if (tipo === "sticker") {
+  const sticker = document.createElement("div");
+  sticker.className = "mensagem-sticker";
+  
+  const img = document.createElement("img");
+  img.src = texto;
+  img.className = "sticker-img";
+  
+  sticker.appendChild(img);
+  
+  const time = document.createElement("span");
+  time.className = "time";
+  time.textContent = new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+  
+  sticker.appendChild(time);
+  
+  messages.appendChild(sticker);
+  messages.scrollTop = messages.scrollHeight;
+  
+  return sticker;
+} else {
+    const conteudo = document.createElement("div");
+    conteudo.textContent = texto;
+    adicionarTextoComLinks(bubble, texto);
+  //  bubble.appendChild(conteudo);
+  }
+
+
+  const hora = document.createElement("div");
+  hora.className = "time";
+  hora.textContent = new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  bubble.appendChild(hora);
+
+  messages.appendChild(bubble);
+
+  observarBalao(bubble);
+
+  messages.scrollTop = messages.scrollHeight;
+
+  return bubble;
+}
+
+// Enviar mensagem
+function enviar() {
+  const texto = input.value.trim();
+
+  if (!texto) return;
+
+  const id = gerarId();
+
+  const bubble = criarBalao(
+    texto,
+    meuNome,
+    minhaFoto,
+    true
+  );
+
+  const status = document.createElement("div");
+  status.className = "status-msg enviando";
+  status.textContent = "◷ Enviando...";
+
+  bubble.appendChild(status);
+
+  const item = {
+    id,
+    bubble,
+    mensagem: {
+      id,
+      tipo: "mensagem",
+      texto
+    },
+    timer: null
+  };
+
+  pendentes.set(id, item);
+
+  input.value = "";
+
+  transmitir(item);
+}
+
+function transmitir(item) {
+  clearTimeout(item.timer);
+
+  const status = item.bubble.querySelector(".status-msg");
+
+  status.className = "status-msg enviando";
+  status.textContent = "◷ Enviando...";
+
+  if (!socket || socket.readyState !== WebSocket.OPEN) {
+    marcarErro(item);
+    return;
+  }
+
+  try {
+    socket.send(JSON.stringify(item.mensagem));
+
+    item.timer = setTimeout(() => {
+      marcarErro(item);
+    }, 10000);
+
+  } catch {
+    marcarErro(item);
+  }
+}
+
+function confirmar(id) {
+  const item = pendentes.get(id);
+  if (!item) return;
+
+  clearTimeout(item.timer);
+
+  const status = item.bubble.querySelector(".status-msg");
+
+  status.className = "status-msg enviada";
+  status.textContent = "✓ Enviada";
+
+  pendentes.delete(id);
+}
+
+function marcarErro(item) {
+  clearTimeout(item.timer);
+
+  const status = item.bubble.querySelector(".status-msg");
+
+  status.className = "status-msg erro";
+status.innerHTML = `
+  <ion-icon name="alert-circle"></ion-icon>
+  <ion-icon name="alert-circle"></ion-icon>
+
+`;
+
+const tentar = document.createElement("button");
+  tentar.className = "tentar-envio";
+//  tentar.textContent = "Tentar novamente";
+
+  tentar.onclick = () => transmitir(item);
+
+  //status.appendChild(tentar);
+}
+
+// Receber mensagens de outros usuários
+function receber(dados) {
+  const usuario = dados.usuario || {};
+
+  const idUsuario = usuario.id || dados.usuarioId;
+
+  const propria =
+    meuId !== null &&
+    idUsuario != null &&
+    String(idUsuario) === String(meuId);
+
+  if (propria) return;
+
+  const texto = dados.tipo === "sticker"
+    ? dados.imagem
+    : dados.texto;
+
+  criarBalao(
+    texto || "",
+    usuario.nome || dados.nome || "Anônimo",
+    usuario.foto || dados.foto || FOTO_PADRAO,
+    false,
+    dados.tipo
+  );
+}
+
+// Animação automática de todos os balões
+const observador = new IntersectionObserver(entradas => {
+  entradas.forEach(entrada => {
+    if (entrada.isIntersecting) {
+      entrada.target.classList.add("visivel");
+      observador.unobserve(entrada.target);
+    }
+  });
+}, {
+  root: messages,
+  threshold: 0.01
+});
+
+function observarBalao(bubble) {
+  observador.observe(bubble);
+}
+
+input.addEventListener("keydown", event => {
+  if (event.key === "Enter") enviar();
+});
+
+conectar();
+</script>
+<script>
+  const conversa = document.querySelector(".chat");
+
+const observadorBaloes = new IntersectionObserver((entradas) => {
+entradas.forEach(entrada => {
+if (entrada.isIntersecting) {
+entrada.target.classList.add("visivel");
+}
+});
+}, {
+root: conversa,
+threshold: 0.05
+});
+
+function observarTodosBaloes() {
+document.querySelectorAll(".bubble:not(.visivel)").forEach(bolha => {
+observadorBaloes.observe(bolha);
+});
+}
+
+// Observa os balões existentes
+observarTodosBaloes();
+
+// Detecta automaticamente os novos balões
+const detector = new MutationObserver(() => {
+observarTodosBaloes();
+});
+
+detector.observe(conversa, {
+childList: true,
+subtree: true
+});
+
+</script>
+
+</body>
+</html>
