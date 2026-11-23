@@ -458,6 +458,29 @@ function gerarId() {
     Math.random().toString(36).slice(2);
 }
 
+async function converterBase64(foto) {
+
+  const resposta = await fetch(foto);
+
+  const blob = await resposta.blob();
+
+  return new Promise((resolve, reject) => {
+
+    const reader = new FileReader();
+
+    reader.onload = () => resolve(reader.result);
+
+    reader.onerror = reject;
+
+    reader.readAsDataURL(blob);
+
+  });
+
+}
+
+//const fotoSalva = localStorage.getItem("fotoUsuario");
+
+
 function conectar() {
   socket = new WebSocket(WS_URL);
 
@@ -830,7 +853,7 @@ function receber(dados) {
   criarBalao(
     texto || "",
     usuario.nome || dados.nome || "Usuário sem nome",
-    usuario.foto || dados.foto || minhaFoto,
+    usuario.foto || dados.foto,
     false,
     dados.tipo
   );
