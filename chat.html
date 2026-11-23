@@ -443,6 +443,9 @@ let meuNomeSalvo = localStorage.getItem("whmer_nome") || "usuário sem nome";
 const meuNome = meuNomeSalvo
 //localStorage.getItem("nomeUsuario") || "Anônimo";
 const fotoSalva = localStorage.getItem("minhaFotoSalva") || "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
+//const fotoSalva = localStorage.getItem("fotoUsuario");
+
+//const fotoBase64 = await converterBase64(fotoSalva);
 const minhaFoto = localStorage.getItem("minhaFotoSalva") ||  "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
 
 const FOTO_PADRAO =
@@ -479,21 +482,41 @@ async function converterBase64(foto) {
 }
 
 //const fotoSalva = localStorage.getItem("fotoUsuario");
-
+async function pegarFotoBase64() {
+  const foto = localStorage.getItem("minhaFotoSalva");
+  
+  const resposta = await fetch(foto);
+  const blob = await resposta.blob();
+  
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+    
+    reader.readAsDataURL(blob);
+  });
+}
 
 function conectar() {
   socket = new WebSocket(WS_URL);
 
-  socket.onopen = () => {
-    statusGlobal.textContent = "Global • Online";
-
+socket.onopen = async () => {
+  statusGlobal.textContent = "Global • Online";
+  
+  try {
+    const fotoBase64 = await pegarFotoBase64();
+    alert(fotoBase64)
     socket.send(JSON.stringify({
       tipo: "usuario",
       nome: meuNome,
-      foto: minhaFoto
+      foto: fotoBase64
     }));
-  };
-
+    
+  } catch (erro) {
+    alert("Erro ao carregar foto: " + erro.message);
+  }
+};
   socket.onmessage = event => {
     let dados;
 
