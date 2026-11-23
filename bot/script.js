@@ -1,0 +1,2072 @@
+
+const messages = document.getElementById("messages");
+const input = document.getElementById("input");
+let meuNomeSalvo = localStorage.getItem("whmer_nome") || "";
+//localStorage.setItem("minhaFotoSalva", base64);
+const fotoSalva = localStorage.getItem("minhaFotoSalva");
+let aguardandoIP = false;
+const YOUTUBE_API_KEY = "AIzaSyBmREsKLafqOo_0LmA07drzNQRcoe6m7QM";
+//AIzaSyBmREsKLafqOo_0LmA07drzNQRcoe6m7QM
+async function pesquisarYouTube(mensagemOriginal, pesquisa) {
+  
+  const bubble = document.createElement("div");
+  bubble.className = "bubble bot";
+  
+  const nome = document.createElement("div");
+  nome.className = "sender";
+  nome.textContent = "Hatsune Miku";
+  const namebot  = document.createElement("div");
+  const divBot  = document.createElement("div");
+  divBot.className = "divBot";
+  namebot.className = "namebot";
+  namebot.innerHTML= "<p>BOT</p>";
+
+  const botselo = document.createElement("div");
+botselo.style.margin = "1px"
+botselo.innerHTML = `<svg viewBox="0 0 18 18" width="13" height="13"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>`
+     nome.appendChild(botselo);
+     divBot.append(nome, namebot);
+
+
+  const citacao = document.createElement("div");
+  citacao.className = "citacao";
+  //citacao.textContent = mensagemOriginal;
+  
+  const d = document.createElement("strong");
+  const  majico = document.createElement("p");
+  d.textContent = "Você";
+  majico.textContent = mensagemOriginal;
+
+citacao.append(d, majico);
+  const status = document.createElement("p");
+  status.textContent = "🔎 Pesquisando no YouTube...";
+  
+  bubble.append(divBot, citacao, status);
+  messages.appendChild(bubble);
+  
+  messages.scrollTop = messages.scrollHeight;
+  
+  try {
+    
+    const url = new URL(
+      "https://www.googleapis.com/youtube/v3/search"
+    );
+    
+    url.search = new URLSearchParams({
+      part: "snippet",
+      q: pesquisa,
+      type: "video",
+      maxResults: "5",
+      regionCode: "BR",
+      relevanceLanguage: "pt",
+      key: YOUTUBE_API_KEY
+    });
+    
+    const resposta = await fetch(url);
+    const dados = await resposta.json();
+    
+    if (!resposta.ok) {
+      throw new Error(dados.error?.message || "Erro na pesquisa");
+    }
+    
+    if (!dados.items || dados.items.length === 0) {
+      status.textContent = "Nenhum vídeo encontrado.";
+      return;
+    }
+    
+    // Buscar estatísticas dos vídeos
+    const ids = dados.items
+      .map(item => item.id.videoId)
+      .join(",");
+    
+    const detalhesURL = new URL(
+      "https://www.googleapis.com/youtube/v3/videos"
+    );
+    
+    detalhesURL.search = new URLSearchParams({
+      part: "statistics",
+      id: ids,
+      key: YOUTUBE_API_KEY
+    });
+    
+    const respostaDetalhes = await fetch(detalhesURL);
+    const detalhes = await respostaDetalhes.json();
+    
+    if (!respostaDetalhes.ok) {
+      throw new Error("Não foi possível carregar os detalhes.");
+    }
+    
+    const estatisticas = {};
+    
+    detalhes.items.forEach(video => {
+      estatisticas[video.id] = video.statistics;
+    });
+    
+    status.remove();
+    
+    const resultados = document.createElement("div");
+    resultados.className = "yt-resultados";
+    
+    const titulo = document.createElement("p");
+    titulo.className = "yt-titulo";
+    titulo.textContent = `Resultados para: ${pesquisa}`;
+    
+    resultados.appendChild(titulo);
+    
+    dados.items.forEach(item => {
+      
+      const videoId = item.id.videoId;
+      const snippet = item.snippet;
+      const stats = estatisticas[videoId] || {};
+      
+      const card = document.createElement("div");
+      card.className = "yt-card";
+      
+      const thumb = document.createElement("img");
+      thumb.className = "yt-thumb";
+      thumb.src = snippet.thumbnails.high?.url ||
+        snippet.thumbnails.medium?.url;
+      thumb.alt = snippet.title;
+      
+      const player = document.createElement("div");
+      player.className = "yt-player";
+      
+      const informacoes = document.createElement("div");
+      informacoes.className = "yt-info";
+      
+      const tituloVideo = document.createElement("strong");
+      tituloVideo.textContent = snippet.title;
+      
+      const canal = document.createElement("p");
+      canal.textContent = snippet.channelTitle;
+      
+      const visualizacoes = document.createElement("small");
+      visualizacoes.textContent =
+        `${Number(stats.viewCount || 0).toLocaleString("pt-BR")} visualizações`;
+      
+      const assistir = document.createElement("button");
+      assistir.className = "yt-assistir";
+      assistir.textContent = "▶ Assistir vídeo";
+      
+      assistir.onclick = () => {
+        thumb.style.display = "none"
+        player.innerHTML = "";
+        
+        const iframe = document.createElement("iframe");
+        
+        iframe.src =
+          `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1`;
+        
+        iframe.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        
+        iframe.allowFullscreen = true;
+        iframe.title = snippet.title;
+        
+        player.appendChild(iframe);
+        assistir.remove();
+        
+      };
+      
+      const link = document.createElement("a");
+      link.href = `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "Abrir no YouTube";
+      
+      informacoes.append(
+        tituloVideo,
+        canal,
+        visualizacoes,
+        assistir,
+        link
+      );
+      
+      const time = document.createElement("span");
+  time.className = "time";
+  time.textContent = new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+      card.append(thumb, player, informacoes, time);
+      resultados.appendChild(card);
+      
+    });
+    
+    bubble.appendChild(resultados);
+    
+    messages.scrollTop = messages.scrollHeight;
+    
+  } catch (erro) {
+    
+    console.error(erro);
+    
+    status.textContent = "❌ Erro ao pesquisar vídeos.";
+    
+    const tentar = document.createElement("button");
+    tentar.textContent = "↻ Tentar novamente";
+    tentar.className = "yt-assistir";
+    
+    tentar.onclick = () => {
+      bubble.remove();
+      pesquisarYouTube(mensagemOriginal, pesquisa);
+    };
+    
+    bubble.appendChild(tentar);
+  }
+}
+
+  
+
+
+
+
+
+async function criarBanner(mensagemOriginal, texto, fonte = "Standard") {
+  const bubble = document.createElement("div");
+  bubble.className = "bubble bot";
+
+  const nome = document.createElement("div");
+  nome.className = "sender";
+  nome.textContent = "Hatsune Miku";
+  
+  const namebot  = document.createElement("div");
+  const divBot  = document.createElement("div");
+  divBot.className = "divBot";
+  namebot.className = "namebot";
+  namebot.innerHTML= "<p>BOT</p>";
+
+const botselo = document.createElement("div");
+botselo.style.margin = "1px"
+botselo.innerHTML = `<svg viewBox="0 0 18 18" width="13" height="13"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>`
+     nome.appendChild(botselo);
+     divBot.append(nome, namebot)
+
+  const citacao = document.createElement("div");
+  citacao.className = "citacao";
+  //citacao.textContent = mensagemOriginal;
+const d = document.createElement("strong");
+  const  majico = document.createElement("p");
+  d.textContent = "Você";
+  majico.textContent = mensagemOriginal;
+
+citacao.append(d, majico);
+
+  const banner = document.createElement("pre");
+  banner.className = "ascii-banner";
+  banner.textContent = "Gerando banner...";
+
+const time = document.createElement("span");
+  time.className = "time";
+  time.textContent = new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  bubble.append(divBot, citacao, banner, time);
+  messages.appendChild(bubble);
+
+  try {
+    const modulo = await import("https://esm.sh/figlet@1.8.0");
+    const figlet = modulo.default;
+
+    figlet.defaults({
+      fontPath: "https://cdn.jsdelivr.net/npm/figlet@1.8.0/fonts",
+      fetchFontIfMissing: true
+    });
+
+    const resultado = await figlet.text(texto, {
+      font: fonte,
+      horizontalLayout: "default",
+      verticalLayout: "default",
+      width: 100,
+      whitespaceBreak: true
+    });
+
+    banner.textContent = resultado;
+
+  } catch (erro) {
+    banner.textContent = "Erro ao carregar a fonte: " + fonte;
+    console.error(erro);
+  }
+  messages.scrollTop = messages.scrollHeight;
+
+}
+  
+// Criar mensagem
+function criarMensagem(texto, tipo) {
+
+  const bubble = document.createElement("div");
+
+  bubble.className = "bubble " + tipo;
+
+  if (tipo === "bot") {
+    const sender = document.createElement("div");
+    sender.className = "sender";
+    sender.textContent = "Hatsune Miku";
+    
+    const namebot  = document.createElement("div");
+  const divBot  = document.createElement("div");
+  divBot.className = "divBot";
+  namebot.className = "namebot";
+  namebot.innerHTML= "<p>BOT</p>";
+
+
+const botselo = document.createElement("div");
+botselo.style.margin = "1px"
+botselo.innerHTML = `<svg viewBox="0 0 18 18" width="13" height="13"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>`
+      sender.appendChild(botselo);
+divBot.append(sender, namebot);
+    bubble.appendChild(divBot);
+  }
+
+  const content = document.createElement("div");
+  content.textContent = texto;
+
+  const time = document.createElement("span");
+  time.className = "time";
+  time.textContent = new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  bubble.append(content, time);
+  messages.appendChild(bubble);
+
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function carregarGIF() {
+  return new Promise((resolve, reject) => {
+    
+    if (window.GIF) {
+      resolve();
+      return;
+    }
+    
+    const script = document.createElement("script");
+    
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.min.js";
+    
+    const timeout = setTimeout(() => {
+      script.remove();
+      reject(new Error("Tempo limite ao carregar biblioteca"));
+    }, 8000);
+    
+    script.onload = () => {
+      clearTimeout(timeout);
+      resolve();
+    };
+    
+    script.onerror = () => {
+      clearTimeout(timeout);
+      reject(new Error("Falha ao carregar biblioteca"));
+    };
+    
+    document.head.appendChild(script);
+  });
+}
+
+
+
+async function criarStickerSpray(mensagemOriginal, texto) {
+  const bubble = document.createElement("div");
+  bubble.className = "bubble bot";
+  const nome = document.createElement("div");
+  nome.className = "sender";
+  nome.textContent = "Hatsune Miku";
+      const namebot  = document.createElement("div");
+  const divBot  = document.createElement("div");
+  divBot.className = "divBot";
+  namebot.className = "namebot";
+  namebot.innerHTML= "<p>BOT</p>";
+
+const botselo = document.createElement("div");
+botselo.style.margin = "1px"
+botselo.innerHTML = `<svg viewBox="0 0 18 18" width="13" height="13"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>`
+     nome.appendChild(botselo);
+     divBot.append(nome, namebot);
+
+  const citacao = document.createElement("div");
+  citacao.className = "citacao";
+  //citacao.textContent = mensagemOriginal;
+const d = document.createElement("strong");
+  const  majico = document.createElement("p");
+  d.textContent = "Você";
+  majico.textContent = mensagemOriginal;
+
+citacao.append(d, majico);
+
+  const status = document.createElement("p");
+  status.textContent = "Criando texto spray...";
+
+  bubble.append(nome, citacao, status);
+  messages.appendChild(bubble);
+
+  try {
+    await document.fonts.load('100px "Sedgwick Ave Display"');
+
+    const canvas = document.createElement("canvas");
+    canvas.width = 512;
+    canvas.height = 512;
+
+    const ctx = canvas.getContext("2d");
+
+    let tamanho = 100;
+    let linhas = [];
+
+    function quebrarTexto() {
+      ctx.font = `${tamanho}px "Sedgwick Ave Display"`;
+
+      linhas = [];
+      let linha = "";
+
+      texto.split(/\s+/).forEach(palavra => {
+        const teste = linha ? linha + " " + palavra : palavra;
+
+        if (ctx.measureText(teste).width > 450 && linha) {
+          linhas.push(linha);
+          linha = palavra;
+        } else {
+          linha = teste;
+        }
+      });
+
+      if (linha) linhas.push(linha);
+    }
+
+    quebrarTexto();
+
+    while (tamanho > 25 && linhas.length * tamanho * 1.25 > 400) {
+      tamanho -= 5;
+      quebrarTexto();
+    }
+
+    const altura = tamanho * 1.25;
+    const inicio = 256 - (linhas.length * altura) / 2 + altura / 2;
+
+    // Respingo de tinta
+    
+    // Respingos pequenos próximos das letras
+    ctx.save();
+
+    ctx.fillStyle = "#000";
+
+    linhas.forEach((linha, i) => {
+      const y = inicio + i * altura;
+      const largura = Math.min(
+        ctx.measureText(linha).width,
+        450
+      );
+
+      const esquerda = 256 - largura / 2;
+      const direita = 256 + largura / 2;
+
+      for (let j = 0; j < 12; j++) {
+        const lado = Math.random() > 0.5 ? direita : esquerda;
+
+        const x = lado + (Math.random() - 0.5) * 18;
+        const sy = y + (Math.random() - 0.5) * tamanho * 0.7;
+
+        ctx.beginPath();
+        ctx.arc(x, sy, Math.random() * 1.5 + 0.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    });
+
+    ctx.restore();
+
+    // Letras de grafite
+    ctx.font = `${tamanho}px "Sedgwick Ave Display"`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillStyle = "#000";
+    ctx.shadowColor = "#000";
+    ctx.shadowBlur = 3;
+
+    linhas.forEach((linha, i) => {
+      const y = inicio + i * altura;
+
+      ctx.fillText(linha, 256, y, 450);
+
+      // Pequenas escorridas de tinta
+      for (let j = 0; j < 3; j++) {
+        const x = 256 + (Math.random() - 0.5) * 300;
+
+        ctx.beginPath();
+        ctx.moveTo(x, y + tamanho * 0.25);
+        ctx.lineTo(x + 2, y + tamanho * 0.25 + Math.random() * 15);
+        ctx.strokeStyle = "#000";
+        ctx.lineWidth = Math.random() * 2 + 0.5;
+        ctx.stroke();
+      }
+    });
+
+    // Exportar WEBP estático
+    canvas.toBlob(blob => {
+      if (!blob) {
+        status.textContent = "Erro ao criar imagem.";
+        return;
+      }
+
+      const url = URL.createObjectURL(blob);
+
+      const imagem = document.createElement("img");
+      imagem.src = url;
+      imagem.style.margin = "0 auto 10px"
+      imagem.className = "gif-gerado";
+
+      const baixar = document.createElement("a");
+      baixar.href = url;
+      baixar.download = "texto-spray.webp";
+      baixar.textContent = "Baixar WEBP";
+
+      status.remove();
+      const time = document.createElement("span");
+  time.className = "time";
+  time.textContent = new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+      bubble.append(imagem, baixar, time);
+
+    }, "image/webp", 0.95);
+
+  } catch (erro) {
+    status.textContent = "Erro: " + erro.message;
+    console.error(erro);
+  }
+  messages.scrollTop = messages.scrollHeight;
+}
+
+
+async function criarGifTextoCase(mensagemOriginal, texto) {
+  const bubble = document.createElement("div");
+  bubble.className = "bubble bot";
+
+  const nome = document.createElement("div");
+  nome.className = "sender";
+  nome.textContent = "Hatsune Miku";
+  const namebot  = document.createElement("div");
+  const divBot  = document.createElement("div");
+  divBot.className = "divBot";
+  namebot.className = "namebot";
+  namebot.innerHTML= "<p>BOT</p>";
+
+  const botselo = document.createElement("div");
+botselo.style.margin = "1px"
+botselo.innerHTML = `<svg viewBox="0 0 18 18" width="13" height="13"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>`
+     nome.appendChild(botselo);
+     divBot.append(nome, namebot);
+
+  const citacao = document.createElement("div");
+  citacao.className = "citacao";
+  //citacao.textContent = mensagemOriginal;
+const d = document.createElement("strong");
+  const  majico = document.createElement("p");
+  d.textContent = "Você";
+  majico.textContent = mensagemOriginal;
+
+citacao.append(d, majico);
+
+  const status = document.createElement("p");
+  status.textContent = "Criando sticker WEBP...";
+  
+const time = document.createElement("span");
+  time.className = "time";
+  time.textContent = new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  bubble.append(divBot, citacao, status);
+  messages.appendChild(bubble);
+
+  try {
+    const { encodeAnimation } = await import(
+      "https://esm.sh/wasm-webp"
+    );
+
+    const canvas = document.createElement("canvas");
+    canvas.width = 512;
+    canvas.height = 512;
+
+    const ctx = canvas.getContext("2d");
+
+    const frames = [];
+
+    const cores = [
+      "#ff00ff",
+      "#00ffff",
+      "#ffff00",
+      "#00ff66",
+      "#ff3333",
+      "#ffffff"
+    ];
+
+    // 12 quadros com piscadas rápidas
+    for (let i = 0; i < 12; i++) {
+      ctx.clearRect(0, 0, 512, 512);
+
+      const cor = cores[i % cores.length];
+      const ligado = i % 2 === 0;
+
+      ctx.save();
+
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+
+
+const palavras = texto.split(/\s+/);
+const linhas = [];
+let linha = "";
+
+let tamanho = 90;
+
+ctx.font = `bold ${tamanho}px Arial`;
+
+while (tamanho > 25) {
+  linhas.length = 0;
+  linha = "";
+
+  for (const palavra of palavras) {
+    const teste = linha ? linha + " " + palavra : palavra;
+
+    if (ctx.measureText(teste).width > 460 && linha) {
+      linhas.push(linha);
+      linha = palavra;
+    } else {
+      linha = teste;
+    }
+  }
+
+  if (linha) linhas.push(linha);
+
+  if (linhas.length * tamanho * 1.2 <= 440) break;
+
+  tamanho -= 5;
+  ctx.font = `bold ${tamanho}px Arial`;
+}
+
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+
+const alturaLinha = tamanho * 1.2;
+const alturaTotal = linhas.length * alturaLinha;
+const inicioY = 256 - alturaTotal / 2 + alturaLinha / 2;
+
+ctx.shadowColor = cor;
+ctx.shadowBlur = ligado ? 35 : 0;
+ctx.globalAlpha = ligado ? 1 : 0.08;
+ctx.fillStyle = cor;
+
+linhas.forEach((linha, indice) => {
+  ctx.fillText(
+    linha,
+    256,
+    inicioY + indice * alturaLinha
+  );
+});
+      ctx.restore();
+
+      const imagem = ctx.getImageData(0, 0, 512, 512);
+
+      frames.push({
+        data: new Uint8Array(imagem.data),
+        duration: 60,
+        config: {
+          lossless: 0,
+          quality: 75
+        }
+      });
+    }
+
+    const resultado = await encodeAnimation(
+      512,
+      512,
+      true,
+      frames
+    );
+
+    if (!resultado) {
+      throw new Error("Não foi possível gerar o WEBP.");
+    }
+
+    const blob = new Blob(
+      [resultado],
+      { type: "image/webp" }
+    );
+
+    if (blob.size > 500 * 1024) {
+      throw new Error("O arquivo ultrapassou 500 KB.");
+    }
+
+    const url = URL.createObjectURL(blob);
+
+    const imagem = document.createElement("img");
+    imagem.src = url;
+    imagem.className = "gif-gerado";
+
+    const baixar = document.createElement("a");
+    baixar.href = url;
+    baixar.download = "sticker.webp";
+    baixar.textContent = "Baixar sticker WEBP";
+
+    status.remove();
+    bubble.append(imagem, baixar, time);
+    messages.scrollTop = messages.scrollHeight;
+
+
+  } catch (erro) {
+    status.textContent = "Erro ao criar sticker: " + erro.message;
+    console.error(erro);
+  }
+}
+
+
+function criarRespostaBot(mensagemOriginal, resposta) {
+
+  const bubble = document.createElement("div");
+  bubble.className = "bubble bot";
+
+  const sender = document.createElement("div");
+  sender.className = "sender";
+  sender.textContent = "Hataune Bot";
+const botselo = document.createElement("div");
+botselo.style.margin = "1px"
+botselo.innerHTML = `<svg viewBox="0 0 18 18" width="13" height="13"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>`
+      sender.appendChild(botselo);
+
+  const citacao = document.createElement("div");
+  citacao.className = "citacao";
+
+  const nome = document.createElement("strong");
+  nome.textContent = "Você";
+
+  const texto = document.createElement("p");
+  texto.textContent = mensagemOriginal;
+
+  citacao.append(nome, texto);
+
+  const content = document.createElement("div");
+  content.textContent = resposta;
+
+  const time = document.createElement("span");
+  time.className = "time";
+  time.textContent = new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  bubble.append(sender, citacao, content, time);
+
+  messages.appendChild(bubble);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+
+
+function criarCase(mensagemOriginal) {
+
+  const bubble = document.createElement("div");
+  bubble.className = "bubble bot";
+
+  bubble.style.padding = "0";
+  bubble.style.overflow = "hidden";
+
+  // Nome do bot
+  const sender = document.createElement("div");
+  sender.className = "sender";
+  sender.textContent = "Hatsune Miku";
+  const namebot  = document.createElement("div");
+  const divBot  = document.createElement("div");
+  divBot.className = "divBot";
+  namebot.className = "namebot";
+  namebot.innerHTML= "<p>BOT</p>";
+  namebot.style.margin = "10px";
+  
+  sender.style.padding = "12px 12px 8px";
+  
+  const botselo = document.createElement("div");
+botselo.style.margin = "1px"
+botselo.innerHTML = `<svg viewBox="0 0 18 18" width="13" height="13"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>`
+      sender.appendChild(botselo);
+      divBot.append(sender, namebot);
+  // Citação da mensagem
+  const citacao = document.createElement("div");
+  citacao.className = "citacao";
+  citacao.style.margin = "-10px 10px 10px";
+
+  const nome = document.createElement("strong");
+  nome.textContent = "Você";
+
+  const texto = document.createElement("p");
+  texto.textContent = mensagemOriginal;
+
+  citacao.append(nome, texto);
+
+  // Imagem
+  const imagem = document.createElement("img");
+  imagem.src = "./bot/bot.jpeg";
+  imagem.className = "case-image";
+  imagem.style.borderRadius = "10px";
+  // Conteúdo
+  const conteudo = document.createElement("div");
+  conteudo.className = "case-content";
+
+  const titulo = document.createElement("h3");
+  
+  titulo.innerHTML = `<h3>Olá! <span style="color:#b99cff; font-weight:bold; letter-spacing:-1px;">@${meuNomeSalvo}</span> 👋 </h3>`;
+
+  const descricao = document.createElement("span");
+  descricao.textContent = "Seja bem-vindo! Eu sou a Miku, o Bot do sistema. Estou aqui para ajudar você.";
+
+  const cmg = document.createElement("div");
+  const cmgF = document.createElement("div");
+  const cmgtodos = document.createElement("div");
+cmgtodos.className = "cmgtodos"
+cmgF.innerHTML = "<p><br>< / > meusdados<br> < / > ip<br> < / > epo nome do video<br> < / > banner<br>< / > list (banner list)<br> < / > spray texto</p>" 
+ cmg.innerHTML = "<p><br>< / > main<br>< / > dolar<br>< / > criador<br>< / > yt nome do video<br> < / > nig texto</p>"
+ cmgtodos.append(cmg, cmgF);
+ 
+  const botao = document.createElement("button");
+  botao.textContent = "Começar";
+
+const time = document.createElement("span");
+  time.className = "time";
+  time.textContent = new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  botao.onclick = () => {
+    criarMensagem("Vamos começar!", "user");
+  };
+
+  conteudo.append(titulo, descricao, cmgtodos, botao, time);
+
+  bubble.append(divBot, citacao, imagem, conteudo);
+
+  messages.appendChild(bubble);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+async function pesquisarEporner(mensagemOriginal, termo) {
+  
+  const bubble = document.createElement("div");
+  bubble.className = "bubble bot";
+  
+  const nome = document.createElement("div");
+  nome.className = "sender";
+  nome.textContent = "Hatsune Miku";
+  const namebot  = document.createElement("div");
+  const divBot  = document.createElement("div");
+  divBot.className = "divBot";
+  namebot.className = "namebot";
+  namebot.innerHTML= "<p>BOT</p>";
+
+  const botselo = document.createElement("div");
+botselo.style.margin = "1px"
+botselo.innerHTML = `<svg viewBox="0 0 18 18" width="13" height="13"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>`
+     nome.appendChild(botselo);
+     divBot.append(nome, namebot);
+
+  const citacao = document.createElement("div");
+  citacao.className = "citacao";
+  citacao.textContent = mensagemOriginal;
+  
+  const status = document.createElement("p");
+  status.textContent = "🔎 Pesquisando vídeos...";
+  
+  bubble.append(divBot, citacao, status);
+  messages.appendChild(bubble);
+  
+  messages.scrollTop = messages.scrollHeight;
+  
+  try {
+    
+    const perPage = 20;
+    
+    const api = `https://www.eporner.com/api/v2/video/search/?query=${encodeURIComponent(termo)}&per_page=${perPage}&thumbsize=big`;
+    
+    const resposta = await fetch(api);
+    
+    if (!resposta.ok) {
+      throw new Error("Erro ao consultar a API");
+    }
+    
+    const dados = await resposta.json();
+    
+    const videos = dados.videos || [];
+    
+    if (!videos.length) {
+      status.textContent = "Nenhum vídeo encontrado.";
+      return;
+    }
+    
+    status.remove();
+    
+    const container = document.createElement("div");
+    container.className = "epo-resultados";
+    
+    const titulo = document.createElement("p");
+    titulo.className = "epo-titulo";
+    titulo.textContent = `Resultados para: ${termo}`;
+    
+    container.appendChild(titulo);
+    
+    videos.forEach(video => {const card = document.createElement("div");
+card.className = "epo-card";
+
+const nomeVideo = document.createElement("strong");
+nomeVideo.className = "epo-nome";
+nomeVideo.textContent = video.title || "Sem título";
+
+const detalhes = document.createElement("p");
+detalhes.className = "epo-detalhes";
+
+detalhes.textContent =
+  `⏱ ${video.length || "N/A"} · 👁 ${Number(video.views || 0).toLocaleString("pt-BR")} visualizações`;
+
+const player = document.createElement("iframe");
+
+player.src = video.embed;
+player.title = video.title || "Vídeo";
+player.allowFullscreen = true;
+player.allow = "autoplay; fullscreen; picture-in-picture";
+player.loading = "lazy";
+
+const link = document.createElement("a");
+
+link.href = video.url || video.link;
+link.target = "_blank";
+link.rel = "noopener noreferrer";
+link.textContent = "Assistir no site oficial";
+link.className = "epo-link";
+
+  const time = document.createElement("span");
+  time.className = "time";
+  time.textContent = new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+  
+card.append(nomeVideo, detalhes, player, link, time);
+//card.append(nomeVideo, detalhes, player);
+
+container.appendChild(card);
+      
+    });
+    
+    bubble.appendChild(container);
+    
+    messages.scrollTop = messages.scrollHeight;
+    
+  } catch (erro) {
+    
+    console.error("Erro Eporner:", erro);
+    
+    status.textContent = "❌ Erro ao pesquisar vídeos.";
+    
+    const tentar = document.createElement("button");
+    tentar.className = "epo-assistir";
+    tentar.textContent = "↻ Tentar novamente";
+    
+    tentar.onclick = () => {
+      bubble.remove();
+      pesquisarEporner(mensagemOriginal, termo);
+    };
+    
+    bubble.appendChild(tentar);
+  }
+}
+
+function criarCaseIP(mensagemOriginal, data) {
+
+  const bubble = document.createElement("div");
+  bubble.className = "bubble bot ip-case";
+
+  const sender = document.createElement("div");
+  sender.className = "sender";
+  sender.textContent = "Hataune Bot";
+const botselo = document.createElement("div");
+botselo.style.margin = "1px"
+botselo.innerHTML = `<svg viewBox="0 0 18 18" width="13" height="13"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>`
+      sender.appendChild(botselo);
+
+  // Mensagem citada
+  const citacao = document.createElement("div");
+  citacao.className = "citacao";
+
+  const nome = document.createElement("strong");
+  nome.textContent = "Você";
+
+  const original = document.createElement("p");
+  original.textContent = mensagemOriginal;
+
+  citacao.append(nome, original);
+
+  // Título
+  const titulo = document.createElement("h3");
+  titulo.textContent = "🌐 Consulta de IP";
+
+  const ip = document.createElement("div");
+  ip.className = "ip-destaque";
+  ip.textContent = data.ip;
+
+  bubble.append(sender, citacao, titulo, ip);
+
+  // IP privado
+  if (data.privado) {
+
+    const aviso = document.createElement("p");
+    aviso.className = "ip-aviso";
+    aviso.textContent =
+      "Este é um endereço IP privado de rede local. Não possui localização geográfica pública.";
+
+    bubble.appendChild(aviso);
+
+    messages.appendChild(bubble);
+    messages.scrollTop = messages.scrollHeight;
+
+    return;
+  }
+
+  // Informações
+  const campos = [
+    ["Cidade", data.city],
+    ["Região", data.region],
+    ["País", data.country],
+    ["Continente", data.continent],
+    ["CEP", data.postal],
+    ["Provedor", data.connection?.isp],
+    ["Organização", data.connection?.org],
+    ["Domínio", data.connection?.domain],
+    ["Fuso horário", data.timezone?.id],
+    ["Latitude", data.latitude],
+    ["Longitude", data.longitude]
+  ];
+
+  const lista = document.createElement("div");
+  lista.className = "ip-lista";
+
+  campos.forEach(([nome, valor]) => {
+
+    if (valor === null || valor === undefined || valor === "") {
+      return;
+    }
+
+    const linha = document.createElement("div");
+    linha.className = "ip-linha";
+
+    const label = document.createElement("span");
+    label.textContent = nome;
+
+    const resultado = document.createElement("strong");
+    resultado.textContent = valor;
+
+    linha.append(label, resultado);
+    lista.appendChild(linha);
+  });
+
+  bubble.appendChild(lista);
+
+  // Botão do mapa
+  if (data.latitude && data.longitude) {
+
+    const botao = document.createElement("button");
+    botao.className = "ip-mapa";
+    botao.textContent = "Ver localização aproximada";
+
+    botao.onclick = () => {
+
+      const url =
+        `https://www.google.com/maps?q=${data.latitude},${data.longitude}`;
+
+      window.open(url, "_blank");
+    };
+
+    bubble.appendChild(botao);
+  }
+
+  const time = document.createElement("span");
+  time.className = "time";
+  time.textContent = new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  bubble.appendChild(time);
+
+  messages.appendChild(bubble);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+
+async function consultarIP(ip, mensagemOriginal) {
+
+  // Verifica se é um IP privado
+  const partes = ip.split(".").map(Number);
+
+  const privado =
+    partes[0] === 10 ||
+    partes[0] === 127 ||
+    (partes[0] === 172 && partes[1] >= 16 && partes[1] <= 31) ||
+    (partes[0] === 192 && partes[1] === 168) ||
+    (partes[0] === 169 && partes[1] === 254);
+
+  if (privado) {
+    criarCaseIP(mensagemOriginal, {
+      ip,
+      privado: true
+    });
+    return;
+  }
+
+  try {
+
+    const response = await fetch(
+      `https://ipwho.is/${encodeURIComponent(ip)}`
+    );
+
+    if (!response.ok) {
+      throw new Error("Falha na consulta.");
+    }
+
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(data.message || "IP não encontrado.");
+    }
+
+    criarCaseIP(mensagemOriginal, data);
+
+  } catch (error) {
+
+    criarMensagem(
+      "Não foi possível consultar esse IP. Tente novamente.",
+      "bot"
+    );
+
+    console.error(error);
+  }
+}
+
+
+function caseDados(mensagemOriginal) {
+
+  const bubble = document.createElement("div");
+  bubble.className = "bubble bot";
+
+  bubble.style.padding = "0";
+  bubble.style.overflow = "hidden";
+  bubble.style.width = "260px";
+
+  // Nome do bot
+  const sender = document.createElement("div");
+  sender.className = "sender";
+  sender.textContent = "Hatsune Miku";
+  const namebot  = document.createElement("div");
+  const divBot  = document.createElement("div");
+  divBot.className = "divBot";
+  namebot.className = "namebot";
+  namebot.innerHTML= "<p>BOT</p>";
+
+
+  sender.style.padding = "12px 12px 8px";
+  
+  const botselo = document.createElement("div");
+botselo.style.margin = "1px"
+botselo.innerHTML = `<svg viewBox="0 0 18 18" width="13" height="13"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>`
+      sender.appendChild(botselo);
+      divBot.append(sender, namebot);
+  // Citação da mensagem
+  const citacao = document.createElement("div");
+  citacao.className = "citacao";
+  citacao.style.margin = "0 10px 10px";
+
+  const nome = document.createElement("strong");
+  nome.textContent = "Você";
+
+  const texto = document.createElement("p");
+  texto.textContent = mensagemOriginal;
+
+  citacao.append(nome, texto);
+
+  // Imagem
+  const imagem = document.createElement("img");
+  imagem.className = "shareImhsnd"
+  imagem.src = fotoSalva;
+  imagem.width = 300;
+  imagem.height = 300;
+//  imagem.className = "case-image";
+
+  // Conteúdo
+  const conteudo = document.createElement("div");
+  conteudo.className = "case-content";
+
+  const titulo = document.createElement("h3");
+  
+  titulo.innerHTML = `<h3>Nome :<span style="color:#b99cff; font-weight:bold; letter-spacing:-1px;">@${meuNomeSalvo}</span> </h3>`;
+
+  const descricao = document.createElement("span");
+  descricao.textContent = "";
+
+  const cmg = document.createElement("div");
+  const cmgF = document.createElement("div");
+  const cmgtodos = document.createElement("div");
+cmgtodos.className = "cmgtodos"
+cmgF.innerHTML = "<p>< / > meusdados<br> < / > usuarios" 
+ cmg.innerHTML = "<p>< / > main<br>< / > user<br>< / > ip<br>< / > criador<br>< / > lojinha</p>"
+ cmgtodos.append(cmg, cmgF);
+ 
+  const botao = document.createElement("button");
+  botao.textContent = "Baixar Imagem";
+  botao.href = fotoSalva;
+
+const time = document.createElement("span");
+  time.className = "time";
+  time.textContent = new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  botao.onclick = () => {
+    criarMensagem("Quero essa imagem!", "user");
+compartilharImagem()
+     };
+
+  conteudo.append(titulo, descricao, time);
+
+  bubble.append(divBot, citacao, imagem, conteudo);
+
+  messages.appendChild(bubble);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+async function compartilharImagem() {
+
+  const imagem = document.querySelector(".shareImhsnd");
+
+  if (!fotoSalva) {
+    alert("Nenhuma imagem encontrada!");
+    return;
+  }
+
+  imagem.src = fotoSalva;
+
+  try {
+
+    // Aguarda a imagem carregar
+    if (!imagem.complete || imagem.naturalWidth === 0) {
+      await new Promise((resolve, reject) => {
+        imagem.onload = resolve;
+        imagem.onerror = reject;
+      });
+    }
+
+    // Converte a imagem em arquivo
+    const resposta = await fetch(fotoSalva);
+
+    if (!resposta.ok) {
+      throw new Error("Erro ao buscar imagem.");
+    }
+
+    const blob = await resposta.blob();
+
+    if (!blob.type.startsWith("image/")) {
+      throw new Error("O arquivo não é uma imagem.");
+    }
+
+    const arquivo = new File(
+      [blob],
+      "imagem." + (blob.type.split("/")[1] || "jpeg"),
+      { type: blob.type }
+    );
+
+    // Compartilhamento nativo
+    if (navigator.canShare && navigator.canShare({ files: [arquivo] })) {
+
+      await navigator.share({
+        files: [arquivo],
+        title: "Compartilhar imagem",
+        text: "Olha essa imagem!"
+      });
+
+    } else {
+      alert("Compartilhamento de arquivos não suportado.");
+    }
+
+  } catch (erro) {
+
+    console.error("Erro:", erro);
+    alert("Erro ao compartilhar: " + erro.message);
+
+  }
+}
+
+async function atualizarCotacaoDolar(card) {
+  
+  const preco = card.querySelector(".dolar-preco");
+  const variacao = card.querySelector(".dolar-variacao");
+  const maxima = card.querySelector(".dolar-maxima");
+  const minima = card.querySelector(".dolar-minima");
+  const atualizacao = card.querySelector(".dolar-atualizacao");
+  
+  try {
+    
+    const resposta = await fetch(
+      "https://economia.awesomeapi.com.br/json/last/USD-BRL"
+    );
+    
+    if (!resposta.ok) throw new Error("Erro na API");
+    
+    const dados = await resposta.json();
+    const dolar = dados.USDBRL;
+    
+    if (!dolar || !dolar.bid) {
+      throw new Error("Cotação indisponível");
+    }
+    
+    const valor = Number(dolar.bid);
+    const porcentagem = Number(dolar.pctChange);
+    
+    preco.textContent = valor.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    });
+    
+    variacao.textContent =
+      `${porcentagem >= 0 ? "▲" : "▼"} ${Math.abs(porcentagem).toFixed(2)}%`;
+    
+    variacao.style.color = porcentagem >= 0 ? "#36d98b" : "#ff6262";
+    
+    maxima.textContent = Number(dolar.high).toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    });
+    
+    minima.textContent = Number(dolar.low).toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    });
+    
+    atualizacao.textContent =
+      "Atualizado às " +
+      new Date(Number(dolar.timestamp) * 1000).toLocaleTimeString("pt-BR");
+    
+  } catch (erro) {
+    
+    console.error(erro);
+    
+    preco.textContent = "Cotação indisponível";
+    variacao.textContent = "Não foi possível atualizar";
+    atualizacao.textContent = "Verifique sua conexão e tente novamente.";
+    
+  }
+}
+
+function criarCaseDolar(mensagemOriginal) {
+  
+  const bubble = document.createElement("div");
+  bubble.className = "bubble bot";
+  
+  const nome = document.createElement("div");
+  nome.className = "sender";
+  nome.textContent = "Hatsune Miku";
+  const namebot  = document.createElement("div");
+  const divBot  = document.createElement("div");
+  divBot.className = "divBot";
+  namebot.className = "namebot";
+  namebot.innerHTML= "<p>BOT</p>";
+
+
+  const botselo = document.createElement("div");
+botselo.style.margin = "1px"
+botselo.innerHTML = `<svg viewBox="0 0 18 18" width="13" height="13"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>`
+     nome.appendChild(botselo);
+     divBot.append(nome, namebot);
+  const citacao = document.createElement("div");
+  const dnjenfn = document.createElement("strong");
+  const dnjenfnp = document.createElement("p");
+ dnjenfn.textContent = "Você";
+
+  citacao.className = "citacao";
+ dnjenfnp.textContent = mensagemOriginal;
+ 
+  const imagem = document.createElement("img");
+imagem.src = "./bot/IMG_7548.webp";
+imagem.className = "case-image";
+imagem.style.borderRadius = "10px";
+  
+  const card = document.createElement("div");
+  card.className = "dolar-card";
+  
+  const time = document.createElement("span");
+time.className = "time";
+time.textContent = new Date().toLocaleTimeString("pt-BR", {
+  hour: "2-digit",
+  minute: "2-digit"
+});
+
+  card.innerHTML = `
+    <div class="dolar-topo">
+      <span>🇺🇸 USD / 🇧🇷 BRL</span>
+      <span class="dolar-live">● AO VIVO</span>
+    </div>
+
+    <p class="dolar-legenda">Dólar comercial</p>
+
+    <h2 class="dolar-preco">Carregando...</h2>
+
+    <p class="dolar-variacao">Buscando cotação...</p>
+
+    <div class="dolar-detalhes">
+      <div>
+        <small>Máxima do dia</small>
+        <strong class="dolar-maxima">--</strong>
+      </div>
+
+      <div>
+        <small>Mínima do dia</small>
+        <strong class="dolar-minima">--</strong>
+      </div>
+    </div>
+
+    <p class="dolar-atualizacao">Consultando API...</p>
+
+    <button class="dolar-atualizar">
+      ↻ Atualizar agora
+    </button>
+  `;
+  citacao.append(dnjenfn, dnjenfnp);
+  bubble.append(divBot, citacao, imagem, card, time);
+  
+  messages.appendChild(bubble);
+  messages.scrollTop = messages.scrollHeight;
+  
+  const botao = card.querySelector(".dolar-atualizar");
+  
+  botao.addEventListener("click", () => {
+    atualizarCotacaoDolar(card);
+  });
+  
+  atualizarCotacaoDolar(card);
+  
+  const intervalo = setInterval(() => {
+    
+    if (!card.isConnected) {
+      clearInterval(intervalo);
+      return;
+    }
+    
+    atualizarCotacaoDolar(card);
+    
+  }, 30000);
+}
+
+function criarCaseIPMenu(mensagemOriginal) {
+  
+  const bubble = document.createElement("div");
+  bubble.className = "bubble bot ip-case";
+  
+ const time = document.createElement("span");
+time.className = "time";
+  time.textContent = new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+  
+  bubble.innerHTML = `
+    <div class="sender">Hatsune Miku
+    <div style="margin:1px;">
+      <svg viewBox="0 0 18 18" width="13" height="13"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>
+    </div>
+    </div>
+
+    <div class="citacao">
+      <strong>Você</strong>
+      <p>${" "}</p>
+    </div>
+
+    <h3>🌐 Consulta de IP</h3>
+
+    <p>
+      Consulte informações públicas de um endereço IP,
+      como cidade, país, região e provedor.
+    </p>
+
+    <p>
+      Digite o endereço IP na conversa para começar.
+    </p>
+<br>
+    <button class="boxkekfnn" onclick="input.value = ''; input.focus();">
+      Consultar IP
+    </button>
+  `;
+  
+  bubble.querySelector(".citacao p").textContent = mensagemOriginal;
+ bubble.append(time);
+
+  messages.appendChild(bubble);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function perto(){
+   window.location.href = "https://t.me/dreqxy";
+}
+
+
+function pertozap(){
+window.location.href = "https://api.whatsapp.com/send/?phone=%2B19043027496&text=Hello&type=phone_number&app_absent=0"
+}
+
+
+function caseCriador(mensagemOriginal) {
+
+  const bubble = document.createElement("div");
+  bubble.className = "bubble bot";
+  bubble.style.padding = "0";
+  bubble.style.overflow = "hidden";
+
+  // Nome do bot
+  const sender = document.createElement("div");
+  
+  const namebot  = document.createElement("div");
+  const divBot  = document.createElement("div");
+  divBot.className = "divBot";
+  namebot.className = "namebot";
+  namebot.innerHTML= "<p>BOT</p>";
+  namebot.style.margin = "10px";
+  
+  sender.className = "sender";
+  sender.textContent = "Hatsune Miku";
+  sender.style.padding = "12px 12px 8px";
+  
+  const botselo = document.createElement("div");
+botselo.style.margin = "1px"
+botselo.innerHTML = `<svg viewBox="0 0 18 18" width="13" height="13"
+
+           xmlns="http://www.w3.org/2000/svg">
+
+        <polygon fill="#3193e4"
+
+          points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9"/>
+
+        <polygon fill="#000"
+
+          points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4"/>
+
+      </svg>`
+   sender.appendChild(botselo);
+  divBot.append(sender, namebot);
+
+  // Citação da mensagem
+  const citacao = document.createElement("div");
+  const citacaotudo = document.createElement("div");
+  const citacaobutao = document.createElement("div");
+  const citacaoT = document.createElement("div");
+  const imgnsnend = document.createElement("div");
+  
+citacaobutao.innerHTML = `
+  <button onclick="pertozap()" class="mdnenfjffnn">ENVIAR MENSAGEM</button>
+  `
+ 
+  imgnsnend.innerHTML = `
+  <img src="./toq/IMG_7296.jpeg" style="border-radius:5px;" width="50" alt="" />
+  `
+  citacao.className = "citacao";
+  citacao.style.margin = "-10px 10px 10px";
+ citacaoT.style.display = "flex";
+ citacaoT.style.justifyContent = "space-between";
+ 
+  const nome = document.createElement("strong");
+  nome.textContent = "WhatsApp • dRëqi 𒉭";
+
+  const texto = document.createElement("p");
+  const anerto  = document.createElement("p");
+  texto.textContent = 'Outras empressas';
+ anerto.textContent = 'Aberto agora';
+ anerto.style.color = "#00ED4C";
+ 
+  //+ mensagemOriginal;
+citacaotudo.append(nome, texto, anerto);
+ // citacao.append(citacaotudo, imgnsnend);
+  citacaoT.append(citacaotudo, imgnsnend);
+ citacao.append(citacaoT, citacaobutao)
+
+
+  // Imagem
+  const imagem = document.createElement("img");
+  imagem.src = "./bot/bot.jpeg";
+  imagem.className = "case-image";
+
+  // Conteúdo
+  const conteudo = document.createElement("div");
+  conteudo.className = "case-content";
+
+  const titulo = document.createElement("h3");
+  titulo.textContent = "Contato Criador";
+
+  const descricao = document.createElement("span");
+  descricao.textContent = "Hataune Bot Versão 00.0.1";
+
+  const cmg = document.createElement("div");
+ 
+ cmg.innerHTML = "<p>Criado & Densenvolvido por: Dreqxy</p>"
+  const botao = document.createElement("button");
+  botao.textContent = "Conversar no Telegram";
+
+const time = document.createElement("span");
+  time.className = "time";
+  time.textContent = new Date().toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  botao.onclick = () => {
+    criarMensagem("fui pro telegram 🤪", "user");
+    perto()
+
+  };
+
+
+  conteudo.append(titulo, descricao, cmg, botao, time);
+
+  bubble.append(divBot, citacao, imagem, conteudo);
+
+  messages.appendChild(bubble);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+
+// Respostas do bot
+
+
+function responderBot(comando) {
+
+  const texto = comando.toLowerCase().trim();
+  
+  
+if (comando.toLowerCase().startsWith("/spray")) {
+  const texto = comando.slice(6).trim();
+
+  if (!texto) {
+    criarMensagem(
+      "Digite um texto. Exemplo: /spray Created By dreamy",
+      "bot"
+    );
+    return;
+  }
+
+  criarStickerSpray(comando, texto);
+  return;
+}
+
+if (comando.toLowerCase().startsWith("/nig")) {
+  
+  const texto = comando.slice(4).trim();
+  
+  if (!texto) {
+    criarMensagem("Digite um texto. Exemplo: /nig olá mundo", "bot");
+    return;
+  }
+  
+  criarGifTextoCase(comando, texto);
+  
+  return;
+}
+
+
+if (comando.toLowerCase().startsWith("/yt ")) {
+  
+  const pesquisa = comando.slice(4).trim();
+  
+  if (!pesquisa) {
+    criarMensagem("Digite o que deseja pesquisar. Exemplo: /yt minecraft", "bot");
+    return;
+  }
+  
+  pesquisarYouTube(comando, pesquisa);
+  return;
+}
+
+
+if (comando.toLowerCase().startsWith("/banner")) {
+  const partes = comando.trim().split(/\s+/);
+
+  const fontes = [
+    "Standard",
+    "Small",
+    "Big",
+    "Slant",
+    "Small Slant",
+    "Shadow",
+    "Banner",
+    "Block",
+    "Bubble",
+    "Digital",
+    "Doom",
+    "Ghost",
+    "Graffiti",
+    "Mini",
+    "Script",
+    "Star Wars",
+    "Cyberlarge",
+    "Cybermedium",
+    "CyberSmall",
+    "Lean",
+    "Varsity"
+  ];
+
+  const primeiraPalavra = partes[1] || "";
+
+  const fonteEncontrada = fontes.find(
+    f => f.toLowerCase() === primeiraPalavra.toLowerCase()
+  );
+
+  let fonte = "Standard";
+  let texto = "";
+
+  if (fonteEncontrada) {
+    fonte = fonteEncontrada;
+    texto = partes.slice(2).join(" ");
+  } else {
+    texto = partes.slice(1).join(" ");
+  }
+
+  if (!texto) {
+    criarMensagem(
+      "Exemplos:\n/banner hello\n/banner Small hello\n/banner Slant hello",
+      "bot"
+    );
+    return;
+  }
+
+  criarBanner(comando, texto, fonte);
+  return;
+}
+
+
+if (comando.toLowerCase().startsWith("/epo")) {
+  
+  const termo = comando.slice(4).trim();
+  
+  if (!termo) {
+    criarMensagem(
+      "Digite o nome do vídeo. Exemplo: /epo pesquisa",
+      "bot"
+    );
+    return;
+  }
+  
+  pesquisarEporner(comando, termo);
+  
+  return;
+}
+
+  // COMANDOS
+  switch (texto) {
+   // case "/hello":
+   //   criarRespostaBot(comando, "Olá! 👋");
+  //    return;
+
+    case "/main":
+      criarCase(comando);
+      return;
+      
+      case "/dolar":
+criarCaseDolar(comando);
+return;
+
+case "/list":
+criarMensagem(
+  `
+Standard
+Small
+Big
+Slant
+Small Slant
+Shadow
+Banner
+Block
+Bubble
+Digital
+Doom
+Ghost
+Graffiti
+Mini
+Script
+Star Wars
+Cyberlarge
+Cybermedium
+CyberSmall
+Lean
+Varsity`,
+  "bot"
+);
+
+return;
+      case "/ip":
+
+aguardandoIP = true;
+
+criarCaseIPMenu(comando);
+
+return;
+
+      case "/criador":
+      caseCriador(comando);
+return; 
+
+case "/meusdados":
+  caseDados(comando);
+  return;
+
+    case "/ajuda":
+      criarRespostaBot(comando, "Digite /main para conhecer o bot!");
+      return;
+
+    default:
+      if (texto.startsWith("/")) {
+        criarRespostaBot(comando, "Comando não encontrado. Digite /ajuda.");
+        return;
+      }
+  }
+
+  // MENSAGENS NORMAIS
+
+  if (["oi", "olá", "ola", "oi bot"].includes(texto)) {
+    criarRespostaBot(comando, "Olá! Como você está? 😊");
+    return;
+  }
+
+  if (texto.includes("bom dia")) {
+    criarRespostaBot(comando, "Bom dia! ☀️");
+    return;
+  }
+
+  if (texto.includes("boa noite")) {
+    criarRespostaBot(comando, "Boa noite! 🌙");
+    return;
+  }
+
+  if (texto.includes("tudo bem")) {
+    criarRespostaBot(comando, "Tudo ótimo por aqui! E com você? ❤️");
+    return;
+  }
+}
+
+// Enviar mensagem
+function enviar() {
+  
+  const texto = input.value.trim();
+  
+  if (!texto) return;
+  
+  criarMensagem(texto, "user");
+  
+  input.value = "";
+  
+  mostrarDigitando();
+  
+  setTimeout(async () => {
+    
+    const digitando = document.getElementById("botDigitando");
+    
+    if (digitando) digitando.remove();
+    
+    // Se o bot estiver aguardando um IP
+    if (aguardandoIP) {
+      
+      aguardandoIP = false;
+      
+      const valido = /^(\d{1,3}\.){3}\d{1,3}$/.test(texto) &&
+        texto.split(".").every(p => Number(p) <= 255);
+      
+      if (!valido) {
+        criarRespostaBot(texto, "IP inválido. Digite um endereço IPv4 válido.");
+        return;
+      }
+      
+      await consultarIP(texto, texto);
+      return;
+    }
+    
+    responderBot(texto);
+    
+  }, 1000);
+}
+// Enter para enviar
+input.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    enviar();
+  }
+});
+
+function mostrarDigitando() {
+  
+  const div = document.createElement("div");
+  
+  div.className = "digitando";
+  div.id = "botDigitando";
+  
+  div.innerHTML = `
+   Hataune está digitando
+    <span></span>
+    <span></span>
+    <span></span>
+  `;
+  
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+// Mensagem inicial
+criarMensagem("Olá! Digite /main para ver os comandos. 🤖", "bot");
