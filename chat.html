@@ -523,54 +523,42 @@ socket.onopen = async () => {
     alert("Erro ao carregar foto: " + erro.message);
   }
 };
-  socket.onmessage = event => {
-    let dados;
-
-    try {
-      dados = JSON.parse(event.data);
-    } catch {
-      return;
-    }
-
-    if (dados.tipo === "conectado") {
-      meuId = dados.seuId || dados.id;
-      return;
-    }
-
-    if (dados.tipo === "usuario_configurado") {
-      meuId = dados.usuario?.id || dados.id || meuId;
-      return;
-    }
-
-    if (dados.tipo === "confirmacao") {
+socket.onmessage = event => {
+  let dados;
+  
+  try {
+    dados = JSON.parse(event.data);
+  } catch {
+    return;
+  }
+  
+  if (dados.tipo === "conectado") {
+    meuId = dados.seuId || dados.id;
+    return;
+  }
+  
+  if (dados.tipo === "usuario_configurado") {
+    meuId = dados.usuario?.id || dados.id || meuId;
+    return;
+  }
+  
+  if (dados.tipo === "confirmacao") {
+    confirmar(dados.id);
+    return;
+  }
+  
+  // Mensagens e stickers
+  if (dados.tipo === "mensagem" || dados.tipo === "sticker") {
+    
+    if (dados.id && pendentes.has(dados.id)) {
       confirmar(dados.id);
       return;
     }
-
-    if (dados.tipo === "mensagem") {
-      if (dados.id && pendentes.has(dados.id)) {
-        confirmar(dados.id);
-        return;
-      }
-
-      receber(dados);
-      return;
-    }
-
-if (tipo === "sticker") {
-  bubble.classList.add("bubble-sticker");
-  
-  const img = document.createElement("img");
-  img.src = texto;
-  img.className = "sticker-img";
-  
-  bubble.appendChild(img);
-} else {
-  //bubble.textContent = texto;
-  adicionarTextoComLinks(bubble, texto);
-}
-  };
-
+    
+    receber(dados);
+    return;
+  }
+};
   socket.onclose = () => {
     statusGlobal.textContent = "Global • Desconectado";
 
@@ -865,31 +853,18 @@ const tentar = document.createElement("button");
 function receber(dados) {
   const usuario = dados.usuario || {};
   
-  const idUsuario = usuario.id || dados.usuarioId;
-  
-  const propria =
-    meuId !== null &&
-    idUsuario != null &&
-    String(idUsuario) === String(meuId);
-  
-  if (propria) return;
-  
   const texto = dados.tipo === "sticker" ?
     dados.imagem :
     dados.texto;
   
-  const nome = usuario.nome || dados.nome || "Usuário sem nome";
-  const foto = usuario.foto || dados.foto;
-  
   criarBalao(
     texto || "",
-    nome,
-    foto,
+    usuario.nome || dados.nome || "Anônimo",
+    usuario.foto || dados.foto,
     false,
     dados.tipo
   );
 }
-
 // Animação automática de todos os balões
 const observador = new IntersectionObserver(entradas => {
   entradas.forEach(entrada => {
