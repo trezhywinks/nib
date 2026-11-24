@@ -205,11 +205,11 @@ body {
   display: block;
 }*/
    .global{
-          padding: 10px;
           width: 95%;
           text-align: center;
           margin: 0 auto 10px;
           border-radius: 20px;
+          height: auto;
           background: #121212C7;
           border: 1px solid #232323;
         }
@@ -266,13 +266,13 @@ width: 100%;
 
   <main class="messages" id="messages">
        <div class="global">
-         <br>
-         <img src="./toq/IMG_7432.jpeg" alt="" 
-         style="border-radius: 100px;" weight="70" height="70"
-         />
-         <br>
-         <br>
-         <div style="display:flex; justify-content: center;">
+         <div>
+       <img src="./bot/io.png" width="100%" style="border-top-left-radius: 20px; border-top-right-radius:20px;"/>
+         </div>
+         <!--img src="./bot/124c1d40-ddd9-36fb-0ea4-a9b133901a35.jpeg" alt="" 
+         style="border-radius: 100px; border: 3px solid #191919; padding:; margin-top:-70%;" weight="120" height="120"
+         /-->
+         <div style="display:flex; justify-content: center; margin-top: -10%;">
            <div>
              <h4>WELCOME TO SERVER GLOBAL</h4>
            </div>
@@ -286,6 +286,7 @@ width: 100%;
 <br>What you are looking for can be found in forums like this. Just another common day in this place we call it? Have fun! Your fun is what matters.
 </p>
 <br>
+<br>
 <div class="sharedD" style="display:; justify-content: center; width:100%;
 border-top:1px solid #232323; transition: 0.3s ease;
 padding: 6px; border-radius:;
@@ -295,6 +296,7 @@ background: transparent;">
  </div--> 
  <div>
    <p style="color:#7655dc;">Share server</p>
+   <br>
  </div>
 </div>
 <script>
@@ -319,10 +321,10 @@ background: transparent;">
  </div>
   </main>
 
-<footer class="footer" style="background: #000;">
+<footer class="footer" style="background: transparent;">
 
-  <button id="btnSticker" type="button" style="background: transparent;">
-    <ion-icon class="pis" name="happy-outline"></ion-icon>
+  <button id="btnSticker" type="button" style="background: transparent; ;">
+   <ion-icon class="pis" name="earth"></ion-icon>
   </button>
 
   <input
@@ -331,7 +333,7 @@ background: transparent;">
     autocomplete="off"
   >
 
-  <button onclick="enviar()" style="display:flex;align-items:center;justify-content:center;">
+  <button onclick="enviar()" style="display:flex;align-items:center;justify-content:center; background: #272727D9;">
     <div class="fjjrfjj" style="height:5px;"></div>
     <div class="fjjrfjj" style="height:12px;"></div>
     <div class="fjjrfjj"></div>
@@ -438,9 +440,7 @@ function enviarSticker(imagem) {
   const status = document.createElement("div");
   status.className = "status-msg enviando";
   status.innerHTML = `<ion-icon name="time-outline"></ion-icon>`;
-  
   bubble.appendChild(status);
-  
   const item = {
     id,
     bubble,
@@ -709,19 +709,21 @@ function criarBalao(texto, nome, foto, propria, tipo = "mensagem") {
     
     bubble.appendChild(sender);
   }
+if (tipo === "sticker") {
   
-  if (tipo === "sticker") {
-    
-    const img = document.createElement("img");
-    img.src = texto;
-    img.className = "sticker-img";
-    
-    bubble.appendChild(img);
-    
-  } else {
-    adicionarTextoComLinks(bubble, texto);
-  }
+  bubble.classList.add("bubble-sticker");
   
+  const img = document.createElement("img");
+  img.src = texto;
+  img.className = "sticker-img";
+  
+  bubble.style.background = "transparent";
+  bubble.appendChild(img);
+  
+} else {
+  adicionarTextoComLinks(bubble, texto);
+}
+
   const hora = document.createElement("div");
   hora.className = "time";
   
