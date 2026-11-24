@@ -54,14 +54,17 @@ box-sizing:border-box;
 
 :root{
   --ser: --wer: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+ --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
+     
+
   html, body{
-    font-family:mine;
+    font-family:var(--font);
     overflow-x: hidden;
     height:100%;
-background:#4C4877;
+background:#0A0A0A;
     width: 100%;
-    font-weight:800;
+    font-weight:500;
     font-size:17px;
     color: white;
   }
@@ -1638,8 +1641,9 @@ obstaculo.x -= velocidadeAtual * delta;
     background:#0c0c0c;
     justify-content: space-between; z-index:999999;
     width:; padding: 10px;">
-      <div style="font-size: 35px;" onclick="bomdia()">
-        <
+      <div style="font-size: 40px;" onclick="bomdia()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+
       </div>
          <div style="display:flex;">
                   <div style="margin-top:15px;  width:60px; height: 40px; background:; overflow:;">
@@ -1729,7 +1733,7 @@ obstaculo.x -= velocidadeAtual * delta;
 
       </div>
     <div style="margin: 10px;" onclick="perfi()">
-      <img src="" id="setvidoresChat" width="45" height="45" onclick="" style="border-radius: 100px; border: 2px solid #00ED4C; padding: 2px;"/>
+      <img src="" id="setvidoresChat" width="45" height="45" onclick="" style="border-radius: 100px; border: 2px solid #9331e4; padding: 2px;"/>
     </div>
     </div>
     <br>
@@ -1923,7 +1927,7 @@ obstaculo.x -= velocidadeAtual * delta;
   
   if ('mediaSession' in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({
-      title: 'SECTION 01',
+      title: 'T7.000',
       artist: 'by: dreqxy...',
       album: '01',
       artwork: [
@@ -2479,10 +2483,10 @@ function alternarToggle(icone) {
     left: 0; right: 0; background: #000; height: 55px; z-index: 9999;
     font-size: 35px;" 
     onclick="remxoem()">
-      <div>
-        <
+      <div style="font-size:35px;">
+        <ion-icon name="chevron-back-outline"></ion-icon>
       </div>
-      <div style="margin-left:10px; margin-top: 10px; font-size: 20px;">
+      <div style="margin-left:10px; margin-top:5px; font-size: 20px;">
         back
       </div>
     </div>
@@ -3197,6 +3201,7 @@ data-preco="$ 55.000,00"
     <style>
     .tabzmendj{
       border: 2px solid #232323;
+      border-radius:100px;
       padding: 2px;
     }
     .nsnekjjj{
@@ -3575,10 +3580,16 @@ padding-bottom:120px;
   </style>
   <div class="kli" style="margin-left:;"></div>
   <div class="kli" style="width: 30px;"></div>
-</div>      
-         <div class="escuras" onclick="dizer()" style="text-align:;">
-           <img src="./trs/IMG_7507.png" width="50"/>
-           <script>
+</div> 
+<div style="display:flex; margin-top:25px;">
+
+</div>
+
+         <div class="escuras" onclick="" style="text-align:; display: flex; margin-top: 20px;">
+                    <p class="granah" style="margin-left:; margin-top:; font-size: 14px; opacity: 0.6;">$ 0,00</p>
+      <p style="font-size: 14px; margin-top:; margin-left:10px;" id="onlineGame">0 Online</p>
+<p style="font-size:14px; margin-left: 10px; color: orange;">Score: 00000</p>
+              <script>
              function homer(){
                document.querySelector(".todos").classList.toggle("ativo");
             document.querySelector(".borjxjdnn").style.display = "block"
@@ -3685,7 +3696,7 @@ padding-bottom:120px;
            </style>
           </div>
     </center>
-    <img src="./trs/IMG_7527.png" width="190" style="margin-top:-35px;"/>
+    <img src="./trs/IMG_7527.png" width="190" style="margin-top:;"/>
     <div class="contros" style="display:flex; justify-content: center;">
     <div class="start" style="padding:10px; 
     border:; margin-top:;
@@ -3738,7 +3749,6 @@ padding-bottom:120px;
        <img src="./img/IMG_0928.gif" width="30"/>
      </div>
      <div>
-      <img src="./cmc/IMG_7516.png" width="80"/>
      </div>
           <div class="pass" onclick="boneca()" style="border:;
           padding:; width:; height:;">
@@ -4187,7 +4197,7 @@ inputCodigo.addEventListener("input", () => {
              <img src="https://count.getloli.com/@Trezhywinks?name=Trezhywinks&theme=booru-lisu&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" width="160"/>
        </div>
        <div class="nasjdj" style="margin-top:-20px; display:none; margin-left: 10px; text-align: left;">
-       <h3 style="color:red; font-family:mine;"><span style="color:white;">Section 01</span></h3>
+       <h3 style="color:red; font-family:;"><span style="color:white;">Section 01</span></h3>
         <p style="font-size:11px; opacity:0.6;">Developed by whmer for you<br>All rights reserved
         <br>&copy; Copyright 2014 - 2026 | Section 01
         </p>
@@ -4312,7 +4322,7 @@ inputCodigo.addEventListener("input", () => {
  To add
  </div>
  <div class="shix">
-   <span style="font-size:40px; font-family: mine;">x</span>
+   <span style="font-size:40px; font-family:;">x</span>
  </div>
 </div>
     <script>
@@ -4378,7 +4388,6 @@ window.addEventListener("appinstalled", () => {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    font-family: mine;
   }
   
   .usuario-card {
@@ -4721,7 +4730,6 @@ z-index:100;
 </div>
 <div style="text-align: end; margin-top:5px;">
   <p style="font-size:14px;">User numbers</p>
-  <p style="font-size: 11px;" id="onlineGame">0 Online</p>
 
 </div>
        </div>
@@ -4853,11 +4861,13 @@ const rainbowC = document.querySelector(".whmerRainbow");
 const dinheiro = document.getElementById("dinheiro");
 const salegrana = document.querySelector(".salegrana");
 const grana = document.querySelector(".grana");
+const granah = document.querySelector(".granah");
 
 //let dinheiroAtual = 0;
 let dinheiroAtual = Number(localStorage.getItem("dinheiroWhmer")) || 0;
 
 grana.textContent =  `$ ${dinheiroAtual}`;
+granah.textContent =  `$ ${dinheiroAtual}`;
 dinheiro.textContent = `$ ${dinheiroAtual}`;
 salegrana.textContent = `$ ${dinheiroAtual}`;
 
@@ -4908,6 +4918,12 @@ grana.textContent = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
   minimumFractionDigits: 2,
   maximumFractionDigits: 2
 });
+
+granah.textContent = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+
   //dinheiro.textContent = "$ " + dinheiroAtual.toFixed(2).replace(".", ",");
 //  grana.textContent = "$ " + dinheiroAtual.toFixed(2).replace(".", ",");
   //salegrana.textContent = "$ " + dinheiroAtual.toFixed(2).replace(".", ",");
@@ -4956,6 +4972,12 @@ function atualizarTela() {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   });
+  
+  granah.innerText = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+
 }
 
 atualizarTela();
@@ -8104,7 +8126,7 @@ inoutf.addEventListener("change", () => {
     usuarios.forEach(usuario => {
       const card = document.createElement("div");
       card.className = "usuario-card";
-      card.style.fontFamily = "mine";
+  //    card.style.fontFamily = "mine";
       const campos = [
         ["Nome", usuario.nome],
         ["Cidade", usuario.cidade],
@@ -8377,6 +8399,11 @@ grana.textContent = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
   minimumFractionDigits: 2,
   maximumFractionDigits: 2
 });
+granah.textContent = "$ " + dinheiroAtual.toLocaleString("pt-BR", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+
   }
 }
 const rainbow = document.querySelector(".whmerRainbow");
