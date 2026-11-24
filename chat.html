@@ -506,7 +506,7 @@ socket.onopen = async () => {
   
   try {
     const fotoBase64 = await pegarFotoBase64();
-    alert(fotoBase64)
+    //alert(fotoBase64)
     socket.send(JSON.stringify({
       tipo: "usuario",
       nome: meuNome,
@@ -757,7 +757,6 @@ function enviar() {
   const id = gerarId();
   
   const fotoBase64 = localStorage.getItem("minhaFotoSalva");
-  
   const bubble = criarBalao(
     texto,
     meuNome,
@@ -843,7 +842,6 @@ function marcarErro(item) {
 
   status.className = "status-msg erro";
 status.innerHTML = `
-  <ion-icon name="alert-circle"></ion-icon>
   <ion-icon name="alert-circle"></ion-icon>
 
 `;
