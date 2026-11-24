@@ -342,7 +342,34 @@ background: transparent;">
 </div>
 <div id="listaStickers"></div>
 <script>
-  const urHl = "https://raw.githubusercontent.com/trezhywinks/sticker-R/refs/heads/main/sticker.json";
+ 
+</script>
+<script>
+
+//const WS_URL = "wss://coisas.onrender.com";
+const WS_URL = "wss://hash-1-761o.onrender.com";
+
+
+const messages = document.getElementById("messages");
+const input = document.getElementById("input");
+const statusGlobal = document.getElementById("statusGlobal");
+
+let meuNomeSalvo = localStorage.getItem("whmer_nome") || "usuário sem nome";
+const meuNome = meuNomeSalvo
+//localStorage.getItem("nomeUsuario") || "Anônimo";
+const fotoSalva = localStorage.getItem("minhaFotoSalva") || "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
+//const fotoSalva = localStorage.getItem("fotoUsuario");
+
+//const fotoBase64 = await converterBase64(fotoSalva);
+const minhaFoto = localStorage.getItem("minhaFotoSalva") ||  "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
+
+const FOTO_PADRAO =
+  "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
+
+let socket;
+let meuId = null;
+
+const urHl = "https://raw.githubusercontent.com/trezhywinks/sticker-R/refs/heads/main/sticker.json";
 
 const listaStickers = document.getElementById("listaStickers");
 const btnSticker = document.getElementById("btnSticker");
@@ -398,17 +425,17 @@ listaStickers.addEventListener("click", e => {
 function enviarSticker(imagem) {
   const id = gerarId();
   
-  // Cria o balão imediatamente
+  const fotoBase64 = localStorage.getItem("minhaFotoSalva");
+  
   const bubble = criarBalao(
     imagem,
     meuNome,
-    minhaFoto,
+    fotoBase64,
     true,
     "sticker"
   );
   
-  // Verifica conexão antes de tentar enviar
-  if (typeof wsc === "undefined" || wsc.readyState !== WebSocket.OPEN) {
+  if (typeof socket === "undefined" || socket.readyState !== WebSocket.OPEN) {
     const status = document.createElement("div");
     status.className = "status-msg erro";
     status.innerHTML = `
@@ -419,40 +446,14 @@ function enviarSticker(imagem) {
     return;
   }
   
-  // Só chega aqui se estiver conectado
-  wsc.send(JSON.stringify({
+  socket.send(JSON.stringify({
     tipo: "sticker",
     id,
     imagem,
     nome: meuNome,
-    foto: minhaFoto
+    foto: fotoBase64
   }));
 }
-</script>
-<script>
-
-//const WS_URL = "wss://coisas.onrender.com";
-const WS_URL = "wss://hash-1-761o.onrender.com";
-
-
-const messages = document.getElementById("messages");
-const input = document.getElementById("input");
-const statusGlobal = document.getElementById("statusGlobal");
-
-let meuNomeSalvo = localStorage.getItem("whmer_nome") || "usuário sem nome";
-const meuNome = meuNomeSalvo
-//localStorage.getItem("nomeUsuario") || "Anônimo";
-const fotoSalva = localStorage.getItem("minhaFotoSalva") || "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
-//const fotoSalva = localStorage.getItem("fotoUsuario");
-
-//const fotoBase64 = await converterBase64(fotoSalva);
-const minhaFoto = localStorage.getItem("minhaFotoSalva") ||  "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
-
-const FOTO_PADRAO =
-  "https://raw.githubusercontent.com/trezhywinks/Hash/refs/heads/main/u/IMG_5629.jpeg";
-
-let socket;
-let meuId = null;
 
 const pendentes = new Map();
 
