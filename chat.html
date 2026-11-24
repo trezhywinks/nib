@@ -435,25 +435,30 @@ function enviarSticker(imagem) {
     "sticker"
   );
   
-  if (typeof socket === "undefined" || socket.readyState !== WebSocket.OPEN) {
-    const status = document.createElement("div");
-    status.className = "status-msg erro";
-    status.innerHTML = `
-      <ion-icon name="alert-circle"></ion-icon>
-    `;
-    
-    bubble.appendChild(status);
-    return;
-  }
+  const status = document.createElement("div");
+  status.className = "status-msg enviando";
+  status.innerHTML = `<ion-icon name="time-outline"></ion-icon>`;
   
-  socket.send(JSON.stringify({
-    tipo: "sticker",
+  bubble.appendChild(status);
+  
+  const item = {
     id,
-    imagem,
-    nome: meuNome,
-    foto: fotoBase64
-  }));
+    bubble,
+    mensagem: {
+      id,
+      tipo: "sticker",
+      imagem,
+      nome: meuNome,
+      foto: fotoBase64
+    },
+    timer: null
+  };
+  
+  pendentes.set(id, item);
+  
+  transmitir(item);
 }
+
 
 const pendentes = new Map();
 
@@ -873,14 +878,18 @@ function receber(dados) {
     dados.imagem :
     dados.texto;
   
+  const nome = usuario.nome || dados.nome || "Usuário sem nome";
+  const foto = usuario.foto || dados.foto;
+  
   criarBalao(
     texto || "",
-    usuario.nome || dados.nome || "Usuário sem nome",
-    usuario.foto || dados.foto,
+    nome,
+    foto,
     false,
     dados.tipo
   );
 }
+
 // Animação automática de todos os balões
 const observador = new IntersectionObserver(entradas => {
   entradas.forEach(entrada => {
